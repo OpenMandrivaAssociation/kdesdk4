@@ -1,4 +1,4 @@
-%define branch_date 20070418
+%define branch_date 20070502
 
 %define lib_name_orig lib%{name}
 %define lib_major 1
