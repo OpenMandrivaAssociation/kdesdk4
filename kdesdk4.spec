@@ -14,7 +14,7 @@
 %define _docdir %_datadir/doc/
 %define _mandir %_prefix/man/
 
-%define use_enable_final 0
+%define use_enable_final 1
 %{?_no_enable_final: %{expand: %%global use_enable_final 0}}
 
 %define compile_apidox 1
