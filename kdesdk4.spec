@@ -45,6 +45,7 @@ BuildRequires: freetype2-devel
 BuildRequires: kdelibs4-devel >= %version-%mini_release
 BuildRequires: kdepimlibs4-devel >= %version-%mini_release
 BuildRequires: kdepim4-devel 
+BuildRequires: kdebase4-workspace-devel
 BuildRequires: bzip2-devel 
 BuildRequires: jpeg-devel 
 BuildRequires: lcms-devel 
