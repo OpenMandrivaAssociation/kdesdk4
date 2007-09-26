@@ -36,7 +36,6 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.%revision.
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 %endif
 Group: Graphical desktop/KDE
-Packager: Mandriva Linux KDE Team <kde@mandriva.com>
 BuildRoot: %_tmppath/%name-%version-%release-root
 Requires: cvs
 BuildRequires: db4-devel 
