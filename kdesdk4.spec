@@ -1,4 +1,4 @@
-%define revision 714320
+%define revision 727179
 
 %define lib_name_orig lib%{name}
 %define lib_major 1
@@ -25,7 +25,7 @@
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 3.93.0
+Version: 3.94.0
 Release: %mkrel 0.%revision.1
 Epoch: 1
 License: GPL
@@ -52,7 +52,6 @@ BuildRequires: mng-devel
 BuildRequires: png-devel 
 BuildRequires: zlib-devel
 BuildRequires: flex
-#BuildRequires: kdepim-devel
 BuildRequires: binutils-devel
 BuildRequires: subversion-devel
 BuildRequires:	libxslt-devel
@@ -107,6 +106,8 @@ Software Development Kit for the K Desktop Environment.
 %doc %_kde_docdir/HTML/en/kapptemplate/*.docbook
 %doc %_kde_docdir/HTML/en/kapptemplate/*.png
 
+#---------------------------------------------------------------------
+
 %package strigi-analyzer
 Summary: Strigi Analyzer
 Group: Graphical desktop/KDE
@@ -117,6 +118,8 @@ Strigi analyzer
 %files strigi-analyzer
 %defattr(-,root,root)
 %_kde_libdir/strigi/strigi*
+
+#---------------------------------------------------------------------
 
 %package kate
 Summary: Kate
@@ -156,6 +159,8 @@ A fast and advanced text editor with nice plugins
 %doc %_kde_docdir/HTML/en/kate/*.bz2
 %doc %_kde_docdir/HTML/en/kate/*.docbook
 
+#---------------------------------------------------------------------
+
 %package -n %lib_name-kate
 Summary: Libraries for Kate
 Group: Graphical desktop/KDE
@@ -174,6 +179,8 @@ Libraries for kate program
 %defattr(-,root,root)
 %_kde_libdir/libkateinterfaces.so.*
 %_kde_libdir/libkdeinit4_kate.so
+
+#---------------------------------------------------------------------
 
 %package -n %lib_name-kate-devel
 Summary: Development file for Kate
@@ -288,7 +295,7 @@ CVS client part.
 %_datadir/dbus-1/interfaces/org.kde.cervisia.cvsloginjob.xml
 %_datadir/dbus-1/interfaces/org.kde.cervisia.cvsservice.xml
 %_datadir/dbus-1/interfaces/org.kde.cervisia.repository.xml
-%_kde_prefix/man/man1/cervisia.*
+%_kde_datadir/man/man1/cervisia.1
 
 %doc %_kde_docdir/HTML/en/cervisia/*.bz2
 %doc %_kde_docdir/HTML/en/cervisia/*.docbook
