@@ -1,4 +1,4 @@
-%define revision 729243 
+%define revision 730863
 
 %define lib_name_orig lib%{name}
 %define lib_major 1
