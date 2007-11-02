@@ -1,4 +1,4 @@
-%define revision 730863
+%define revision 731774
 
 %define lib_name_orig lib%{name}
 %define lib_major 1
@@ -25,7 +25,7 @@
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 3.94.1
+Version: 3.95.1
 Release: %mkrel 0.%revision.1
 Epoch: 1
 License: GPL
