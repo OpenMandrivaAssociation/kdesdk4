@@ -1,4 +1,4 @@
-%define revision 731774
+%define revision 737044
 
 %define lib_name_orig lib%{name}
 %define lib_major 1
@@ -25,7 +25,7 @@
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 3.95.1
+Version: 3.96.0
 Release: %mkrel 0.%revision.1
 Epoch: 1
 License: GPL
@@ -92,8 +92,6 @@ Software Development Kit for the K Desktop Environment.
 %_kde_iconsdir/*/*/actions/svn_remove.*
 %_kde_iconsdir/*/*/actions/svn_status.*
 %_kde_iconsdir/*/*/actions/svn_switch.*
-%_kde_appsdir/konqueror/servicemenus/subversion.desktop
-%_kde_appsdir/konqueror/servicemenus/subversion_toplevel.desktop
 %_datadir/dbus-1/interfaces/org.kde.ksvnd.xml
 
 %doc %_kde_docdir/HTML/en/kdesvn-build/*.docbook
