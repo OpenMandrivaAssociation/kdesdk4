@@ -1,4 +1,4 @@
-%define revision 746591
+%define revision 752225
 
 %define lib_name_orig lib%{name}
 %define lib_major 1
@@ -26,13 +26,14 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
 Version: 3.97.1
-Release: %mkrel 0.%revision.1
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
 %if %branch
+Release: %mkrel 0.%revision.1
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.%revision.tar.bz2
 %else
+Release: %mkrel 1
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 %endif
 Group: Graphical desktop/KDE
@@ -444,7 +445,7 @@ applications for kdesdk.
 %_kde_libdir/libktrace.so
 %_kde_libdir/libkstartperf.so
 %_kde_libdir/libkateinterfaces.so
-
+%_kde_libdir/libkompareinterface.so
 #---------------------------------------------------------------
 
 %package -n kde4-umbrello
@@ -551,6 +552,51 @@ kompare is a KDE diff graphic tool
 
 %files -n kde4-kompare
 %defattr(-,root,root,-)
+%_kde_bindir/kompare
+%_kde_libdir/kde4/libkomparenavtreepart.so
+%_kde_libdir/kde4/libkomparepart.so
+%_kde_libdir/libkomparedialogpages.so
+%_kde_libdir/libkomparediff2.so
+%_kde_datadir/applications/kde4/kompare.desktop
+%_kde_datadir/apps/kompare/komparepartui.rc
+%_kde_datadir/apps/kompare/kompareui.rc
+%_kde_datadir/doc/HTML/en/kompare/index.cache.bz2
+%_kde_datadir/doc/HTML/en/kompare/index.docbook
+%_kde_datadir/doc/HTML/en/kompare/settings-diff1.png
+%_kde_datadir/doc/HTML/en/kompare/settings-diff2.png
+%_kde_datadir/doc/HTML/en/kompare/settings-diff3.png
+%_kde_datadir/doc/HTML/en/kompare/settings-diff4.png
+%_kde_datadir/doc/HTML/en/kompare/settings-view1.png
+%_kde_datadir/doc/HTML/en/kompare/settings-view2.png
+%_kde_datadir/icons/hicolor/128x128/apps/kompare.png
+%_kde_datadir/icons/hicolor/16x16/apps/kompare.png
+%_kde_datadir/icons/hicolor/22x22/apps/kompare.png
+%_kde_datadir/icons/hicolor/32x32/apps/kompare.png
+%_kde_datadir/icons/hicolor/48x48/apps/kompare.png
+%_kde_datadir/icons/hicolor/scalable/apps/kompare.svgz
+%_kde_datadir/kde4/services/komparenavtreepart.desktop
+%_kde_datadir/kde4/services/komparepart.desktop
+%_kde_datadir/kde4/servicetypes/komparenavigationpart.desktop
+%_kde_datadir/kde4/servicetypes/kompareviewpart.desktop
+
+#---------------------------------------------------------------
+
+%define  libkompareinterface %mklibname kompareinterface 4
+
+%package -n %libkompareinterface
+Summary:    KDE 4 core library
+Group:      System/Libraries
+
+%description -n %libkompareinterface
+KDE 4 core library.
+
+%post -n   %libkompareinterface -p /sbin/ldconfig
+%postun -n %libkompareinterface -p /sbin/ldconfig
+
+%files -n %libkompareinterface
+%defattr(-,root,root)
+%_kde_libdir/libkompareinterface.so.*
+
 
 #---------------------------------------------------------------
 
