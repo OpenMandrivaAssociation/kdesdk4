@@ -37,6 +37,7 @@ Release: %mkrel 1
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 %endif
 Group: Graphical desktop/KDE
+BuildRoot: %_tmppath/%name-%version-%release-root
 BuildRequires: db4-devel 
 BuildRequires: freetype2-devel
 %define mini_release %mkrel 0.%branch_date.1
