@@ -12,7 +12,7 @@
 %define unstable 1
 %{?_unstable: %{expand: %%global unstable 1}}
 
-%define branch 1
+%define branch 0
 %{?_branch: %{expand: %%global branch 1}}
 
 %define use_enable_pie 1
@@ -25,7 +25,7 @@
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 3.97.1
+Version: 4.0.0
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
@@ -43,7 +43,6 @@ BuildRequires: freetype2-devel
 %define mini_release %mkrel 0.%branch_date.1
 BuildRequires: kdelibs4-devel >= %version-%mini_release
 BuildRequires: kdepimlibs4-devel >= %version-%mini_release
-BuildRequires: kdepim4-devel 
 BuildRequires: kdebase4-workspace-devel
 BuildRequires: bzip2-devel 
 BuildRequires: jpeg-devel 
@@ -394,7 +393,6 @@ A fast and advanced text editor with nice plugins
 %_kde_appsdir/kate/tips
 %_kde_appsdir/kate/default.katesession
 %_kde_appsdir/kconf_update/kate-2.4.upd
-%_kde_appsdir/kicker/menuext/katesessionmenu.desktop
 %_kde_datadir/config/katerc
 %_kde_datadir/config/katefiletemplates.knsrc
 %_kde_libdir/libkdeinit4_kate.so
@@ -409,7 +407,6 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/katesymbolviewerplugin.so
 %_kde_libdir/kde4/katetabbarextensionplugin.so
 %_kde_libdir/kde4/katetextfilterplugin.so
-%_kde_libdir/kde4/kickermenu_kate.so
 %dir %_kde_appsdir/katepart
 %dir %_kde_appsdir/katepart/syntax   
 %_kde_appsdir/katepart/syntax/katetemplate.xml
