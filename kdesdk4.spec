@@ -79,9 +79,6 @@ Common files needed for kdesdk
 %{_kde_bindir}/cvsservice
 %{_kde_bindir}/kio_svn_helper
 %{_kde_bindir}/kstartperf
-%{_kde_bindir}/po2xml
-%{_kde_bindir}/split2po
-%{_kde_bindir}/swappo
 %{_kde_libdir}/kde4/kabcformat_kdeaccounts.so
 %{_kde_appsdir}/kabc/formats/kdeaccountsplugin.desktop
 
@@ -298,7 +295,6 @@ contained in the kdesdk module.
 %{_kde_bindir}/svnlastlog
 %{_kde_bindir}/svnrevertlast
 %{_kde_bindir}/svnversions
-%{_kde_bindir}/xml2pot
 %{_kde_bindir}/zonetab2pot.py
 
 %dir %doc %_kde_docdir/HTML/en/kdesvn-build
@@ -345,6 +341,24 @@ Strigi analyzer
 %files strigi-analyzer
 %defattr(-,root,root)
 %_kde_libdir/strigi/strigi*
+
+#---------------------------------------------------------------
+
+%package po2xml
+Summary: An xml2po and vice versa converters
+Group: Graphical desktop/KDE
+Conflicts: kdesdk4-core < 1:3.97.1-0.752225.2
+Conflicts: kde4-scripts < 1:3.97.1-0.752225.2
+
+%description po2xml
+An xml2po and vice versa converters.
+
+%files po2xml
+%defattr(-,root,root,-)
+%{_kde_bindir}/po2xml
+%{_kde_bindir}/split2po
+%{_kde_bindir}/swappo
+%{_kde_bindir}/xml2pot
 
 #---------------------------------------------------------------------
 
