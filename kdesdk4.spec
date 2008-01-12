@@ -30,10 +30,10 @@ Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
 %if %branch
-Release: %mkrel 0.%revision.2
+Release: %mkrel 0.%revision.1
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.%revision.tar.bz2
 %else
-Release: %mkrel 1
+Release: %mkrel 2
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 %endif
 Group: Graphical desktop/KDE
