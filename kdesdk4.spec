@@ -30,7 +30,7 @@ Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
 %if %branch
-Release: %mkrel 0.%revision.1
+Release: %mkrel 0.%revision.2
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.%revision.tar.bz2
 %else
 Release: %mkrel 1
@@ -67,7 +67,7 @@ Software Development Kit for the K Desktop Environment.
 Summary: Common files needed for kdesdk
 Group: Graphical desktop/KDE
 Conflicts: %name < %epoch:3.97.1-0.746591.1
-Obsoletes: %{_lib}kdesdk41 <= %epoch:3.96.1-0.740308.1
+Obsoletes: %{_lib}kdesdk41 < %epoch:3.96.1-0.740308.2
 
 %description core
 Common files needed for kdesdk
@@ -368,7 +368,7 @@ Provides:  kate4
 Obsoletes: kdebase4-kate < 1:3.97.1
 Provides:  kdebase4-kate > 1:3.97.1
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
-Obsoletes: %lib_name-kate <= 1:3.96.1-0.740308.1
+Obsoletes: %lib_name-kate < 1:3.96.1-0.740308.2
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 Requires: %name-core = %epoch:%version-%release
@@ -438,9 +438,9 @@ Summary:    Header files for kdesdk
 Group:      Development/KDE and Qt
 Provides:   kdesdk4-devel =  %epoch:%version-%release
 Obsoletes:  %lib_name_orig-devel < 1:3.97.1
-Obsoletes:  %{_lib}kdesdk41-kate-devel <= %epoch:3.96.1-0.740308.1
-Obsoletes:  %{_lib}kdesdk41-devel <= %epoch:3.96.1-0.740308.1
-Obsoletes:  %{_lib}kdesdk41-cervisia-devel <= %epoch:3.96.1-0.740308.1
+Obsoletes:  %{_lib}kdesdk41-kate-devel < %epoch:3.96.1-0.740308.2
+Obsoletes:  %{_lib}kdesdk41-devel < %epoch:3.96.1-0.740308.2
+Obsoletes:  %{_lib}kdesdk41-cervisia-devel < %epoch:3.96.1-0.740308.2
 
 %description  devel	
 This package includes the header files you will need to compile
@@ -493,7 +493,7 @@ Requires:   cvs
 Conflicts:  kdesdk4 < %epoch:3.97.1-0.746591.1
 Requires:   %name-core = %epoch:%version-%release
 Obsoletes:  %name-cervisia < %epoch:3.97.1 
-Obsoletes:  %lib_name-cervisia <= %epoch:3.96.1-0.740308.1
+Obsoletes:  %lib_name-cervisia < %epoch:3.96.1-0.740308.2
 
 %description -n kde4-cervisia
 CVS client part.
