@@ -593,7 +593,8 @@ kompare is a KDE diff graphic tool
 
 #---------------------------------------------------------------
 
-%define  libkompareinterface %mklibname kompareinterface 4
+%define  kompareinterface_major 4
+%define  libkompareinterface %mklibname kompareinterface %kompareinterface_major
 
 %package -n %libkompareinterface
 Summary:    KDE 4 core library
@@ -607,7 +608,7 @@ KDE 4 core library.
 
 %files -n %libkompareinterface
 %defattr(-,root,root)
-%_kde_libdir/libkompareinterface.so.*
+%_kde_libdir/libkompareinterface.so.%{kompareinterface_major}*
 
 
 #---------------------------------------------------------------
@@ -664,7 +665,8 @@ Calltree extends Cachegrind, which is part of Valgrind.
 %doc %_kde_docdir/HTML/en/kcachegrind/*.docbook
 
 #---------------------------------------------------------------
-%define  libantlr %mklibname antlr 4
+%define  antlr_major 4
+%define  libantlr %mklibname antlr %antlr_major
 
 %package -n %libantlr
 Summary: KDE 4 core library
@@ -678,10 +680,11 @@ KDE 4 core library.
 
 %files -n %libantlr
 %defattr(-,root,root)
-%_kde_libdir/libantlr.so.*
+%_kde_libdir/libantlr.so.%{antlr_major}*
 
 #---------------------------------------------------------------
-%define  libkateinterfaces %mklibname kateinterfaces 4
+%define  kateinterfaces_major 4
+%define  libkateinterfaces %mklibname kateinterfaces %kateinterfaces_major
 
 %package -n %libkateinterfaces
 Summary:    KDE 4 core library
@@ -696,10 +699,11 @@ KDE 4 core library.
 
 %files -n %libkateinterfaces
 %defattr(-,root,root)
-%_kde_libdir/libkateinterfaces.so.*
+%_kde_libdir/libkateinterfaces.so.%{kateinterfaces_major}*
 
 #-----------------------------------------------------------------------------
-%define  libkstartperf %mklibname kstartperf 4
+%define  kstartperf_major 4
+%define  libkstartperf %mklibname kstartperf %kstartperf_major
 
 %package -n %libkstartperf
 Summary: KDE 4 core library
@@ -713,10 +717,11 @@ KDE 4 core library.
 
 %files -n %libkstartperf
 %defattr(-,root,root)
-%_kde_libdir/libkstartperf.so.*
+%_kde_libdir/libkstartperf.so.%{kstartperf_major}*
 
 #-----------------------------------------------------------------------------
-%define  libktrace %mklibname ktrace 4
+%define  ktrace_major 4
+%define  libktrace %mklibname ktrace %ktrace_major
 
 %package -n %libktrace
 Summary: KDE 4 core library
@@ -730,7 +735,7 @@ KDE 4 core library.
 
 %files -n %libktrace
 %defattr(-,root,root)
-%_kde_libdir/libktrace.so.*
+%_kde_libdir/libktrace.so.%{ktrace_major}*
 
 #-----------------------------------------------------------------------------
 
