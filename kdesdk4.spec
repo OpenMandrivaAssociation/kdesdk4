@@ -425,7 +425,7 @@ A fast and advanced text editor with nice plugins
 %_kde_datadir/kde4/services/katetextfilter.desktop
 %_kde_datadir/kde4/servicetypes/kateplugin.desktop
 
-%dir _kde_docdir/HTML/en/kate-plugins 
+%dir %_kde_docdir/HTML/en/kate-plugins 
 %doc %_kde_docdir/HTML/en/kate-plugins/*.png
 %doc %_kde_docdir/HTML/en/kate-plugins/*.bz2
 %doc %_kde_docdir/HTML/en/kate-plugins/*.docbook
