@@ -33,7 +33,7 @@ URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
 Release: %mkrel 0.%revision.1
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.%revision.tar.bz2
 %else
-Release: %mkrel 2
+Release: %mkrel 3
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 %endif
 Group: Graphical desktop/KDE
@@ -231,17 +231,18 @@ Displays Qt Designer UI files
 
 #---------------------------------------------------------------------
 
-%package -n kde4-scripts
+%package -n kdesdk4-scripts
 Summary:    Script From kdesdk
 Group:      Graphical desktop/KDE
 Conflicts:  kdesdk4 < %epoch:3.97.1-0.746591.1
+Obsoletes:  kde4-scripts
 Requires:   %name-core = %epoch:%version-%release
 
-%description -n kde4-scripts
+%description -n kdesdk4-scripts
 This package contains the scripts for KDE development which are
 contained in the kdesdk module.
 
-%files -n kde4-scripts
+%files -n kdesdk4-scripts
 %defattr(-,root,root)
 %{_kde_bindir}/adddebug
 %{_kde_bindir}/build-progress.sh
@@ -296,7 +297,7 @@ contained in the kdesdk module.
 %{_kde_bindir}/svnversions
 %{_kde_bindir}/zonetab2pot.py
 
-%dir %doc %_kde_docdir/HTML/en/kdesvn-build
+%dir %_kde_docdir/HTML/en/kdesvn-build
 %doc %_kde_docdir/HTML/en/kdesvn-build/*.docbook
 %doc %_kde_docdir/HTML/en/kdesvn-build/index.cache.bz2
 
@@ -323,7 +324,7 @@ Kbugbuster
 %_kde_libdir/kde4/kcal_bugzilla.so
 %_kde_datadir/kde4/services/kresources/kcal/bugzilla.desktop
 
-%dir %doc %_kde_docdir/HTML/en/kbugbuster
+%dir %_kde_docdir/HTML/en/kbugbuster
 %doc %_kde_docdir/HTML/en/kbugbuster/*.bz2
 %doc %_kde_docdir/HTML/en/kbugbuster/*.docbook
 
@@ -423,7 +424,8 @@ A fast and advanced text editor with nice plugins
 %_kde_datadir/kde4/services/katetabbarextension.desktop
 %_kde_datadir/kde4/services/katetextfilter.desktop
 %_kde_datadir/kde4/servicetypes/kateplugin.desktop
-   
+
+%dir _kde_docdir/HTML/en/kate-plugins 
 %doc %_kde_docdir/HTML/en/kate-plugins/*.png
 %doc %_kde_docdir/HTML/en/kate-plugins/*.bz2
 %doc %_kde_docdir/HTML/en/kate-plugins/*.docbook
@@ -545,6 +547,7 @@ CVS client part.
 %{_kde_datadir}/kde4/services/svn.protocol
 %{_datadir}/dbus-1/interfaces/org.kde.ksvnd.xml
 
+%dir %_kde_docdir/HTML/en/cervisia
 %doc %_kde_docdir/HTML/en/cervisia/*.bz2
 %doc %_kde_docdir/HTML/en/cervisia/*.docbook
 %doc %_kde_docdir/HTML/en/cervisia/*.png
