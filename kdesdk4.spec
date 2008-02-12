@@ -1,46 +1,14 @@
-%define revision 752225
-
-%define lib_name_orig lib%{name}
-%define lib_major 1
-%define lib_name %mklibname kdesdk4 %lib_major
-%define use_enable_final 0
-%{?_no_enable_final: %{expand: %%global use_enable_final 0}}
-
-%define compile_apidox 1
-%{?_no_apidox: %{expand: %%global compile_apidox 0}}
-
-%define unstable 1
-%{?_unstable: %{expand: %%global unstable 1}}
-
-%define branch 0
-%{?_branch: %{expand: %%global branch 1}}
-
-%define use_enable_pie 1
-%{?_no_enable_pie: %{expand: %%global use_enable_pie 0}}
-
-%if %unstable
-%define dont_strip 1
-%endif
-
-
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.0.0
+Version: 4.0.1
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
-%if %branch
-Release: %mkrel 0.%revision.1
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.%revision.tar.bz2
-%else
-Release: %mkrel 3
+Release: %mkrel 1
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
-%endif
 Group: Graphical desktop/KDE
-BuildRoot: %_tmppath/%name-%version-%release-root
 BuildRequires: db4-devel 
 BuildRequires: freetype2-devel
-%define mini_release %mkrel 0.%branch_date.1
 BuildRequires: kdelibs4-devel >= %version-%mini_release
 BuildRequires: kdepimlibs4-devel >= %version-%mini_release
 BuildRequires: kdebase4-workspace-devel
@@ -53,10 +21,10 @@ BuildRequires: zlib-devel
 BuildRequires: flex
 BuildRequires: binutils-devel
 BuildRequires: subversion-devel
-BuildRequires:	libxslt-devel
-BuildRequires:	mesaglut-devel 
-BuildRequires: libx11-devel 
-BuildRequires:	libltdl-devel
+BuildRequires: libxslt-devel
+BuildRequires: mesaglut-devel 
+BuildRequires: X11-devel 
+BuildRequires: libltdl-devel
 
 %description
 Software Development Kit for the K Desktop Environment.
@@ -78,6 +46,7 @@ Common files needed for kdesdk
 %{_kde_bindir}/cvsservice
 %{_kde_bindir}/kio_svn_helper
 %{_kde_bindir}/kstartperf
+%{_kde_bindir}/svnforwardport
 %{_kde_libdir}/kde4/kabcformat_kdeaccounts.so
 %{_kde_appsdir}/kabc/formats/kdeaccountsplugin.desktop
 
@@ -199,11 +168,7 @@ existing source code to the KDE framework.
 %{_kde_appsdir}/kapptemplate/kpartplugin/plugin_app.cpp
 %{_kde_appsdir}/kapptemplate/kpartplugin/plugin_app.h
 %{_kde_appsdir}/kapptemplate/kpartplugin/plugin_app.rc
-
-%dir %_kde_docdir/HTML/en/kapptemplate
-%doc %_kde_docdir/HTML/en/kapptemplate/*.bz2
-%doc %_kde_docdir/HTML/en/kapptemplate/*.docbook
-%doc %_kde_docdir/HTML/en/kapptemplate/*.png
+%_kde_docdir/*/*/kapptemplate
 
 #---------------------------------------------------------------------
 
@@ -296,10 +261,7 @@ contained in the kdesdk module.
 %{_kde_bindir}/svnrevertlast
 %{_kde_bindir}/svnversions
 %{_kde_bindir}/zonetab2pot.py
-
-%dir %_kde_docdir/HTML/en/kdesvn-build
-%doc %_kde_docdir/HTML/en/kdesvn-build/*.docbook
-%doc %_kde_docdir/HTML/en/kdesvn-build/index.cache.bz2
+%_kde_docdir/HTML/en/kdesvn-build
 
 #---------------------------------------------------------------------
 
@@ -320,13 +282,9 @@ Kbugbuster
 %dir %_kde_appsdir/kbugbuster
 %_kde_appsdir/kbugbuster/*
 %_kde_iconsdir/*/*/*/kbugbuster*
-
 %_kde_libdir/kde4/kcal_bugzilla.so
 %_kde_datadir/kde4/services/kresources/kcal/bugzilla.desktop
-
-%dir %_kde_docdir/HTML/en/kbugbuster
-%doc %_kde_docdir/HTML/en/kbugbuster/*.bz2
-%doc %_kde_docdir/HTML/en/kbugbuster/*.docbook
+%_kde_docdir/*/*/kbugbuster
 
 #---------------------------------------------------------------------
 
@@ -369,7 +327,6 @@ Provides:  kate4
 Obsoletes: kdebase4-kate < 1:3.97.1
 Provides:  kdebase4-kate > 1:3.97.1
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
-Obsoletes: %lib_name-kate < 1:3.96.1-0.740308.2
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 Requires: %name-core = %epoch:%version-%release
@@ -424,14 +381,8 @@ A fast and advanced text editor with nice plugins
 %_kde_datadir/kde4/services/katetabbarextension.desktop
 %_kde_datadir/kde4/services/katetextfilter.desktop
 %_kde_datadir/kde4/servicetypes/kateplugin.desktop
-
-%dir %_kde_docdir/HTML/en/kate-plugins 
-%doc %_kde_docdir/HTML/en/kate-plugins/*.png
-%doc %_kde_docdir/HTML/en/kate-plugins/*.bz2
-%doc %_kde_docdir/HTML/en/kate-plugins/*.docbook
-%doc %_kde_docdir/HTML/en/kate/*.png
-%doc %_kde_docdir/HTML/en/kate/*.bz2
-%doc %_kde_docdir/HTML/en/kate/*.docbook
+%_kde_docdir/*/*/kate-plugins 
+%_kde_docdir/*/*/kate
 
 #---------------------------------------------------------------------
 
@@ -439,7 +390,6 @@ A fast and advanced text editor with nice plugins
 Summary:    Header files for kdesdk
 Group:      Development/KDE and Qt
 Provides:   kdesdk4-devel =  %epoch:%version-%release
-Obsoletes:  %lib_name_orig-devel < 1:3.97.1
 Obsoletes:  %{_lib}kdesdk41-kate-devel < %epoch:3.96.1-0.740308.2
 Obsoletes:  %{_lib}kdesdk41-devel < %epoch:3.96.1-0.740308.2
 Obsoletes:  %{_lib}kdesdk41-cervisia-devel < %epoch:3.96.1-0.740308.2
@@ -460,6 +410,7 @@ applications for kdesdk.
 %_kde_libdir/libkstartperf.so
 %_kde_libdir/libkateinterfaces.so
 %_kde_libdir/libkompareinterface.so
+
 #---------------------------------------------------------------
 
 %package -n kde4-umbrello
@@ -480,10 +431,7 @@ Umbrello UML Modeller is a UML diagramming tool for KDE.
 %dir %_kde_appsdir/umbrello/
 %_kde_appsdir/umbrello/*
 %_kde_iconsdir/*/*/*/umbrello*
-
-%doc %_kde_docdir/HTML/en/umbrello/*.png
-%doc %_kde_docdir/HTML/en/umbrello/*.bz2
-%doc %_kde_docdir/HTML/en/umbrello/*.docbook
+%_kde_docdir/*/*/umbrello
 
 #---------------------------------------------------------------
 
@@ -495,7 +443,6 @@ Requires:   cvs
 Conflicts:  kdesdk4 < %epoch:3.97.1-0.746591.1
 Requires:   %name-core = %epoch:%version-%release
 Obsoletes:  %name-cervisia < %epoch:3.97.1 
-Obsoletes:  %lib_name-cervisia < %epoch:3.96.1-0.740308.2
 
 %description -n kde4-cervisia
 CVS client part.
@@ -546,11 +493,7 @@ CVS client part.
 %{_kde_datadir}/kde4/services/svn+ssh.protocol
 %{_kde_datadir}/kde4/services/svn.protocol
 %{_datadir}/dbus-1/interfaces/org.kde.ksvnd.xml
-
-%dir %_kde_docdir/HTML/en/cervisia
-%doc %_kde_docdir/HTML/en/cervisia/*.bz2
-%doc %_kde_docdir/HTML/en/cervisia/*.docbook
-%doc %_kde_docdir/HTML/en/cervisia/*.png
+%_kde_docdir/*/*/cervisia
 
 #---------------------------------------------------------------
 
@@ -575,14 +518,6 @@ kompare is a KDE diff graphic tool
 %_kde_datadir/applications/kde4/kompare.desktop
 %_kde_datadir/apps/kompare/komparepartui.rc
 %_kde_datadir/apps/kompare/kompareui.rc
-%_kde_datadir/doc/HTML/en/kompare/index.cache.bz2
-%_kde_datadir/doc/HTML/en/kompare/index.docbook
-%_kde_datadir/doc/HTML/en/kompare/settings-diff1.png
-%_kde_datadir/doc/HTML/en/kompare/settings-diff2.png
-%_kde_datadir/doc/HTML/en/kompare/settings-diff3.png
-%_kde_datadir/doc/HTML/en/kompare/settings-diff4.png
-%_kde_datadir/doc/HTML/en/kompare/settings-view1.png
-%_kde_datadir/doc/HTML/en/kompare/settings-view2.png
 %_kde_datadir/icons/hicolor/128x128/apps/kompare.png
 %_kde_datadir/icons/hicolor/16x16/apps/kompare.png
 %_kde_datadir/icons/hicolor/22x22/apps/kompare.png
@@ -593,6 +528,7 @@ kompare is a KDE diff graphic tool
 %_kde_datadir/kde4/services/komparepart.desktop
 %_kde_datadir/kde4/servicetypes/komparenavigationpart.desktop
 %_kde_datadir/kde4/servicetypes/kompareviewpart.desktop
+%_kde_docdir/*/*/kompare
 
 #---------------------------------------------------------------
 
@@ -612,7 +548,6 @@ KDE 4 core library.
 %files -n %libkompareinterface
 %defattr(-,root,root)
 %_kde_libdir/libkompareinterface.so.%{kompareinterface_major}*
-
 
 #---------------------------------------------------------------
 
@@ -664,10 +599,10 @@ Calltree extends Cachegrind, which is part of Valgrind.
 %dir %_kde_appsdir/kcachegrind/
 %_kde_appsdir/kcachegrind/*
 %_kde_datadir/applications/kde4/kcachegrind.desktop
-%doc %_kde_docdir/HTML/en/kcachegrind/*.bz2
-%doc %_kde_docdir/HTML/en/kcachegrind/*.docbook
+%_kde_docdir/*/*/kcachegrind
 
 #---------------------------------------------------------------
+
 %define  antlr_major 4
 %define  libantlr %mklibname antlr %antlr_major
 
@@ -686,13 +621,13 @@ KDE 4 core library.
 %_kde_libdir/libantlr.so.%{antlr_major}*
 
 #---------------------------------------------------------------
+
 %define  kateinterfaces_major 4
 %define  libkateinterfaces %mklibname kateinterfaces %kateinterfaces_major
 
 %package -n %libkateinterfaces
 Summary:    KDE 4 core library
 Group:      System/Libraries
-Conflicts:  %lib_name-kate <= 1:3.96.1-0.740308.1
 
 %description -n %libkateinterfaces
 KDE 4 core library.
@@ -705,6 +640,7 @@ KDE 4 core library.
 %_kde_libdir/libkateinterfaces.so.%{kateinterfaces_major}*
 
 #-----------------------------------------------------------------------------
+
 %define  kstartperf_major 4
 %define  libkstartperf %mklibname kstartperf %kstartperf_major
 
@@ -723,6 +659,7 @@ KDE 4 core library.
 %_kde_libdir/libkstartperf.so.%{kstartperf_major}*
 
 #-----------------------------------------------------------------------------
+
 %define  ktrace_major 4
 %define  libktrace %mklibname ktrace %ktrace_major
 
@@ -746,13 +683,15 @@ KDE 4 core library.
 %setup -q -n kdesdk-%version
 
 %build
+
 %cmake_kde4
+
+%make
 
 %install
 rm -fr %buildroot
-cd build
 
-make DESTDIR=%buildroot install
+make -C build DESTDIR=%buildroot install
 
 %clean
 rm -fr %buildroot
