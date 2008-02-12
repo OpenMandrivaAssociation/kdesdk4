@@ -6,6 +6,7 @@ License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
 Release: %mkrel 1
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
+BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
 BuildRequires: freetype2-devel
