@@ -10,8 +10,8 @@ BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
 BuildRequires: freetype2-devel
-BuildRequires: kdelibs4-devel >= %version-%mini_release
-BuildRequires: kdepimlibs4-devel >= %version-%mini_release
+BuildRequires: kdelibs4-devel
+BuildRequires: kdepimlibs4-devel
 BuildRequires: kdebase4-workspace-devel
 BuildRequires: bzip2-devel 
 BuildRequires: jpeg-devel 
