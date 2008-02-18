@@ -304,7 +304,7 @@ Strigi analyzer
 #---------------------------------------------------------------
 
 %package po2xml
-Summary: An xml2po and vice versa converters
+Summary: Xml2po and vice versa converters
 Group: Graphical desktop/KDE
 Conflicts: kdesdk4-core < 1:3.97.1-0.752225.2
 Conflicts: kde4-scripts < 1:3.97.1-0.752225.2
@@ -499,7 +499,7 @@ CVS client part.
 #---------------------------------------------------------------
 
 %package -n kde4-kompare
-Summary: kompare is a KDE diff graphic tool
+Summary: KDE diff graphic tool
 Group: Graphical desktop/KDE
 Provides: kompare4 = %epoch:%version-%release
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
