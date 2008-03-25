@@ -4,7 +4,7 @@ Version: 4.0.2
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Release: %mkrel 2
+Release: %mkrel 3
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
@@ -32,11 +32,13 @@ Software Development Kit for the K Desktop Environment.
 
 
 #--------------------------------------------------------------------
+
 %package core
 Summary: Common files needed for kdesdk
 Group: Graphical desktop/KDE
 Conflicts: %name < %epoch:3.97.1-0.746591.1
 Obsoletes: %{_lib}kdesdk41 < %epoch:3.96.1-0.740308.2
+Obsoletes: %name < %epoch:4.0.2-3
 
 %description core
 Common files needed for kdesdk
