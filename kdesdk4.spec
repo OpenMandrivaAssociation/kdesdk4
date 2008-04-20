@@ -32,7 +32,7 @@ Requires:      kapptemplate
 Requires:      kuiviewer
 Requires:      kdesdk4-scripts
 Requires:      kbugbuster
-Requires:      strigi-analyzer
+Requires:      %name-strigi-analyzer
 Requires:      po2xml
 Requires:      kate
 Requires:      umbrello 
@@ -627,7 +627,7 @@ KDE 4 core library.
 #---------------------------------------------------------------
 
 %define  komparedialogpages_major 4
-%define  komparedialogpages %mklibname komparedialogpages %komparedialogpages_major
+%define  libkomparedialogpages %mklibname komparedialogpages %komparedialogpages_major
 
 %package -n %libkomparedialogpages
 Summary:    KDE 4 core library
