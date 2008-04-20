@@ -1,6 +1,6 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.0.3
+Version: 4.0.70
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
@@ -13,6 +13,7 @@ BuildRequires: freetype2-devel
 BuildRequires: kdelibs4-devel
 BuildRequires: kdepimlibs4-devel
 BuildRequires: kdebase4-workspace-devel
+BuildRequires: kdepim4-devel
 BuildRequires: bzip2-devel 
 BuildRequires: jpeg-devel 
 BuildRequires: lcms-devel 
@@ -27,9 +28,24 @@ BuildRequires: mesaglut-devel
 BuildRequires: X11-devel 
 BuildRequires: libltdl-devel
 
+Requires:      kapptemplate
+Requires:      kuiviewer
+Requires:      kdesdk4-scripts
+Requires:      kbugbuster
+Requires:      strigi-analyzer
+Requires:      po2xml
+Requires:      kate
+Requires:      umbrello 
+Requires:      cervisia
+Requires:      kompare 
+Requires:      kmtrace
+Requires:      kcachegrind
+
 %description
 Software Development Kit for the K Desktop Environment.
 
+%files
+%defattr(-,root,root)
 
 #--------------------------------------------------------------------
 
@@ -55,14 +71,16 @@ Common files needed for kdesdk
 
 #---------------------------------------------------------------------
 
-%package  -n kde4-kapptemplate
+%package  -n kapptemplate
 Summary:   Template for KDE Application Development
 Group:     Graphical desktop/KDE
 Provides:  kapptemplate4
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
 Requires:  %name-core = %epoch:%version-%release
+Obsoletes: kde4-kapptemplate < 1:4.0.68
+Provides: kde4-kapptemplate = %epoch:%version
 
-%description   -n kde4-kapptemplate
+%description   -n kapptemplate
 KAppTemplate is a set of modular shell scripts that will create a 
 framework for any number of KDE application types. At it's base 
 level, it handles creation of things like the automake/autoconf 
@@ -71,7 +89,7 @@ are individual modules that allow you to create a skeleton KDE
 application, a KPart application, a KPart plugin, or even convert 
 existing source code to the KDE framework.
 
-%files   -n kde4-kapptemplate
+%files   -n kapptemplate
 %defattr(-,root,root)
 %{_kde_bindir}/kapptemplate
 %{_kde_datadir}/applications/kde4/kapptemplate.desktop
@@ -175,17 +193,19 @@ existing source code to the KDE framework.
 
 #---------------------------------------------------------------------
 
-%package  -n kde4-kuiviewer
+%package  -n kuiviewer
 Summary:   UI Files Viewer
 Group:     Graphical desktop/KDE
 Provides:  kuiviewer4
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
 Requires:  %name-core = %epoch:%version-%release
+Obsoletes: kde4-kuiviewer < 1:4.0.68
+Provides: kde4-kuiviewer = %epoch:%version
 
-%description -n kde4-kuiviewer
+%description -n kuiviewer
 Displays Qt Designer UI files
 
-%files -n kde4-kuiviewer
+%files -n kuiviewer
 %defattr(-,root,root)
 %{_kde_bindir}/kuiviewer
 %{_kde_libdir}/kde4/libkuiviewerpart.so
@@ -268,17 +288,19 @@ contained in the kdesdk module.
 
 #---------------------------------------------------------------------
 
-%package -n kde4-kbugbuster
+%package -n kbugbuster
 Summary:   kbugbuster
 Group:     Graphical desktop/KDE
 Provides:  kbugbuster4
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
 Requires:  %name-core = %epoch:%version-%release
+Obsoletes: kde4-kbugbuster < 1:4.0.68
+Provides: kde4-kbugbuster = %epoch:%version
 
-%description -n kde4-kbugbuster
+%description -n kbugbuster
 Kbugbuster
 
-%files -n kde4-kbugbuster
+%files -n kbugbuster
 %defattr(-,root,root)
 %_kde_bindir/kbugbuster
 %_kde_datadir/applications/kde4/kbugbuster.desktop
@@ -323,7 +345,7 @@ An xml2po and vice versa converters.
 
 #---------------------------------------------------------------------
 
-%package -n kde4-kate
+%package -n kate
 Summary:   Kate
 Group:     Graphical desktop/KDE
 Provides:  kate4
@@ -333,11 +355,13 @@ Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 Requires: %name-core = %epoch:%version-%release
+Obsoletes: kde4-kate < 1:4.0.68
+Provides: kde4-kate = %epoch:%version
 
-%description -n kde4-kate
+%description -n kate
 A fast and advanced text editor with nice plugins
 
-%files -n kde4-kate
+%files -n kate
 %defattr(-,root,root)
 %_kde_bindir/kate
 %_kde_datadir/applications/kde4/kate.desktop
@@ -416,18 +440,20 @@ applications for kdesdk.
 
 #---------------------------------------------------------------
 
-%package -n kde4-umbrello
+%package -n umbrello
 Summary:    UML Modeller
 Group:      Graphical desktop/KDE
 Provides:   umbrello4
 Conflicts:  kdesdk4 < %epoch:3.97.1
 Requires:   %name-core = %epoch:%version-%release
 Obsoletes:  %name-umbrello < %epoch:3.97.1 
+Obsoletes:  kde4-umbrello < 1:4.0.68
+Provides:   kde4-umbrello = %epoch:%version
 
-%description -n kde4-umbrello
+%description -n umbrello
 Umbrello UML Modeller is a UML diagramming tool for KDE.
 
-%files -n kde4-umbrello
+%files -n umbrello
 %defattr(-,root,root,-)
 %_kde_bindir/umbrello
 %_kde_datadir/applications/kde4/umbrello.desktop
@@ -438,7 +464,7 @@ Umbrello UML Modeller is a UML diagramming tool for KDE.
 
 #---------------------------------------------------------------
 
-%package -n kde4-cervisia
+%package -n cervisia
 Summary:    CVS client part
 Group:      Graphical desktop/KDE
 Provides:   cervisia4 = %epoch:%version-%release
@@ -446,11 +472,13 @@ Requires:   cvs
 Conflicts:  kdesdk4 < %epoch:3.97.1-0.746591.1
 Requires:   %name-core = %epoch:%version-%release
 Obsoletes:  %name-cervisia < %epoch:3.97.1 
+Obsoletes:  kde4-cervisia < 1:4.0.68
+Provides:   kde4-cervisia = %epoch:%version
 
-%description -n kde4-cervisia
+%description -n cervisia
 CVS client part.
 
-%files -n kde4-cervisia
+%files -n cervisia
 %defattr(-,root,root,-)
 %{_kde_bindir}/cervisia
 %_kde_iconsdir/*/*/actions/svn_add.*
@@ -500,18 +528,20 @@ CVS client part.
 
 #---------------------------------------------------------------
 
-%package -n kde4-kompare
+%package -n kompare
 Summary: KDE diff graphic tool
 Group: Graphical desktop/KDE
 Provides: kompare4 = %epoch:%version-%release
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
 Obsoletes: %name-kompare < %epoch:3.97.1-0.746591.1
 Requires: %name-core = %epoch:%version-%release
+Obsoletes: kde4-kompare < 1:4.0.68
+Provides: kde4-kompare = %epoch:%version
 
-%description -n kde4-kompare
+%description -n kompare
 kompare is a KDE diff graphic tool
 
-%files -n kde4-kompare
+%files -n kompare
 %defattr(-,root,root,-)
 %_kde_bindir/kompare
 %_kde_libdir/kde4/libkomparenavtreepart.so
@@ -554,17 +584,19 @@ KDE 4 core library.
 
 #---------------------------------------------------------------
 
-%package -n kde4-kmtrace
+%package -n kmtrace
 Summary: Memory Allocation Debugging Tool
 Group: Graphical desktop/KDE
 Provides: kmtrace4 = %epoch:%version-%release
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
 Requires: %name-core = %epoch:%version-%release
+Obsoletes: kde4-kmtrace < 1:4.0.68
+Provides: kde4-kmtrace = %epoch:%version
 
-%description -n kde4-kmtrace
+%description -n kmtrace
 Memory Allocation Debugging Tool
 
-%files -n kde4-kmtrace
+%files -n kmtrace
 %defattr(-,root,root,-)
 %{_kde_bindir}/kmtrace
 %{_kde_bindir}/demangle
@@ -574,23 +606,25 @@ Memory Allocation Debugging Tool
 
 #---------------------------------------------------------------
 
-%package -n kde4-kcachegrind
+%package -n kcachegrind
 Summary: KCachegrind
 Group: Graphical desktop/KDE
 Provides: kcachegrind4 = %epoch:%version-%release
 Obsoletes: %name-kcachegrind < %epoch:3.97.1
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
 Requires: %name-core = %epoch:%version-%release
+Obsoletes: kde4-kcachegrind < 1:4.0.68
+Provides: kde4-kcachegrind = %epoch:%version
 %ifarch %{ix86}
 Requires: valgrind
 %endif
 
-%description -n kde4-kcachegrind
+%description -n kcachegrind
 KCachegrind is a visualisation tool for the profiling data generated by 
 Cachegrind and Calltree (they profile data file format is upwards compatible).
 Calltree extends Cachegrind, which is part of Valgrind.
 
-%files -n kde4-kcachegrind
+%files -n kcachegrind
 %defattr(-,root,root,-)
 %_kde_bindir/kcachegrind
 %{_kde_bindir}/dprof2calltree
