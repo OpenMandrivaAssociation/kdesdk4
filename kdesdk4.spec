@@ -65,7 +65,6 @@ Common files needed for kdesdk
 %{_kde_bindir}/cvsservice
 %{_kde_bindir}/kio_svn_helper
 %{_kde_bindir}/kstartperf
-%{_kde_bindir}/svnforwardport
 %{_kde_libdir}/kde4/kabcformat_kdeaccounts.so
 %{_kde_appsdir}/kabc/formats/kdeaccountsplugin.desktop
 
@@ -284,6 +283,8 @@ contained in the kdesdk module.
 %{_kde_bindir}/svnrevertlast
 %{_kde_bindir}/svnversions
 %{_kde_bindir}/zonetab2pot.py
+%{_kde_bindir}/optimizegraphics
+%{_kde_bindir}/wcgrep
 %_kde_docdir/HTML/en/kdesvn-build
 
 #---------------------------------------------------------------------
@@ -392,6 +393,7 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/katesymbolviewerplugin.so
 %_kde_libdir/kde4/katetabbarextensionplugin.so
 %_kde_libdir/kde4/katetextfilterplugin.so
+%_kde_libdir/kde4/plasma_applet_katesession.so
 %dir %_kde_appsdir/katepart
 %dir %_kde_appsdir/katepart/syntax   
 %_kde_appsdir/katepart/syntax/katetemplate.xml
@@ -408,6 +410,7 @@ A fast and advanced text editor with nice plugins
 %_kde_datadir/kde4/services/katetabbarextension.desktop
 %_kde_datadir/kde4/services/katetextfilter.desktop
 %_kde_datadir/kde4/servicetypes/kateplugin.desktop
+%_kde_datadir/kde4/services/plasma-applet-katesession.desktop
 %_kde_docdir/*/*/kate-plugins 
 %_kde_docdir/*/*/kate
 
@@ -464,6 +467,45 @@ Umbrello UML Modeller is a UML diagramming tool for KDE.
 
 #---------------------------------------------------------------
 
+%package -n localize
+Summary:   TODO 
+Group:      Graphical desktop/KDE
+Provides:   localize4
+Requires:   %name-core = %epoch:%version-%release
+
+%description -n localize
+Umbrello UML Modeller is a UML diagramming tool for KDE.
+
+%files -n localize
+%defattr(-,root,root,-)
+%_kde_bindir/lokalize
+%_kde_datadir/applications/kde4/lokalize.desktop                                     
+%_kde_appsdir/lokalize/lokalizeui.rc                                            
+%_kde_appsdir/lokalize/projectmanagerui.rc                                      
+%_kde_datadir/config.kcfg/lokalize.kcfg  
+%_kde_datadir/strigi/fieldproperties/strigi_translation.fieldproperties                                            
+%_kde_iconsdir/*/*/actions/approved.*
+%_kde_iconsdir/*/*/actions/insert_arg.png
+%_kde_iconsdir/*/*/actions/insert_tag.png                             
+%_kde_iconsdir/*/*/actions/msgid2msgstr.png                           
+%_kde_iconsdir/*/*/actions/nexterror.png                              
+%_kde_iconsdir/*/*/actions/nextfuzzy.png                              
+%_kde_iconsdir/*/*/actions/nextfuzzyuntrans.png                       
+%_kde_iconsdir/*/*/actions/nextuntranslated.png                       
+%_kde_iconsdir/*/*/actions/preverror.png                              
+%_kde_iconsdir/*/*/actions/prevfuzzy.png                              
+%_kde_iconsdir/*/*/actions/prevfuzzyuntrans.png                       
+%_kde_iconsdir/*/*/actions/prevuntranslated.png                       
+%_kde_iconsdir/*/*/actions/search2msgstr.png
+%_kde_iconsdir/*/*/actions/transsearch.png                            
+%_kde_iconsdir/*/*/actions/catalogmanager.png
+%_kde_iconsdir/*/*/actions/autodiff.png
+%_kde_iconsdir/*/*/actions/diff.png
+%_kde_iconsdir/*/*/apps/lokalize.*
+%_kde_docdir/*/*/lokalize
+
+#---------------------------------------------------------------
+
 %package -n cervisia
 Summary:    CVS client part
 Group:      Graphical desktop/KDE
@@ -507,7 +549,6 @@ CVS client part.
 %_datadir/dbus-1/interfaces/org.kde.cervisia.cvsloginjob.xml
 %_datadir/dbus-1/interfaces/org.kde.cervisia.cvsservice.xml
 %_datadir/dbus-1/interfaces/org.kde.cervisia.repository.xml
-%_kde_datadir/man/man1/cervisia.1
 %_kde_libdir/libkdeinit4_cervisia.so
 %_kde_libdir/libkdeinit4_cvsaskpass.so
 %_kde_libdir/libkdeinit4_cvsservice.so
@@ -525,6 +566,7 @@ CVS client part.
 %{_kde_datadir}/kde4/services/svn.protocol
 %{_datadir}/dbus-1/interfaces/org.kde.ksvnd.xml
 %_kde_docdir/*/*/cervisia
+%{_kde_mandir}/man1/cervisia.1.*
 
 #---------------------------------------------------------------
 
@@ -564,6 +606,45 @@ kompare is a KDE diff graphic tool
 %_kde_docdir/*/*/kompare
 
 #---------------------------------------------------------------
+
+%define  komparediff2_major 4
+%define  libkomparediff2 %mklibname komparediff2 %komparediff2_major
+
+%package -n %libkomparediff2
+Summary:    KDE 4 core library
+Group:      System/Libraries
+
+%description -n %libkomparediff2
+KDE 4 core library.
+
+%post -n   %libkomparediff2 -p /sbin/ldconfig
+%postun -n %libkomparediff2 -p /sbin/ldconfig
+
+%files -n %libkomparediff2
+%defattr(-,root,root)
+%_kde_libdir/libkomparediff2.so.%{komparediff2_major}*
+
+#---------------------------------------------------------------
+
+%define  komparedialogpages_major 4
+%define  komparedialogpages %mklibname komparedialogpages %komparedialogpages_major
+
+%package -n %libkomparedialogpages
+Summary:    KDE 4 core library
+Group:      System/Libraries
+
+%description -n %libkomparedialogpages
+KDE 4 core library.
+
+%post -n   %libkomparedialogpages -p /sbin/ldconfig
+%postun -n %libkomparedialogpages -p /sbin/ldconfig
+
+%files -n %libkomparedialogpages
+%defattr(-,root,root)
+%_kde_libdir/libkomparedialogpages.so.%{komparedialogpages_major}*
+
+#---------------------------------------------------------------
+
 
 %define  kompareinterface_major 4
 %define  libkompareinterface %mklibname kompareinterface %kompareinterface_major
