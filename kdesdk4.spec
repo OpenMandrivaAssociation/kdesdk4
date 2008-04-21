@@ -33,7 +33,7 @@ Requires:      kuiviewer
 Requires:      kdesdk4-scripts
 Requires:      kbugbuster
 Requires:      %name-strigi-analyzer
-Requires:      po2xml
+Requires:      %name-po2xml
 Requires:      kate
 Requires:      umbrello 
 Requires:      cervisia
