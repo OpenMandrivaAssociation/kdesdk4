@@ -4,7 +4,7 @@ Version: 4.0.72
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Release: %mkrel 1
+Release: %mkrel 2
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
@@ -512,6 +512,7 @@ Group:      Graphical desktop/KDE
 Provides:   cervisia4 = %epoch:%version-%release
 Requires:   cvs
 Conflicts:  kdesdk4 < %epoch:3.97.1-0.746591.1
+Conflicts:  kdesdk-cervisia < 1:3.5.9-5mdv
 Requires:   %name-core = %epoch:%version-%release
 Obsoletes:  %name-cervisia < %epoch:3.97.1 
 Obsoletes:  kde4-cervisia < 1:4.0.68
