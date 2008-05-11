@@ -4,7 +4,7 @@ Version:       4.0.73
 Epoch:         1
 License:       GPL
 URL:           ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Release:       %mkrel 4
+Release:       %mkrel 5
 Source:        ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 BuildRoot:     %_tmppath/%name-%version-%release-root
 Group:         Graphical desktop/KDE
