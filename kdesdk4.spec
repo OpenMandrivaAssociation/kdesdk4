@@ -4,7 +4,7 @@ Version:       4.0.73
 Epoch:         1
 License:       GPL
 URL:           ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Release:       %mkrel 3
+Release:       %mkrel 4
 Source:        ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 BuildRoot:     %_tmppath/%name-%version-%release-root
 Group:         Graphical desktop/KDE
@@ -448,6 +448,7 @@ Summary:    UML Modeller
 Group:      Graphical desktop/KDE
 Provides:   umbrello4
 Conflicts:  kdesdk4 < %epoch:3.97.1
+Conflicts:  kdesdk-umbrello < 1:3.5.9-5
 Requires:   %name-core = %epoch:%version-%release
 Obsoletes:  %name-umbrello < %epoch:3.97.1 
 Obsoletes:  kde4-umbrello < 1:4.0.68
@@ -695,6 +696,7 @@ Group: Graphical desktop/KDE
 Provides: kcachegrind4 = %epoch:%version-%release
 Obsoletes: %name-kcachegrind < %epoch:3.97.1
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
+Conflicts: kdesdk-kcachegrind < 1:3.5.9-5
 Requires: %name-core = %epoch:%version-%release
 Obsoletes: kde4-kcachegrind < 1:4.0.68
 Provides: kde4-kcachegrind = %epoch:%version
