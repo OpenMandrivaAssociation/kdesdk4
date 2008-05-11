@@ -4,7 +4,7 @@ Version:       4.0.73
 Epoch:         1
 License:       GPL
 URL:           ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Release:       %mkrel 2
+Release:       %mkrel 3
 Source:        ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 BuildRoot:     %_tmppath/%name-%version-%release-root
 Group:         Graphical desktop/KDE
@@ -576,6 +576,7 @@ Summary: KDE diff graphic tool
 Group: Graphical desktop/KDE
 Provides: kompare4 = %epoch:%version-%release
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
+Conflicts: kdesdk-kompare < 1:3.5.9-5
 Obsoletes: %name-kompare < %epoch:3.97.1-0.746591.1
 Requires: %name-core = %epoch:%version-%release
 Obsoletes: kde4-kompare < 1:4.0.68
