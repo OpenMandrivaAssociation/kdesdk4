@@ -4,7 +4,7 @@ Version:       4.0.74
 Epoch:         1
 License:       GPL
 URL:           ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Release:       %mkrel 1
+Release:       %mkrel 2
 Source:        ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 BuildRoot:     %_tmppath/%name-%version-%release-root
 Group:         Graphical desktop/KDE
@@ -224,6 +224,7 @@ Group:      Graphical desktop/KDE
 Conflicts:  kdesdk4 < %epoch:3.97.1-0.746591.1
 Obsoletes:  kde4-scripts
 Requires:   %name-core = %epoch:%version-%release
+Requires:   colorsvn
 
 %description -n kdesdk4-scripts
 This package contains the scripts for KDE development which are
@@ -234,7 +235,9 @@ contained in the kdesdk module.
 %{_kde_bindir}/adddebug
 %{_kde_bindir}/build-progress.sh
 %{_kde_bindir}/cheatmake
-%{_kde_bindir}/colorsvn
+# (nl) Prefer the file from colorsvn as it is more up to date 
+# and this removing fix a conflict between kdesdk4-scripts and colorsvn
+%exclude %{_kde_bindir}/colorsvn
 %{_kde_bindir}/create_cvsignore
 %{_kde_bindir}/create_makefile
 %{_kde_bindir}/create_makefiles
