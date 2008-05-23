@@ -686,7 +686,7 @@ Memory Allocation Debugging Tool
 %{_kde_bindir}/demangle
 %{_kde_bindir}/kminspector
 %{_kde_bindir}/kmmatch
-%{_kde_appsdir}/kmtrace/kde.excludes
+%{_kde_appsdir}/kmtrace
 
 #---------------------------------------------------------------
 
