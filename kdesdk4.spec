@@ -484,8 +484,7 @@ Umbrello UML Modeller is a UML diagramming tool for KDE.
 %defattr(-,root,root,-)
 %_kde_bindir/lokalize
 %_kde_datadir/applications/kde4/lokalize.desktop                                     
-%_kde_appsdir/lokalize/lokalizeui.rc                                            
-%_kde_appsdir/lokalize/projectmanagerui.rc                                      
+%_kde_appsdir/lokalize
 %_kde_datadir/config.kcfg/lokalize.kcfg  
 %_kde_datadir/strigi/fieldproperties/strigi_translation.fieldproperties                                            
 %_kde_iconsdir/*/*/actions/approved.*
