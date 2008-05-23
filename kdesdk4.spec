@@ -595,8 +595,7 @@ kompare is a KDE diff graphic tool
 %_kde_libdir/libkomparedialogpages.so
 %_kde_libdir/libkomparediff2.so
 %_kde_datadir/applications/kde4/kompare.desktop
-%_kde_datadir/apps/kompare/komparepartui.rc
-%_kde_datadir/apps/kompare/kompareui.rc
+%_kde_appsdir/kompare
 %_kde_datadir/icons/hicolor/128x128/apps/kompare.png
 %_kde_datadir/icons/hicolor/16x16/apps/kompare.png
 %_kde_datadir/icons/hicolor/22x22/apps/kompare.png
