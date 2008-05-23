@@ -210,8 +210,7 @@ Displays Qt Designer UI files
 %{_kde_libdir}/kde4/libkuiviewerpart.so
 %{_kde_libdir}/kde4/quithumbnail.so
 %{_kde_datadir}/applications/kde4/kuiviewer.desktop
-%{_kde_appsdir}/kuiviewer/kuiviewerui.rc
-%{_kde_appsdir}/kuiviewerpart/kuiviewer_part.rc
+%{_kde_appsdir}/kuiviewer
 %{_kde_iconsdir}/hicolor/*/apps/kuiviewer.png
 %{_kde_datadir}/kde4/services/kuiviewer_part.desktop
 %{_kde_datadir}/kde4/services/designerthumbnail.desktop
