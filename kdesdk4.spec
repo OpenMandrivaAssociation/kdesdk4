@@ -92,102 +92,9 @@ existing source code to the KDE framework.
 %defattr(-,root,root)
 %{_kde_bindir}/kapptemplate
 %{_kde_datadir}/applications/kde4/kapptemplate.desktop
-%dir %{_kde_appsdir}/kapptemplate
-%dir %{_kde_appsdir}/kapptemplate/appframework
-%{_kde_appsdir}/kapptemplate/appframework/AUTHORS
-%{_kde_appsdir}/kapptemplate/appframework/COPYING
-%{_kde_appsdir}/kapptemplate/appframework/ChangeLog
-%{_kde_appsdir}/kapptemplate/appframework/INSTALL
-%{_kde_appsdir}/kapptemplate/appframework/NEWS
-%{_kde_appsdir}/kapptemplate/appframework/README
-%{_kde_appsdir}/kapptemplate/appframework/VERSION
-%{_kde_appsdir}/kapptemplate/appframework/app.lsm
-%{_kde_appsdir}/kapptemplate/appframework/app.spec
-%{_kde_appsdir}/kapptemplate/appframework/base-Makefile.am
-%{_kde_appsdir}/kapptemplate/appframework/base-Makefile.cvs
-%{_kde_appsdir}/kapptemplate/appframework/configure.in.in.in
-%{_kde_appsdir}/kapptemplate/appframework/no-exe/COPYING
-%{_kde_appsdir}/kapptemplate/appframework/no-exe/INSTALL
-%{_kde_appsdir}/kapptemplate/appframework/po-Makefile.am
-%dir %{_kde_appsdir}/kapptemplate/bin
-%{_kde_appsdir}/kapptemplate/bin/mkinstalldirs
-%dir %{_kde_appsdir}/kapptemplate/existing
-%{_kde_appsdir}/kapptemplate/existing/app-Makefile.am
-%{_kde_appsdir}/kapptemplate/existing/app-desktop
-%dir %{_kde_appsdir}/kapptemplate/include
-%{_kde_appsdir}/kapptemplate/include/existing.module
-%{_kde_appsdir}/kapptemplate/include/kapp4template.module
-%{_kde_appsdir}/kapptemplate/include/kapptemplate.common
-%{_kde_appsdir}/kapptemplate/include/kapptemplate.module
-%{_kde_appsdir}/kapptemplate/include/kpartapp.module
-%{_kde_appsdir}/kapptemplate/include/kpartplugin.module
-%dir %{_kde_appsdir}/kapptemplate/kapp
-%{_kde_appsdir}/kapptemplate/kapp/app-CMakeLists.txt
-%{_kde_appsdir}/kapptemplate/kapp/app-desktop
-%{_kde_appsdir}/kapptemplate/kapp/app.cpp
-%{_kde_appsdir}/kapptemplate/kapp/app.h
-%{_kde_appsdir}/kapptemplate/kapp/app.kcfg
-%{_kde_appsdir}/kapptemplate/kapp/apppref.cpp
-%{_kde_appsdir}/kapptemplate/kapp/apppref.h
-%{_kde_appsdir}/kapptemplate/kapp/appui.rc
-%{_kde_appsdir}/kapptemplate/kapp/appview.cpp
-%{_kde_appsdir}/kapptemplate/kapp/appview.h
-%{_kde_appsdir}/kapptemplate/kapp/doc-CMakeLists.txt
-%{_kde_appsdir}/kapptemplate/kapp/hi16-app-app.png
-%{_kde_appsdir}/kapptemplate/kapp/hi32-app-app.png
-%{_kde_appsdir}/kapptemplate/kapp/hi48-app-app.png
-%{_kde_appsdir}/kapptemplate/kapp/icons-CMakeLists.txt
-%{_kde_appsdir}/kapptemplate/kapp/index.docbook
-%{_kde_appsdir}/kapptemplate/kapp/main.cpp
-%{_kde_appsdir}/kapptemplate/kapp/no-exe/hi16-app-app.png
-%{_kde_appsdir}/kapptemplate/kapp/no-exe/hi32-app-app.png
-%{_kde_appsdir}/kapptemplate/kapp/no-exe/hi48-app-app.png
-%{_kde_appsdir}/kapptemplate/kapp/org.kde.app.App.xml
-%{_kde_appsdir}/kapptemplate/kapp/settings.kcfgc
-%{_kde_appsdir}/kapptemplate/kapp/src-CMakeLists.txt
-%dir %{_kde_appsdir}/kapptemplate/kapp4
-%{_kde_appsdir}/kapptemplate/kapp4/kapp4-CMakeLists.txt
-%{_kde_appsdir}/kapptemplate/kapp4/kapp4-desktop
-%{_kde_appsdir}/kapptemplate/kapp4/kapp4.cpp
-%{_kde_appsdir}/kapptemplate/kapp4/kapp4.h
-%{_kde_appsdir}/kapptemplate/kapp4/kapp4.kcfg
-%{_kde_appsdir}/kapptemplate/kapp4/kapp4ui.rc
-%{_kde_appsdir}/kapptemplate/kapp4/kapp4view.cpp
-%{_kde_appsdir}/kapptemplate/kapp4/kapp4view.h
-%{_kde_appsdir}/kapptemplate/kapp4/kapp4view_base.ui
-%{_kde_appsdir}/kapptemplate/kapp4/main.cpp
-%{_kde_appsdir}/kapptemplate/kapp4/prefs_base.ui
-%{_kde_appsdir}/kapptemplate/kapp4/settings.kcfgc
-%dir %{_kde_appsdir}/kapptemplate/kpartapp
-%{_kde_appsdir}/kapptemplate/kpartapp/app-CMakeLists.txt
-%{_kde_appsdir}/kapptemplate/kpartapp/app-desktop
-%{_kde_appsdir}/kapptemplate/kpartapp/app-main-CMakeLists.txt
-%{_kde_appsdir}/kapptemplate/kpartapp/app.cpp
-%{_kde_appsdir}/kapptemplate/kpartapp/app.h
-%{_kde_appsdir}/kapptemplate/kpartapp/app_part-desktop
-%{_kde_appsdir}/kapptemplate/kpartapp/app_part.cpp
-%{_kde_appsdir}/kapptemplate/kpartapp/app_part.h
-%{_kde_appsdir}/kapptemplate/kpartapp/app_part.rc
-%{_kde_appsdir}/kapptemplate/kpartapp/app_shell.rc
-%{_kde_appsdir}/kapptemplate/kpartapp/doc-CMakeLists.txt
-%{_kde_appsdir}/kapptemplate/kpartapp/hi16-app-app.png
-%{_kde_appsdir}/kapptemplate/kpartapp/hi32-app-app.png
-%{_kde_appsdir}/kapptemplate/kpartapp/hi48-app-app.png
-%{_kde_appsdir}/kapptemplate/kpartapp/index.docbook
-%{_kde_appsdir}/kapptemplate/kpartapp/main.cpp
-%dir %{_kde_appsdir}/kapptemplate/kpartapp/no-exe
-%{_kde_appsdir}/kapptemplate/kpartapp/no-exe/hi16-app-app.png
-%{_kde_appsdir}/kapptemplate/kpartapp/no-exe/hi32-app-app.png
-%{_kde_appsdir}/kapptemplate/kpartapp/no-exe/hi48-app-app.png
-%dir %{_kde_appsdir}/kapptemplate/kpartplugin
-%{_kde_appsdir}/kapptemplate/kpartplugin/hi16-action-plugin.png
-%{_kde_appsdir}/kapptemplate/kpartplugin/hi22-action-plugin.png
-%{_kde_appsdir}/kapptemplate/kpartplugin/no-exe/hi16-action-plugin.png
-%{_kde_appsdir}/kapptemplate/kpartplugin/no-exe/hi22-action-plugin.png
-%{_kde_appsdir}/kapptemplate/kpartplugin/plugin-CMakeLists.txt
-%{_kde_appsdir}/kapptemplate/kpartplugin/plugin_app.cpp
-%{_kde_appsdir}/kapptemplate/kpartplugin/plugin_app.h
-%{_kde_appsdir}/kapptemplate/kpartplugin/plugin_app.rc
+%{_kde_appsdir}/kapptemplate
+%{_kde_datadir}/config.kcfg/kapptemplate.kcfg
+%{_kde_appsdir}/kdevappwizard
 %_kde_docdir/*/*/kapptemplate
 
 #---------------------------------------------------------------------
@@ -211,6 +118,7 @@ Displays Qt Designer UI files
 %{_kde_libdir}/kde4/quithumbnail.so
 %{_kde_datadir}/applications/kde4/kuiviewer.desktop
 %{_kde_appsdir}/kuiviewer
+%{_kde_appsdir}/kuiviewerpart
 %{_kde_iconsdir}/hicolor/*/apps/kuiviewer.png
 %{_kde_datadir}/kde4/services/kuiviewer_part.desktop
 %{_kde_datadir}/kde4/services/designerthumbnail.desktop
