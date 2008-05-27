@@ -4,7 +4,7 @@ Version: 4.0.80
 Epoch:         1
 License:       GPL
 URL:           ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Release: %mkrel 1
+Release: %mkrel 2
 Source:        ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 BuildRoot:     %_tmppath/%name-%version-%release-root
 Group:         Graphical desktop/KDE
@@ -75,6 +75,7 @@ Summary:   Template for KDE Application Development
 Group:     Graphical desktop/KDE
 Provides:  kapptemplate4
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
+Conflicts: kdevelop4 < 3:4.0.80-1
 Requires:  %name-core = %epoch:%version-%release
 Obsoletes: kde4-kapptemplate < 1:4.0.68
 Provides: kde4-kapptemplate = %epoch:%version
