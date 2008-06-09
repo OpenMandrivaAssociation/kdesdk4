@@ -529,8 +529,12 @@ Group:      System/Libraries
 %description -n %libkomparediff2
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n   %libkomparediff2 -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkomparediff2 -p /sbin/ldconfig
+%endif
 
 %files -n %libkomparediff2
 %defattr(-,root,root)
@@ -548,8 +552,12 @@ Group:      System/Libraries
 %description -n %libkomparedialogpages
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n   %libkomparedialogpages -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkomparedialogpages -p /sbin/ldconfig
+%endif
 
 %files -n %libkomparedialogpages
 %defattr(-,root,root)
@@ -568,8 +576,12 @@ Group:      System/Libraries
 %description -n %libkompareinterface
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n   %libkompareinterface -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkompareinterface -p /sbin/ldconfig
+%endif
 
 %files -n %libkompareinterface
 %defattr(-,root,root)
@@ -644,8 +656,12 @@ Group: System/Libraries
 %description -n %libantlr
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libantlr -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libantlr -p /sbin/ldconfig
+%endif
 
 %files -n %libantlr
 %defattr(-,root,root)
@@ -663,8 +679,12 @@ Group:      System/Libraries
 %description -n %libkateinterfaces
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n   %libkateinterfaces -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkateinterfaces -p /sbin/ldconfig
+%endif
 
 %files -n %libkateinterfaces
 %defattr(-,root,root)
@@ -682,8 +702,12 @@ Group: System/Libraries
 %description -n %libkstartperf
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libkstartperf -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libkstartperf -p /sbin/ldconfig
+%endif
 
 %files -n %libkstartperf
 %defattr(-,root,root)
@@ -701,8 +725,12 @@ Group: System/Libraries
 %description -n %libktrace
 KDE 4 core library.
 
+%if %mdkversion < 200900
 %post -n %libktrace -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libktrace -p /sbin/ldconfig
+%endif
 
 %files -n %libktrace
 %defattr(-,root,root)
