@@ -1,7 +1,7 @@
-Name:          kdesdk4
-Summary:       K Desktop Environment - Software Development Kit
-Version: 4.0.80
-Epoch:         1
+Name: kdesdk4
+Summary: K Desktop Environment - Software Development Kit
+Version: 4.0.82
+Epoch: 1
 License:       GPL
 URL:           ftp://ftp.kde.org/pub/kde/stable/%version/src/
 Release: %mkrel 2
