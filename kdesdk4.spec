@@ -351,6 +351,7 @@ applications for kdesdk.
 %_kde_libdir/libkstartperf.so
 %_kde_libdir/libkateinterfaces.so
 %_kde_libdir/libkompareinterface.so
+%_kde_datadir/dbus-1/interfaces/*
 
 #---------------------------------------------------------------
 
@@ -457,10 +458,6 @@ CVS client part.
 %_kde_datadir/icons/*/*/actions/vcs_status.*
 %_kde_datadir/icons/*/*/actions/vcs_update.*
 %_kde_datadir/icons/*/*/apps/cervisia.*
-%_datadir/dbus-1/interfaces/org.kde.cervisia.cvsjob.xml
-%_datadir/dbus-1/interfaces/org.kde.cervisia.cvsloginjob.xml
-%_datadir/dbus-1/interfaces/org.kde.cervisia.cvsservice.xml
-%_datadir/dbus-1/interfaces/org.kde.cervisia.repository.xml
 %_kde_libdir/libkdeinit4_cervisia.so
 %_kde_libdir/libkdeinit4_cvsaskpass.so
 %_kde_libdir/libkdeinit4_cvsservice.so
@@ -476,7 +473,6 @@ CVS client part.
 %{_kde_datadir}/kde4/services/svn+https.protocol
 %{_kde_datadir}/kde4/services/svn+ssh.protocol
 %{_kde_datadir}/kde4/services/svn.protocol
-%{_datadir}/dbus-1/interfaces/org.kde.ksvnd.xml
 %_kde_docdir/*/*/cervisia
 %{_kde_mandir}/man1/cervisia.1.*
 
