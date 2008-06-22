@@ -1,11 +1,12 @@
-Name: kdesdk4
-Summary: K Desktop Environment - Software Development Kit
-Version: 4.0.83
-Epoch: 1
+Name:          kdesdk4
+Summary:       K Desktop Environment - Software Development Kit
+Version:       4.0.83
+Epoch:         1
 License:       GPL
 URL:           ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Release: %mkrel 1
+Release:       %mkrel 1
 Source:        ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
+patch0:        kdesdk-4.0.83-fix-multiple-instance.patch
 BuildRoot:     %_tmppath/%name-%version-%release-root
 Group:         Graphical desktop/KDE
 BuildRequires: db4-devel 
@@ -736,6 +737,7 @@ KDE 4 core library.
 
 %prep
 %setup -q -n kdesdk-%version
+%patch0 -p0
 
 %build
 
