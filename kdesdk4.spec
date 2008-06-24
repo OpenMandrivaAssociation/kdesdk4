@@ -4,7 +4,7 @@ Version:       4.0.83
 Epoch:         1
 License:       GPL
 URL:           ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Release:       %mkrel  3
+Release:       %mkrel  4
 Source:        ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 patch0:        kdesdk-4.0.83-fix-multiple-instance.patch
 BuildRoot:     %_tmppath/%name-%version-%release-root
@@ -41,6 +41,7 @@ Requires:      cervisia
 Requires:      kompare 
 Requires:      kmtrace
 Requires:      kcachegrind
+Requires:      lokalize
 
 %description
 Software Development Kit for the K Desktop Environment.
@@ -381,16 +382,23 @@ Umbrello UML Modeller is a UML diagramming tool for KDE.
 
 #---------------------------------------------------------------
 
-%package -n localize
-Summary:   TODO 
+%package -n lokalize
+Summary:    Computer-Aided Translation Tool
 Group:      Graphical desktop/KDE
-Provides:   localize4
+Provides:   lokalize4
+Obsoletes:  localise < 1:4.0.83-4
+Obsoletes:  localise4 < 1:4.0.83-4
 Requires:   %name-core = %epoch:%version-%release
 
-%description -n localize
-Umbrello UML Modeller is a UML diagramming tool for KDE.
+%description -n lokalize
+Lokalize is a computer-aided translation system that focuses on 
+productivity and performance. Translator does only creative work 
+(of delivering message in his/her mother language in laconic and 
+easy to understand form). Lokalize implies paragraph-by-paragraph 
+translation approach (when translating documentation) and 
+message-by-message approach (when translating GUI).
 
-%files -n localize
+%files -n lokalize
 %defattr(-,root,root,-)
 %_kde_bindir/lokalize
 %_kde_datadir/applications/kde4/lokalize.desktop                                     
