@@ -62,6 +62,7 @@ Common files needed for kdesdk
 
 %files core
 %defattr(-,root,root)
+%{_kde_bindir}/krazy-licensecheck
 %{_kde_bindir}/cvsaskpass
 %{_kde_bindir}/cvsservice
 %{_kde_bindir}/kio_svn_helper
