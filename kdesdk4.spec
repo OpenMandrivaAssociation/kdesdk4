@@ -149,6 +149,7 @@ contained in the kdesdk module.
 # and this removing fix a conflict between kdesdk4-scripts and colorsvn
 %exclude %{_kde_bindir}/colorsvn
 %{_kde_bindir}/create_cvsignore
+%{_kde_bindir}/svnforwardport
 %{_kde_bindir}/create_makefile
 %{_kde_bindir}/create_makefiles
 %{_kde_bindir}/create_svnignore
