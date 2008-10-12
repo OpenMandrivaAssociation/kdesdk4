@@ -56,7 +56,7 @@ Group: Graphical desktop/KDE
 Conflicts: %name < %epoch:3.97.1-0.746591.1
 Obsoletes: %{_lib}kdesdk41 < %epoch:3.96.1-0.740308.2
 Obsoletes: %name < %epoch:4.0.2-3
-
+Requires:  kdebase4-runtime
 %description core
 Common files needed for kdesdk
 
