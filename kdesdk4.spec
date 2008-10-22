@@ -99,6 +99,7 @@ existing source code to the KDE framework.
 %{_kde_datadir}/config.kcfg/kapptemplate.kcfg
 %{_kde_appsdir}/kdevappwizard
 %_kde_docdir/*/*/kapptemplate
+%_kde_iconsdir/hicolor/*/apps/kapptemplate.png
 
 #---------------------------------------------------------------------
 
@@ -149,7 +150,6 @@ contained in the kdesdk module.
 # and this removing fix a conflict between kdesdk4-scripts and colorsvn
 %exclude %{_kde_bindir}/colorsvn
 %{_kde_bindir}/create_cvsignore
-%{_kde_bindir}/svnforwardport
 %{_kde_bindir}/create_makefile
 %{_kde_bindir}/create_makefiles
 %{_kde_bindir}/create_svnignore
@@ -280,6 +280,7 @@ A fast and advanced text editor with nice plugins
 %defattr(-,root,root)
 %_kde_bindir/kate
 %_kde_datadir/applications/kde4/kate.desktop
+%_kde_iconsdir/hicolor/*/apps/kate.*
 %dir %_kde_appsdir/kate
 %_kde_appsdir/kate/externaltools
 %_kde_appsdir/kate/icons/*/*/actions/curfiledir.*
@@ -288,7 +289,6 @@ A fast and advanced text editor with nice plugins
 %_kde_appsdir/kate/icons/*/*/actions/modonhd.*
 %_kde_appsdir/kate/icons/*/*/actions/null.*
 %_kde_appsdir/kate/kateui.rc
-%_kde_appsdir/kate/pics/sessionchooser.png
 %_kde_appsdir/kate/plugins/*
 %_kde_appsdir/kate/tips
 %_kde_appsdir/kate/default.katesession
@@ -296,6 +296,7 @@ A fast and advanced text editor with nice plugins
 %_kde_datadir/config/katerc
 %_kde_datadir/config/katefiletemplates.knsrc
 %_kde_libdir/libkdeinit4_kate.so
+%_kde_libdir/kde4/katebacktracebrowserplugin.so
 %_kde_libdir/kde4/kateexternaltoolsplugin.so
 %_kde_libdir/kde4/katefilebrowserplugin.so
 %_kde_libdir/kde4/katefiletemplates.so
@@ -304,14 +305,17 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/katemailfilesplugin.so
 %_kde_libdir/kde4/kateopenheaderplugin.so
 %_kde_libdir/kde4/katequickdocumentswitcherplugin.so
+%_kde_libdir/kde4/katesnippetsplugin.so
 %_kde_libdir/kde4/katesymbolviewerplugin.so
 %_kde_libdir/kde4/katetabbarextensionplugin.so
 %_kde_libdir/kde4/katetextfilterplugin.so
+%_kde_libdir/kde4/katebacktracebrowserplugin.so
 %_kde_libdir/kde4/plasma_applet_katesession.so
 %dir %_kde_appsdir/katepart
 %dir %_kde_appsdir/katepart/syntax   
 %_kde_appsdir/katepart/syntax/katetemplate.xml
 %_kde_appsdir/katepart/syntax/kdesvn-buildrc.xml
+%_kde_datadir/kde4/services/katebacktracebrowserplugin.desktop
 %_kde_datadir/kde4/services/kateexternaltoolsplugin.desktop
 %_kde_datadir/kde4/services/katefilebrowserplugin.desktop
 %_kde_datadir/kde4/services/katefiletemplates.desktop
@@ -320,6 +324,7 @@ A fast and advanced text editor with nice plugins
 %_kde_datadir/kde4/services/katemailfilesplugin.desktop
 %_kde_datadir/kde4/services/kateopenheader.desktop
 %_kde_datadir/kde4/services/katequickdocumentswitcher.desktop
+%_kde_datadir/kde4/services/katesnippets.desktop
 %_kde_datadir/kde4/services/katesymbolviewer.desktop
 %_kde_datadir/kde4/services/katetabbarextension.desktop
 %_kde_datadir/kde4/services/katetextfilter.desktop
@@ -473,9 +478,10 @@ CVS client part.
 %_kde_libdir/libkdeinit4_cvsservice.so
 %{_kde_libdir}/kde4/kded_ksvnd.so
 %{_kde_libdir}/kde4/kio_svn.so
-%{_kde_libdir}/kde4/libcervisiapart.so
+%{_kde_libdir}/kde4/cervisiapart.so
 %{_kde_datadir}/kde4/services/ServiceMenus/subversion.desktop
 %{_kde_datadir}/kde4/services/ServiceMenus/subversion_toplevel.desktop
+%{_kde_datadir}/kde4/services/cervisiapart.desktop
 %{_kde_datadir}/kde4/services/cvsservice.desktop
 %{_kde_datadir}/kde4/services/kded/ksvnd.desktop
 %{_kde_datadir}/kde4/services/svn+file.protocol
