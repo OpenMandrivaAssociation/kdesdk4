@@ -67,8 +67,13 @@ Common files needed for kdesdk
 %{_kde_bindir}/cvsservice
 %{_kde_bindir}/kio_svn_helper
 %{_kde_bindir}/kstartperf
+%{_kde_bindir}/kpartloader
 %{_kde_libdir}/kde4/kabcformat_kdeaccounts.so
 %{_kde_appsdir}/kabc/formats/kdeaccountsplugin.desktop
+%{_kde_appsdir}/kio_perldoc
+%{_kde_appsdir}/kpartloader
+%{_kde_libdir}/kde4/kio_perldoc.so
+%{_kde_datadir}/kde4/services/perldoc.protocol
 
 #---------------------------------------------------------------------
 
@@ -311,6 +316,8 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/katetextfilterplugin.so
 %_kde_libdir/kde4/katebacktracebrowserplugin.so
 %_kde_libdir/kde4/plasma_applet_katesession.so
+%_kde_libdir/kde4/katebuildplugin.so
+%_kde_libdir/kde4/katectagsplugin.so
 %dir %_kde_appsdir/katepart
 %dir %_kde_appsdir/katepart/syntax   
 %_kde_appsdir/katepart/syntax/katetemplate.xml
@@ -330,6 +337,8 @@ A fast and advanced text editor with nice plugins
 %_kde_datadir/kde4/services/katetextfilter.desktop
 %_kde_datadir/kde4/servicetypes/kateplugin.desktop
 %_kde_datadir/kde4/services/plasma-applet-katesession.desktop
+%_kde_datadir/kde4/services/katebuildplugin.desktop
+%_kde_datadir/kde4/services/katectagsplugin.desktop
 %_kde_docdir/*/*/kate-plugins 
 %_kde_docdir/*/*/kate
 
