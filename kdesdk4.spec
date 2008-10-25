@@ -292,7 +292,6 @@ A fast and advanced text editor with nice plugins
 %_kde_appsdir/kate/icons/*/*/actions/modified.*
 %_kde_appsdir/kate/icons/*/*/actions/modmod.*
 %_kde_appsdir/kate/icons/*/*/actions/modonhd.*
-%_kde_appsdir/kate/icons/*/*/actions/null.*
 %_kde_appsdir/kate/kateui.rc
 %_kde_appsdir/kate/plugins/*
 %_kde_appsdir/kate/tips
