@@ -1,6 +1,6 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.1.71
+Version: 4.1.73
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
@@ -292,6 +292,7 @@ A fast and advanced text editor with nice plugins
 %_kde_appsdir/kate/icons/*/*/actions/modified.*
 %_kde_appsdir/kate/icons/*/*/actions/modmod.*
 %_kde_appsdir/kate/icons/*/*/actions/modonhd.*
+%_kde_appsdir/kate/icons/oxygen/16x16/actions/null.png
 %_kde_appsdir/kate/kateui.rc
 %_kde_appsdir/kate/plugins/*
 %_kde_appsdir/kate/tips
