@@ -100,7 +100,6 @@ existing source code to the KDE framework.
 %defattr(-,root,root)
 %{_kde_bindir}/kapptemplate
 %{_kde_datadir}/applications/kde4/kapptemplate.desktop
-%{_kde_appsdir}/kapptemplate
 %{_kde_datadir}/config.kcfg/kapptemplate.kcfg
 %{_kde_appsdir}/kdevappwizard
 %_kde_docdir/*/*/kapptemplate
