@@ -204,6 +204,31 @@ contained in the kdesdk module.
 %{_kde_bindir}/zonetab2pot.py
 %{_kde_bindir}/optimizegraphics
 %{_kde_bindir}/wcgrep
+
+%_kde_mandir/man1/adddebug.1.*
+%_kde_mandir/man1/cheatmake.1.*
+%_kde_mandir/man1/create_cvsignore.1.*
+%_kde_mandir/man1/create_makefile.1.*
+%_kde_mandir/man1/create_makefiles.1.*
+%_kde_mandir/man1/cvscheck.1.*
+%_kde_mandir/man1/cvslastchange.1.*
+%_kde_mandir/man1/cvslastlog.1.*
+%_kde_mandir/man1/cvsrevertlast.1.*
+%_kde_mandir/man1/cxxmetric.1.*
+%_kde_mandir/man1/demangle.1.*
+%_kde_mandir/man1/extend_dmalloc.1.*
+%_kde_mandir/man1/extractrc.1.*
+%_kde_mandir/man1/fixincludes.1.*
+%_kde_mandir/man1/po2xml.1.*
+%_kde_mandir/man1/pruneemptydirs.1.*
+%_kde_mandir/man1/qtdoc.1.*
+%_kde_mandir/man1/reportview.1.*
+%_kde_mandir/man1/split2po.1.*
+%_kde_mandir/man1/swappo.1.*
+%_kde_mandir/man1/transxx.1.*
+%_kde_mandir/man1/xml2pot.1.*
+%_kde_mandir/man1/zonetab2pot.py.1.*
+
 %_kde_docdir/HTML/en/kdesvn-build
 
 #---------------------------------------------------------------------
@@ -339,6 +364,7 @@ A fast and advanced text editor with nice plugins
 %_kde_datadir/kde4/services/plasma-applet-katesession.desktop
 %_kde_datadir/kde4/services/katebuildplugin.desktop
 %_kde_datadir/kde4/services/katectagsplugin.desktop
+%_kde_mandir/man1/kate.1.*
 %_kde_docdir/*/*/kate-plugins 
 %_kde_docdir/*/*/kate
 
