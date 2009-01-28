@@ -193,6 +193,7 @@ contained in the kdesdk module.
 %{_kde_bindir}/svn-clean
 %{_kde_bindir}/svn2dist
 %{_kde_bindir}/svnbackport
+%{_kde_bindir}/svnforwardport
 %{_kde_bindir}/svnchangesince
 %{_kde_bindir}/svngettags
 %{_kde_bindir}/svnintegrate
@@ -338,7 +339,6 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/katesymbolviewerplugin.so
 %_kde_libdir/kde4/katetabbarextensionplugin.so
 %_kde_libdir/kde4/katetextfilterplugin.so
-%_kde_libdir/kde4/katebacktracebrowserplugin.so
 %_kde_libdir/kde4/plasma_applet_katesession.so
 %_kde_libdir/kde4/katebuildplugin.so
 %_kde_libdir/kde4/katectagsplugin.so
