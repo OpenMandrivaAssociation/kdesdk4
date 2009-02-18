@@ -4,7 +4,7 @@ Version: 4.2.0
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Release: %mkrel 2
+Release: %mkrel 3
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
@@ -367,34 +367,6 @@ A fast and advanced text editor with nice plugins
 %_kde_docdir/*/*/kate-plugins 
 %_kde_docdir/*/*/kate
 
-#---------------------------------------------------------------------
-
-%package    devel
-Summary:    Header files for kdesdk
-Group:      Development/KDE and Qt
-Provides:   kdesdk4-devel =  %epoch:%version-%release
-Obsoletes:  %{_lib}kdesdk41-kate-devel < %epoch:3.96.1-0.740308.2
-Obsoletes:  %{_lib}kdesdk41-devel < %epoch:3.96.1-0.740308.2
-Obsoletes:  %{_lib}kdesdk41-cervisia-devel < %epoch:3.96.1-0.740308.2
-
-%description  devel	
-This package includes the header files you will need to compile
-applications for kdesdk.
-
-%files devel
-%defattr(-,root,root,-)
-%_kde_includedir/kprofilemethod.h
-%_kde_includedir/ktrace.h
-%_kde_includedir/kate_export.h
-%dir %_kde_includedir/kate
-%_kde_includedir/kate/*.h
-%_kde_libdir/libantlr.so
-%_kde_libdir/libktrace.so
-%_kde_libdir/libkstartperf.so
-%_kde_libdir/libkateinterfaces.so
-%_kde_libdir/libkompareinterface.so
-%_kde_datadir/dbus-1/interfaces/*
-
 #---------------------------------------------------------------
 
 %package -n umbrello
@@ -547,8 +519,6 @@ kompare is a KDE diff graphic tool
 %_kde_bindir/kompare
 %_kde_libdir/kde4/libkomparenavtreepart.so
 %_kde_libdir/kde4/libkomparepart.so
-%_kde_libdir/libkomparedialogpages.so
-%_kde_libdir/libkomparediff2.so
 %_kde_datadir/applications/kde4/kompare.desktop
 %_kde_appsdir/kompare
 %_kde_datadir/icons/hicolor/128x128/apps/kompare.png
@@ -782,7 +752,38 @@ KDE 4 core library.
 %defattr(-,root,root)
 %_kde_libdir/libktrace.so.%{ktrace_major}*
 
-#-----------------------------------------------------------------------------
+#---------------------------------------------------------------------
+
+%package    devel
+Summary:    Header files for kdesdk
+Group:      Development/KDE and Qt
+Provides:   kdesdk4-devel =  %epoch:%version-%release
+Conflicts:  kompare < 1:4.2.0-3
+Obsoletes:  %{_lib}kdesdk41-kate-devel < %epoch:3.96.1-0.740308.2
+Obsoletes:  %{_lib}kdesdk41-devel < %epoch:3.96.1-0.740308.2
+Obsoletes:  %{_lib}kdesdk41-cervisia-devel < %epoch:3.96.1-0.740308.2
+
+%description  devel
+This package includes the header files you will need to compile
+applications for kdesdk.
+
+%files devel
+%defattr(-,root,root,-)
+%_kde_includedir/kprofilemethod.h
+%_kde_includedir/ktrace.h
+%_kde_includedir/kate_export.h
+%dir %_kde_includedir/kate
+%_kde_includedir/kate/*.h
+%_kde_libdir/libantlr.so
+%_kde_libdir/libktrace.so
+%_kde_libdir/libkstartperf.so
+%_kde_libdir/libkateinterfaces.so
+%_kde_libdir/libkompareinterface.so
+%_kde_libdir/libkomparediff2.so
+%_kde_libdir/libkomparedialogpages.so
+%_kde_datadir/dbus-1/interfaces/*
+
+#---------------------------------------------------------------
 
 %prep
 %setup -q -n kdesdk-%version
