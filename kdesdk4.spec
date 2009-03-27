@@ -205,6 +205,8 @@ contained in the kdesdk module.
 %{_kde_bindir}/optimizegraphics
 %{_kde_bindir}/wcgrep
 
+%_kde_applicationsdir/kdesvn-build.desktop
+
 %_kde_mandir/man1/adddebug.1.*
 %_kde_mandir/man1/cheatmake.1.*
 %_kde_mandir/man1/create_cvsignore.1.*
