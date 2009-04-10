@@ -1,7 +1,7 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
 Version: 4.2.2
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
@@ -403,7 +403,7 @@ Provides:   lokalize4
 Obsoletes:  localise < 1:4.0.83-4
 Obsoletes:  localise4 < 1:4.0.83-4
 Requires:   %name-core = %epoch:%version-%release
-Requires:   strigi-analizer
+Requires:   kdesdk4-strigi-analyzer
 
 %description -n lokalize
 Lokalize is a computer-aided translation system that focuses on 
