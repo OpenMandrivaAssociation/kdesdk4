@@ -1,11 +1,13 @@
+%define kderevision svn961800
+
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.2.2
-Release: %mkrel 4
+Version: 4.2.71
+Release: %mkrel 0.%kderevision.1
 Epoch: 1
 License: GPL
-URL: ftp://ftp.kde.org/pub/kde/stable/%version/src/
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%version.tar.bz2
+URL: ftp://ftp.kde.org/pub/kde/unstable/%version/src/
+Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%version.%kderevision.tar.bz2
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
@@ -68,12 +70,12 @@ Common files needed for kdesdk
 %{_kde_bindir}/kio_svn_helper
 %{_kde_bindir}/kstartperf
 %{_kde_bindir}/kpartloader
-%{_kde_libdir}/kde4/kabcformat_kdeaccounts.so
+%_kde_libdir/kde4/kabcformat_kdeaccounts.so
 %{_kde_appsdir}/kabc/formats/kdeaccountsplugin.desktop
 %{_kde_appsdir}/kio_perldoc
 %{_kde_appsdir}/kpartloader
-%{_kde_libdir}/kde4/kio_perldoc.so
-%{_kde_datadir}/kde4/services/perldoc.protocol
+%_kde_libdir/kde4/kio_perldoc.so
+%_kde_services/perldoc.protocol
 
 #---------------------------------------------------------------------
 
@@ -122,14 +124,14 @@ Displays Qt Designer UI files
 %files -n kuiviewer
 %defattr(-,root,root)
 %{_kde_bindir}/kuiviewer
-%{_kde_libdir}/kde4/libkuiviewerpart.so
-%{_kde_libdir}/kde4/quithumbnail.so
+%_kde_libdir/kde4/libkuiviewerpart.so
+%_kde_libdir/kde4/quithumbnail.so
 %{_kde_datadir}/applications/kde4/kuiviewer.desktop
 %{_kde_appsdir}/kuiviewer
 %{_kde_appsdir}/kuiviewerpart
 %{_kde_iconsdir}/hicolor/*/apps/kuiviewer.png
-%{_kde_datadir}/kde4/services/kuiviewer_part.desktop
-%{_kde_datadir}/kde4/services/designerthumbnail.desktop
+%_kde_services/kuiviewer_part.desktop
+%_kde_services/designerthumbnail.desktop
 
 #---------------------------------------------------------------------
 
@@ -158,7 +160,6 @@ contained in the kdesdk module.
 %{_kde_bindir}/create_makefiles
 %{_kde_bindir}/create_svnignore
 %{_kde_bindir}/cvs-clean
-%{_kde_bindir}/cvs2dist
 %{_kde_bindir}/cvsaddcurrentdir
 %{_kde_bindir}/cvsbackport
 %{_kde_bindir}/cvsblame
@@ -191,9 +192,7 @@ contained in the kdesdk module.
 %{_kde_bindir}/pruneemptydirs
 %{_kde_bindir}/qtdoc
 %{_kde_bindir}/svn-clean
-%{_kde_bindir}/svn2dist
 %{_kde_bindir}/svnbackport
-%{_kde_bindir}/svnforwardport
 %{_kde_bindir}/svnchangesince
 %{_kde_bindir}/svngettags
 %{_kde_bindir}/svnintegrate
@@ -255,7 +254,7 @@ Kbugbuster
 %_kde_appsdir/kbugbuster/*
 %_kde_iconsdir/*/*/*/kbugbuster*
 %_kde_libdir/kde4/kcal_bugzilla.so
-%_kde_datadir/kde4/services/kresources/kcal/bugzilla.desktop
+%_kde_services/kresources/kcal/bugzilla.desktop
 %_kde_docdir/*/*/kbugbuster
 
 #---------------------------------------------------------------------
@@ -344,27 +343,33 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/plasma_applet_katesession.so
 %_kde_libdir/kde4/katebuildplugin.so
 %_kde_libdir/kde4/katectagsplugin.so
+%_kde_libdir/kde4/kate_kttsd.so
+%_kde_libdir/kde4/katepybrowseplugin.so
+%_kde_libdir/kde4/katexmlcheckplugin.so
 %dir %_kde_appsdir/katepart
 %dir %_kde_appsdir/katepart/syntax   
 %_kde_appsdir/katepart/syntax/katetemplate.xml
 %_kde_appsdir/katepart/syntax/kdesvn-buildrc.xml
-%_kde_datadir/kde4/services/katebacktracebrowserplugin.desktop
-%_kde_datadir/kde4/services/kateexternaltoolsplugin.desktop
-%_kde_datadir/kde4/services/katefilebrowserplugin.desktop
-%_kde_datadir/kde4/services/katefiletemplates.desktop
-%_kde_datadir/kde4/services/katefindinfilesplugin.desktop
-%_kde_datadir/kde4/services/katekonsoleplugin.desktop
-%_kde_datadir/kde4/services/katemailfilesplugin.desktop
-%_kde_datadir/kde4/services/kateopenheader.desktop
-%_kde_datadir/kde4/services/katequickdocumentswitcher.desktop
-%_kde_datadir/kde4/services/katesnippets.desktop
-%_kde_datadir/kde4/services/katesymbolviewer.desktop
-%_kde_datadir/kde4/services/katetabbarextension.desktop
-%_kde_datadir/kde4/services/katetextfilter.desktop
-%_kde_datadir/kde4/servicetypes/kateplugin.desktop
-%_kde_datadir/kde4/services/plasma-applet-katesession.desktop
-%_kde_datadir/kde4/services/katebuildplugin.desktop
-%_kde_datadir/kde4/services/katectagsplugin.desktop
+%_kde_services/katebacktracebrowserplugin.desktop
+%_kde_services/kateexternaltoolsplugin.desktop
+%_kde_services/katefilebrowserplugin.desktop
+%_kde_services/katefiletemplates.desktop
+%_kde_services/katefindinfilesplugin.desktop
+%_kde_services/katekonsoleplugin.desktop
+%_kde_services/katemailfilesplugin.desktop
+%_kde_services/kateopenheader.desktop
+%_kde_services/katequickdocumentswitcher.desktop
+%_kde_services/katesnippets.desktop
+%_kde_services/katesymbolviewer.desktop
+%_kde_services/katetabbarextension.desktop
+%_kde_services/katetextfilter.desktop
+%_kde_servicetypes/kateplugin.desktop
+%_kde_services/plasma-applet-katesession.desktop
+%_kde_services/katebuildplugin.desktop
+%_kde_services/katectagsplugin.desktop
+%_kde_services/kate_kttsd.desktop
+%_kde_services/katepybrowse.desktop
+%_kde_services/katexmlcheck.desktop
 %_kde_mandir/man1/kate.1.*
 %_kde_docdir/*/*/kate-plugins 
 %_kde_docdir/*/*/kate
@@ -435,7 +440,6 @@ message-by-message approach (when translating GUI).
 %_kde_iconsdir/*/*/actions/search2msgstr.png
 %_kde_iconsdir/*/*/actions/transsearch.png                            
 %_kde_iconsdir/*/*/actions/catalogmanager.png
-%_kde_iconsdir/*/*/actions/autodiff.png
 %_kde_iconsdir/*/*/actions/diff.png
 %_kde_iconsdir/*/*/apps/lokalize.*
 %_kde_docdir/*/*/lokalize
@@ -475,29 +479,29 @@ CVS client part.
 %_kde_appsdir/kconf_update/cervisia.upd
 %_kde_appsdir/kconf_update/change_colors.pl
 %_kde_datadir/config.kcfg/cervisiapart.kcfg
-%_kde_datadir/icons/*/*/actions/vcs_add.*
-%_kde_datadir/icons/*/*/actions/vcs_commit.*
-%_kde_datadir/icons/*/*/actions/vcs_diff.*
-%_kde_datadir/icons/*/*/actions/vcs_remove.*
-%_kde_datadir/icons/*/*/actions/vcs_status.*
-%_kde_datadir/icons/*/*/actions/vcs_update.*
-%_kde_datadir/icons/*/*/apps/cervisia.*
+%_kde_iconsdir/*/*/actions/vcs_add.*
+%_kde_iconsdir/*/*/actions/vcs_commit.*
+%_kde_iconsdir/*/*/actions/vcs_diff.*
+%_kde_iconsdir/*/*/actions/vcs_remove.*
+%_kde_iconsdir/*/*/actions/vcs_status.*
+%_kde_iconsdir/*/*/actions/vcs_update.*
+%_kde_iconsdir/*/*/apps/cervisia.*
 %_kde_libdir/libkdeinit4_cervisia.so
 %_kde_libdir/libkdeinit4_cvsaskpass.so
 %_kde_libdir/libkdeinit4_cvsservice.so
-%{_kde_libdir}/kde4/kded_ksvnd.so
-%{_kde_libdir}/kde4/kio_svn.so
-%{_kde_libdir}/kde4/cervisiapart.so
-%{_kde_datadir}/kde4/services/ServiceMenus/subversion.desktop
-%{_kde_datadir}/kde4/services/ServiceMenus/subversion_toplevel.desktop
-%{_kde_datadir}/kde4/services/cervisiapart.desktop
-%{_kde_datadir}/kde4/services/cvsservice.desktop
-%{_kde_datadir}/kde4/services/kded/ksvnd.desktop
-%{_kde_datadir}/kde4/services/svn+file.protocol
-%{_kde_datadir}/kde4/services/svn+http.protocol
-%{_kde_datadir}/kde4/services/svn+https.protocol
-%{_kde_datadir}/kde4/services/svn+ssh.protocol
-%{_kde_datadir}/kde4/services/svn.protocol
+%_kde_libdir/kde4/kded_ksvnd.so
+%_kde_libdir/kde4/kio_svn.so
+%_kde_libdir/kde4/cervisiapart.so
+%_kde_services/ServiceMenus/subversion.desktop
+%_kde_services/ServiceMenus/subversion_toplevel.desktop
+%_kde_services/cervisiapart.desktop
+%_kde_services/cvsservice.desktop
+%_kde_services/kded/ksvnd.desktop
+%_kde_services/svn+file.protocol
+%_kde_services/svn+http.protocol
+%_kde_services/svn+https.protocol
+%_kde_services/svn+ssh.protocol
+%_kde_services/svn.protocol
 %_kde_docdir/*/*/cervisia
 %{_kde_mandir}/man1/cervisia.1.*
 
@@ -524,16 +528,16 @@ kompare is a KDE diff graphic tool
 %_kde_libdir/kde4/libkomparepart.so
 %_kde_datadir/applications/kde4/kompare.desktop
 %_kde_appsdir/kompare
-%_kde_datadir/icons/hicolor/128x128/apps/kompare.png
-%_kde_datadir/icons/hicolor/16x16/apps/kompare.png
-%_kde_datadir/icons/hicolor/22x22/apps/kompare.png
-%_kde_datadir/icons/hicolor/32x32/apps/kompare.png
-%_kde_datadir/icons/hicolor/48x48/apps/kompare.png
-%_kde_datadir/icons/hicolor/scalable/apps/kompare.svgz
-%_kde_datadir/kde4/services/komparenavtreepart.desktop
-%_kde_datadir/kde4/services/komparepart.desktop
-%_kde_datadir/kde4/servicetypes/komparenavigationpart.desktop
-%_kde_datadir/kde4/servicetypes/kompareviewpart.desktop
+%_kde_iconsdir/hicolor/128x128/apps/kompare.png
+%_kde_iconsdir/hicolor/16x16/apps/kompare.png
+%_kde_iconsdir/hicolor/22x22/apps/kompare.png
+%_kde_iconsdir/hicolor/32x32/apps/kompare.png
+%_kde_iconsdir/hicolor/48x48/apps/kompare.png
+%_kde_iconsdir/hicolor/scalable/apps/kompare.svgz
+%_kde_services/komparenavtreepart.desktop
+%_kde_services/komparepart.desktop
+%_kde_servicetypes/komparenavigationpart.desktop
+%_kde_servicetypes/kompareviewpart.desktop
 %_kde_docdir/*/*/kompare
 
 #---------------------------------------------------------------
@@ -777,6 +781,8 @@ applications for kdesdk.
 %_kde_includedir/kate_export.h
 %dir %_kde_includedir/kate
 %_kde_includedir/kate/*.h
+%dir %_kde_includedir/kompare
+%_kde_includedir/kompare/*.h
 %_kde_libdir/libantlr.so
 %_kde_libdir/libktrace.so
 %_kde_libdir/libkstartperf.so
@@ -789,7 +795,7 @@ applications for kdesdk.
 #---------------------------------------------------------------
 
 %prep
-%setup -q -n kdesdk-%version
+%setup -q -n kdesdk-%version.%kderevision
 
 %build
 %cmake_kde4
