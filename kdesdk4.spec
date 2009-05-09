@@ -1,7 +1,7 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
 Version: 4.2.85
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/unstable/%version/src/
@@ -54,6 +54,7 @@ Software Development Kit for the K Desktop Environment.
 Summary: Common files needed for kdesdk
 Group: Graphical desktop/KDE
 Conflicts: %name < %epoch:3.97.1-0.746591.1
+Conflicts: cervisia < 1:4.2.85-2
 Obsoletes: %{_lib}kdesdk41 < %epoch:3.96.1-0.740308.2
 Obsoletes: %name < %epoch:4.0.2-3
 Requires:  kdebase4-runtime
@@ -68,12 +69,14 @@ Common files needed for kdesdk
 %{_kde_bindir}/kio_svn_helper
 %{_kde_bindir}/kstartperf
 %{_kde_bindir}/kpartloader
-%_kde_libdir/kde4/kabcformat_kdeaccounts.so
+%{_kde_libdir}/kde4/kabcformat_kdeaccounts.so
+%{_kde_libdir}/libkdeinit4_cvsaskpass.so
+%{_kde_libdir}/libkdeinit4_cvsservice.so
 %{_kde_appsdir}/kabc/formats/kdeaccountsplugin.desktop
 %{_kde_appsdir}/kio_perldoc
 %{_kde_appsdir}/kpartloader
-%_kde_libdir/kde4/kio_perldoc.so
-%_kde_services/perldoc.protocol
+%{_kde_libdir}/kde4/kio_perldoc.so
+%{_kde_services}/perldoc.protocol
 
 #---------------------------------------------------------------------
 
@@ -485,8 +488,6 @@ CVS client part.
 %_kde_iconsdir/*/*/actions/vcs_update.*
 %_kde_iconsdir/*/*/apps/cervisia.*
 %_kde_libdir/libkdeinit4_cervisia.so
-%_kde_libdir/libkdeinit4_cvsaskpass.so
-%_kde_libdir/libkdeinit4_cvsservice.so
 %_kde_libdir/kde4/kded_ksvnd.so
 %_kde_libdir/kde4/kio_svn.so
 %_kde_libdir/kde4/cervisiapart.so
