@@ -1,13 +1,11 @@
-%define kderevision svn961800
-
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.2.71
-Release: %mkrel 0.%kderevision.1
+Version: 4.2.85
+Release: %mkrel 1
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/unstable/%version/src/
-Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%version.%kderevision.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%version.tar.bz2
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
@@ -795,7 +793,7 @@ applications for kdesdk.
 #---------------------------------------------------------------
 
 %prep
-%setup -q -n kdesdk-%version.%kderevision
+%setup -q -n kdesdk-%version
 
 %build
 %cmake_kde4
