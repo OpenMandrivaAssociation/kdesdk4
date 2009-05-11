@@ -410,6 +410,7 @@ Obsoletes:  localise < 1:4.0.83-4
 Obsoletes:  localise4 < 1:4.0.83-4
 Requires:   %name-core = %epoch:%version-%release
 Requires:   kdesdk4-strigi-analyzer
+Requires:   qt4-database-plugin-sqlite
 
 %description -n lokalize
 Lokalize is a computer-aided translation system that focuses on 
