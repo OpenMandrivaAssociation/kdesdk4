@@ -1,11 +1,13 @@
+%define kderev 969966
+
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.2.85
-Release: %mkrel 2
+Version: 4.2.87
+Release: %mkrel 1
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/unstable/%version/src/
-Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%version.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}svn%{kderev}.tar.bz2
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
@@ -58,6 +60,7 @@ Conflicts: cervisia < 1:4.2.85-2
 Obsoletes: %{_lib}kdesdk41 < %epoch:3.96.1-0.740308.2
 Obsoletes: %name < %epoch:4.0.2-3
 Requires:  kdebase4-runtime
+
 %description core
 Common files needed for kdesdk
 
@@ -795,7 +798,7 @@ applications for kdesdk.
 #---------------------------------------------------------------
 
 %prep
-%setup -q -n kdesdk-%version
+%setup -q -n kdesdk-%{version}svn%{kderev}
 
 %build
 %cmake_kde4
