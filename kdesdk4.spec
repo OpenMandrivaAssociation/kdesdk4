@@ -1,4 +1,9 @@
-%define kderev 969966
+%define branch 1
+%{?_branch: %{expand: %%global branch 1}}
+
+%if %branch
+%define kderevision svn969966
+%endif
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
@@ -7,7 +12,11 @@ Release: %mkrel 1
 Epoch: 1
 License: GPL
 URL: ftp://ftp.kde.org/pub/kde/unstable/%version/src/
-Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}svn%{kderev}.tar.bz2
+%if %branch
+Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}%kderevision.tar.bz2
+%else
+Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}.tar.bz2
+%endif
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
@@ -798,7 +807,11 @@ applications for kdesdk.
 #---------------------------------------------------------------
 
 %prep
-%setup -q -n kdesdk-%{version}svn%{kderev}
+%if %branch
+%setup -q -n kdesdk-%{version}%kderevision
+%else
+%setup -q -n kdesdk-%{version}
+%endif
 
 %build
 %cmake_kde4
