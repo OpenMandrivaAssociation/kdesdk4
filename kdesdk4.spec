@@ -1,27 +1,16 @@
-%define branch 0
-%{?_branch: %{expand: %%global branch 1}}
-
-%if %branch
-%define kderevision svn973768
-%endif
-
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.2.96
+Version: 4.2.98
 Release: %mkrel 1
 Epoch: 1
 License: GPL
-URL: ftp://ftp.kde.org/pub/kde/unstable/%version/src/
-%if %branch
-Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}%kderevision.tar.bz2
-%else
 Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}.tar.bz2
-%endif
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
 BuildRequires: freetype2-devel
-BuildRequires: kdelibs4-devel
+BuildRequires: kdelibs4-devel >= 2:4.2.98
+BuildRequires: kdelibs4-experimental-devel >= 2:4.2.98
 BuildRequires: kdepimlibs4-devel
 BuildRequires: kdebase4-workspace-devel
 BuildRequires: kdepim4-devel
@@ -39,19 +28,19 @@ BuildRequires: mesaglut-devel
 BuildRequires: X11-devel 
 BuildRequires: libltdl-devel
 BuildRequires: boost-devel
-Requires:      kapptemplate
-Requires:      kuiviewer
-Requires:      kdesdk4-scripts
-Requires:      kbugbuster
-Requires:      %name-strigi-analyzer
-Requires:      %name-po2xml
-Requires:      kate
-Requires:      umbrello 
-Requires:      cervisia
-Requires:      kompare 
-Requires:      kmtrace
-Requires:      kcachegrind
-Requires:      lokalize
+Requires: kapptemplate
+Requires: kuiviewer
+Requires: kdesdk4-scripts
+Requires: kbugbuster
+Requires: %name-strigi-analyzer
+Requires: %name-po2xml
+Requires: kate
+Requires: umbrello 
+Requires: cervisia
+Requires: kompare 
+Requires: kmtrace
+Requires: kcachegrind
+Requires: lokalize
 
 %description
 Software Development Kit for the K Desktop Environment.
@@ -119,6 +108,7 @@ existing source code to the KDE framework.
 %{_kde_appsdir}/kdevappwizard
 %_kde_docdir/*/*/kapptemplate
 %_kde_iconsdir/hicolor/*/apps/kapptemplate.png
+%_kde_appsdir/kdesdk/scripts
 
 #---------------------------------------------------------------------
 
@@ -807,11 +797,7 @@ applications for kdesdk.
 #---------------------------------------------------------------
 
 %prep
-%if %branch
-%setup -q -n kdesdk-%{version}%kderevision
-%else
 %setup -q -n kdesdk-%{version}
-%endif
 
 %build
 %cmake_kde4
@@ -820,7 +806,12 @@ applications for kdesdk.
 %install
 rm -fr %buildroot
 
-make -C build DESTDIR=%buildroot install
+%makeinstall_std -C build
+
+# Copy all scripts 
+mkdir -p %buildroot/%_kde_appsdir/kdesdk/
+cp -a scripts %buildroot/%_kde_appsdir/kdesdk/
+rm -f %buildroot/%_kde_appsdir/kdesdk/CMake*
 
 %clean
 rm -fr %buildroot
