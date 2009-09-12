@@ -1,7 +1,7 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
 Version: 4.3.1
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 1
 License: GPL
 Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}.tar.bz2
@@ -307,6 +307,10 @@ Requires(postun): desktop-file-utils
 Requires: %name-core = %epoch:%version-%release
 Obsoletes: kde4-kate < 1:4.0.68
 Provides: kde4-kate = %epoch:%version
+%if %mdkversion >= 200100
+Obsoletes:     kdebase-kate < 1:3.5.10-24
+Obsoletes:     kdebase3-kate < 1:3.5.10-24
+%endif
 
 %description -n kate
 A fast and advanced text editor with nice plugins
