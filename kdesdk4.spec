@@ -1,10 +1,12 @@
+%define kde_snapshot svn1040395
+
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.3.2
-Release: %mkrel 2
+Version: 4.3.73
+Release: %mkrel 1
 Epoch: 1
 License: GPL
-Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}%kde_snapshot.tar.bz2
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
@@ -200,6 +202,7 @@ contained in the kdesdk module.
 %{_kde_bindir}/svnchangesince
 %{_kde_bindir}/svngettags
 %{_kde_bindir}/svnintegrate
+%{_kde_bindir}/svnforwardport
 %{_kde_bindir}/svnlastchange
 %{_kde_bindir}/svnlastlog
 %{_kde_bindir}/svnrevertlast
@@ -209,6 +212,8 @@ contained in the kdesdk module.
 %{_kde_bindir}/wcgrep
 
 %_kde_applicationsdir/kdesvn-build.desktop
+
+%{_kde_libdir}/kde4/kstartperf.so
 
 %_kde_mandir/man1/adddebug.1.*
 %_kde_mandir/man1/cheatmake.1.*
@@ -318,19 +323,11 @@ A fast and advanced text editor with nice plugins
 %files -n kate
 %defattr(-,root,root)
 %_kde_bindir/kate
+%_kde_bindir/katesnippetstng_editor
 %_kde_datadir/applications/kde4/kate.desktop
+%_kde_datadir/applications/kde4/katesnippetstng_editor.desktop
 %_kde_iconsdir/hicolor/*/apps/kate.*
-%dir %_kde_appsdir/kate
-%_kde_appsdir/kate/externaltools
-%_kde_appsdir/kate/icons/*/*/actions/curfiledir.*
-%_kde_appsdir/kate/icons/*/*/actions/modified.*
-%_kde_appsdir/kate/icons/*/*/actions/modmod.*
-%_kde_appsdir/kate/icons/*/*/actions/modonhd.*
-%_kde_appsdir/kate/icons/oxygen/16x16/actions/null.png
-%_kde_appsdir/kate/kateui.rc
-%_kde_appsdir/kate/plugins/*
-%_kde_appsdir/kate/tips
-%_kde_appsdir/kate/default.katesession
+%_kde_appsdir/kate
 %_kde_appsdir/kconf_update/kate-2.4.upd
 %_kde_datadir/config/katerc
 %_kde_datadir/config/katefiletemplates.knsrc
@@ -354,10 +351,8 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/kate_kttsd.so
 %_kde_libdir/kde4/katepybrowseplugin.so
 %_kde_libdir/kde4/katexmlcheckplugin.so
-%dir %_kde_appsdir/katepart
-%dir %_kde_appsdir/katepart/syntax   
-%_kde_appsdir/katepart/syntax/katetemplate.xml
-%_kde_appsdir/katepart/syntax/kdesvn-buildrc.xml
+%_kde_libdir/kde4/katesnippets_tngplugin.so
+%_kde_appsdir/katepart
 %_kde_services/katebacktracebrowserplugin.desktop
 %_kde_services/kateexternaltoolsplugin.desktop
 %_kde_services/katefilebrowserplugin.desktop
@@ -378,6 +373,8 @@ A fast and advanced text editor with nice plugins
 %_kde_services/kate_kttsd.desktop
 %_kde_services/katepybrowse.desktop
 %_kde_services/katexmlcheck.desktop
+%_kde_services/katesnippets_tngplugin.desktop
+%_kde_datadir/mime/packages/kateplugin_katesnippets_tng.xml
 %_kde_mandir/man1/kate.1.*
 %_kde_docdir/*/*/kate-plugins 
 %_kde_docdir/*/*/kate
@@ -451,6 +448,11 @@ message-by-message approach (when translating GUI).
 %_kde_iconsdir/*/*/actions/transsearch.png                            
 %_kde_iconsdir/*/*/actions/catalogmanager.png
 %_kde_iconsdir/*/*/actions/diff.png
+%_kde_iconsdir/*/*/actions/nextpo.png
+%_kde_iconsdir/*/*/actions/nexttemplate.png
+%_kde_iconsdir/*/*/actions/prevpo.png
+%_kde_iconsdir/*/*/actions/prevtemplate.png
+
 %_kde_iconsdir/*/*/apps/lokalize.*
 %_kde_docdir/*/*/lokalize
 
@@ -723,29 +725,6 @@ KDE 4 core library.
 
 #-----------------------------------------------------------------------------
 
-%define  kstartperf_major 4
-%define  libkstartperf %mklibname kstartperf %kstartperf_major
-
-%package -n %libkstartperf
-Summary: KDE 4 core library
-Group: System/Libraries
-
-%description -n %libkstartperf
-KDE 4 core library.
-
-%if %mdkversion < 200900
-%post -n %libkstartperf -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libkstartperf -p /sbin/ldconfig
-%endif
-
-%files -n %libkstartperf
-%defattr(-,root,root)
-%_kde_libdir/libkstartperf.so.%{kstartperf_major}*
-
-#-----------------------------------------------------------------------------
-
 %define  ktrace_major 4
 %define  libktrace %mklibname ktrace %ktrace_major
 
@@ -793,7 +772,6 @@ applications for kdesdk.
 %_kde_includedir/kompare/*.h
 %_kde_libdir/libantlr.so
 %_kde_libdir/libktrace.so
-%_kde_libdir/libkstartperf.so
 %_kde_libdir/libkateinterfaces.so
 %_kde_libdir/libkompareinterface.so
 %_kde_libdir/libkomparediff2.so
@@ -803,7 +781,7 @@ applications for kdesdk.
 #---------------------------------------------------------------
 
 %prep
-%setup -q -n kdesdk-%{version}
+%setup -q -n kdesdk-%{version}%kde_snapshot
 
 %build
 %cmake_kde4
