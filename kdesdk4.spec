@@ -31,6 +31,7 @@ BuildRequires: mesaglut-devel
 BuildRequires: X11-devel 
 BuildRequires: libltdl-devel
 BuildRequires: boost-devel
+BuildRequires: hunspell-devel
 Requires: kapptemplate
 Requires: kuiviewer
 Requires: kdesdk4-scripts
