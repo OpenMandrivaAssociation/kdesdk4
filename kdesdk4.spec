@@ -325,6 +325,7 @@ A fast and advanced text editor with nice plugins
 %defattr(-,root,root)
 %_kde_bindir/kate
 %_kde_bindir/katesnippetstng_editor
+%_kde_datadir/config/ktexteditor_codesnippets_core.knsrc
 %_kde_datadir/applications/kde4/kate.desktop
 %_kde_datadir/applications/kde4/katesnippetstng_editor.desktop
 %_kde_iconsdir/hicolor/*/apps/kate.*
@@ -563,13 +564,6 @@ Group:      System/Libraries
 %description -n %libkomparediff2
 KDE 4 core library.
 
-%if %mdkversion < 200900
-%post -n   %libkomparediff2 -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libkomparediff2 -p /sbin/ldconfig
-%endif
-
 %files -n %libkomparediff2
 %defattr(-,root,root)
 %_kde_libdir/libkomparediff2.so.%{komparediff2_major}*
@@ -585,13 +579,6 @@ Group:      System/Libraries
 
 %description -n %libkomparedialogpages
 KDE 4 core library.
-
-%if %mdkversion < 200900
-%post -n   %libkomparedialogpages -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libkomparedialogpages -p /sbin/ldconfig
-%endif
 
 %files -n %libkomparedialogpages
 %defattr(-,root,root)
@@ -609,13 +596,6 @@ Group:      System/Libraries
 
 %description -n %libkompareinterface
 KDE 4 core library.
-
-%if %mdkversion < 200900
-%post -n   %libkompareinterface -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libkompareinterface -p /sbin/ldconfig
-%endif
 
 %files -n %libkompareinterface
 %defattr(-,root,root)
@@ -690,13 +670,6 @@ Group: System/Libraries
 %description -n %libantlr
 KDE 4 core library.
 
-%if %mdkversion < 200900
-%post -n %libantlr -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libantlr -p /sbin/ldconfig
-%endif
-
 %files -n %libantlr
 %defattr(-,root,root)
 %_kde_libdir/libantlr.so.%{antlr_major}*
@@ -712,13 +685,6 @@ Group:      System/Libraries
 
 %description -n %libkateinterfaces
 KDE 4 core library.
-
-%if %mdkversion < 200900
-%post -n   %libkateinterfaces -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libkateinterfaces -p /sbin/ldconfig
-%endif
 
 %files -n %libkateinterfaces
 %defattr(-,root,root)
@@ -736,16 +702,25 @@ Group: System/Libraries
 %description -n %libktrace
 KDE 4 core library.
 
-%if %mdkversion < 200900
-%post -n %libktrace -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libktrace -p /sbin/ldconfig
-%endif
-
 %files -n %libktrace
 %defattr(-,root,root)
 %_kde_libdir/libktrace.so.%{ktrace_major}*
+
+#-----------------------------------------------------------------------------
+
+%define  ktexteditor_codesnippets_core_major 4
+%define  libktexteditor_codesnippets_core %mklibname ktexteditor_codesnippets_core %ktexteditor_codesnippets_core_major
+
+%package -n %libktexteditor_codesnippets_core
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libktexteditor_codesnippets_core
+KDE 4 core library.
+
+%files -n %libktexteditor_codesnippets_core
+%defattr(-,root,root)
+%_kde_libdir/libktexteditor_codesnippets_core.so.%{ktexteditor_codesnippets_core_major}*
 
 #---------------------------------------------------------------------
 
@@ -767,16 +742,16 @@ applications for kdesdk.
 %_kde_includedir/kprofilemethod.h
 %_kde_includedir/ktrace.h
 %_kde_includedir/kate_export.h
-%dir %_kde_includedir/kate
-%_kde_includedir/kate/*.h
-%dir %_kde_includedir/kompare
-%_kde_includedir/kompare/*.h
+%_kde_includedir/kate
+%_kde_includedir/kompare
+%_kde_includedir/ktexteditor_codesnippets_core
 %_kde_libdir/libantlr.so
 %_kde_libdir/libktrace.so
 %_kde_libdir/libkateinterfaces.so
 %_kde_libdir/libkompareinterface.so
 %_kde_libdir/libkomparediff2.so
-%_kde_libdir/libkomparedialogpages.so
+%_kde_libdir/libikomparedialogpages.so
+%_kde_libdir/libktexteditor_codesnippets_core.so
 %_kde_datadir/dbus-1/interfaces/*
 
 #---------------------------------------------------------------
