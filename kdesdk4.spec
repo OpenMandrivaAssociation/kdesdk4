@@ -750,7 +750,7 @@ applications for kdesdk.
 %_kde_libdir/libkateinterfaces.so
 %_kde_libdir/libkompareinterface.so
 %_kde_libdir/libkomparediff2.so
-%_kde_libdir/libikomparedialogpages.so
+%_kde_libdir/libkomparedialogpages.so
 %_kde_libdir/libktexteditor_codesnippets_core.so
 %_kde_datadir/dbus-1/interfaces/*
 
