@@ -708,7 +708,7 @@ KDE 4 core library.
 
 #-----------------------------------------------------------------------------
 
-%define  ktexteditor_codesnippets_core_major 4
+%define  ktexteditor_codesnippets_core_major 0
 %define  libktexteditor_codesnippets_core %mklibname ktexteditor_codesnippets_core %ktexteditor_codesnippets_core_major
 
 %package -n %libktexteditor_codesnippets_core
