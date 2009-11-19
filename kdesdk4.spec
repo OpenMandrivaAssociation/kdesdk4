@@ -1,9 +1,9 @@
-%define kde_snapshot svn1040395
+%define kde_snapshot svn1048496
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.3.73
-Release: %mkrel 2
+Version: 4.3.75
+Release: %mkrel 1
 Epoch: 1
 License: GPL
 Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}%kde_snapshot.tar.bz2
