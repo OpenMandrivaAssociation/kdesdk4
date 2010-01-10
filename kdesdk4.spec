@@ -8,7 +8,7 @@
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.3.85
+Version: 4.3.90
 Release: %mkrel 1
 Epoch: 1
 License: GPL
