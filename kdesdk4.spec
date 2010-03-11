@@ -337,7 +337,7 @@ A fast and advanced text editor with nice plugins
 %_kde_bindir/kate
 %_kde_bindir/katesnippetstng_editor
 %_kde_datadir/config/ktexteditor_codesnippets_core.knsrc
-%_kde_datadir/ktexteditor_snippets
+%_kde_appsdir/ktexteditor_snippets
 %_kde_datadir/applications/kde4/kate.desktop
 %_kde_datadir/applications/kde4/katesnippetstng_editor.desktop
 %_kde_iconsdir/hicolor/*/apps/kate.*
