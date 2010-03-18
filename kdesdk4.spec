@@ -9,7 +9,7 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
 Version: 4.4.1
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 1
 License: GPL
 %if %branch
@@ -324,6 +324,7 @@ Requires(postun): desktop-file-utils
 Requires: %name-core = %epoch:%version-%release
 Obsoletes: kde4-kate < 1:4.0.68
 Provides: kde4-kate = %epoch:%version
+Requires: konsole
 %if %mdkversion >= 200100
 Obsoletes:     kdebase-kate < 1:3.5.10-24
 Obsoletes:     kdebase3-kate < 1:3.5.10-24
