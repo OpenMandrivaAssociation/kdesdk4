@@ -43,19 +43,19 @@ BuildRequires: X11-devel
 BuildRequires: libltdl-devel
 BuildRequires: boost-devel
 BuildRequires: hunspell-devel
-Requires: kapptemplate
-Requires: kuiviewer
-Requires: kdesdk4-scripts
-Requires: kbugbuster
-Requires: %name-strigi-analyzer
-Requires: %name-po2xml
-Requires: kate
-Requires: umbrello 
-Requires: cervisia
-Requires: kompare 
-Requires: kmtrace
-Requires: kcachegrind
-Requires: lokalize
+Suggests: kapptemplate
+Suggests: kuiviewer
+Suggests: kdesdk4-scripts
+Suggests: kbugbuster
+Suggests: %name-strigi-analyzer
+Suggests: %name-po2xml
+Suggests: kate
+Suggests: umbrello 
+Suggests: cervisia
+Suggests: kompare 
+Suggests: kmtrace
+Suggests: kcachegrind
+Suggests: lokalize
 
 %description
 Software Development Kit for the K Desktop Environment.
