@@ -391,7 +391,6 @@ A fast and advanced text editor with nice plugins
 %_kde_services/katesnippets_tngplugin.desktop
 %_kde_datadir/mime/packages/kateplugin_katesnippets_tng.xml
 %_kde_mandir/man1/kate.1.*
-%_kde_docdir/*/*/kate-plugins 
 %_kde_docdir/*/*/kate
 
 #---------------------------------------------------------------
