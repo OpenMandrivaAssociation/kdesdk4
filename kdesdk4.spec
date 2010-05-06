@@ -9,7 +9,7 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
 Version: 4.4.3
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 1
 License: GPL
 %if %branch
@@ -103,6 +103,7 @@ Provides:  kapptemplate4
 Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
 Conflicts: kdevelop4 < 3:4.0.80-1
 Requires:  %name-core = %epoch:%version-%release
+Requires:  kdelibs4-devel
 Obsoletes: kde4-kapptemplate < 1:4.0.68
 Provides: kde4-kapptemplate = %epoch:%version
 
