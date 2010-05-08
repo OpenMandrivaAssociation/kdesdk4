@@ -9,7 +9,7 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
 Version: 4.4.3
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch: 1
 License: GPL
 %if %branch
@@ -740,11 +740,18 @@ KDE 4 core library.
 %package    devel
 Summary:    Header files for kdesdk
 Group:      Development/KDE and Qt
-Provides:   kdesdk4-devel =  %epoch:%version-%release
+Provides:   kdesdk4-devel = %epoch:%version-%release
 Conflicts:  kompare < 1:4.2.0-3
 Obsoletes:  %{_lib}kdesdk41-kate-devel < %epoch:3.96.1-0.740308.2
 Obsoletes:  %{_lib}kdesdk41-devel < %epoch:3.96.1-0.740308.2
 Obsoletes:  %{_lib}kdesdk41-cervisia-devel < %epoch:3.96.1-0.740308.2
+Requires: %libkomparediff2 = %epoch:%version
+Requires: %libkomparedialogpages = %epoch:%version
+Requires: %libkompareinterface = %epoch:%version
+Requires: %libantlr = %epoch:%version
+Requires: %libkateinterfaces = %epoch:%version
+Requires: %libktrace = %epoch:%version
+Requires: %libktexteditor_codesnippets_core = %epoch:%version
 
 %description  devel
 This package includes the header files you will need to compile
