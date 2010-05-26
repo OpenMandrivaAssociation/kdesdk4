@@ -9,7 +9,7 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
 Version: 4.4.3
-Release: %mkrel 4
+Release: %mkrel 5
 Epoch: 1
 License: GPL
 %if %branch
@@ -19,6 +19,7 @@ Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}.tar.bz
 %endif
 Patch0:    kdesdk-4.4.0-lokalize-fix-crash.patch
 Patch1:    kdesdk-4.4.3-fix-kate-crash-on-document-close.patch
+Patch100:  kdesdk-4.4.3-t1130965-kate-fix-crash.patch
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
@@ -785,6 +786,7 @@ applications for kdesdk.
 %endif
 %patch0 -p0
 %patch1 -p1
+%patch100 -p0
 
 %build
 %cmake_kde4
