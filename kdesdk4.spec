@@ -3,13 +3,13 @@
 
 
 %if %branch
-%define kde_snapshot svn1053190
+%define kde_snapshot svn1138650
 %endif
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.4.3
-Release: %mkrel 5
+Version: 4.4.95
+Release: %mkrel 1
 Epoch: 1
 License: GPL
 %if %branch
@@ -18,8 +18,6 @@ Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}%kde_sn
 Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}.tar.bz2
 %endif
 Patch0:    kdesdk-4.4.0-lokalize-fix-crash.patch
-Patch1:    kdesdk-4.4.3-fix-kate-crash-on-document-close.patch
-Patch100:  kdesdk-4.4.3-t1130965-kate-fix-crash.patch
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
@@ -90,11 +88,20 @@ Common files needed for kdesdk
 %{_kde_libdir}/kde4/kabcformat_kdeaccounts.so
 %{_kde_libdir}/libkdeinit4_cvsaskpass.so
 %{_kde_libdir}/libkdeinit4_cvsservice.so
+%{_kde_libdir}/kde4/fileviewgitplugin.so
+%{_kde_libdir}/kde4/fileviewsvnplugin.so
 %{_kde_appsdir}/kabc/formats/kdeaccountsplugin.desktop
 %{_kde_appsdir}/kio_perldoc
 %{_kde_appsdir}/kpartloader
 %{_kde_libdir}/kde4/kio_perldoc.so
 %{_kde_services}/perldoc.protocol
+%{_kde_services}/fileviewgitplugin.desktop
+%{_kde_services}/fileviewsvnplugin.desktop
+%{_kde_datadir}/config.kcfg/fileviewsvnpluginsettings.kcfg
+%{_kde_iconsdir}/oxygen/16x16/actions/repoadd.png
+%{_kde_iconsdir}/oxygen/16x16/actions/repomanage.png
+%{_kde_iconsdir}/oxygen/16x16/actions/snippetadd.png
+%{_kde_iconsdir}/oxygen/16x16/actions/snippetedit.png
 
 #---------------------------------------------------------------------
 
@@ -204,7 +211,7 @@ contained in the kdesdk module.
 %{_kde_bindir}/kdekillall
 %{_kde_bindir}/kdelnk2desktop.py
 %{_kde_bindir}/kdemangen.pl
-%{_kde_bindir}/kdesvn-build
+%{_kde_bindir}/kdesrc-build
 %{_kde_bindir}/makeobj
 %{_kde_bindir}/noncvslist
 %{_kde_bindir}/nonsvnlist
@@ -225,6 +232,8 @@ contained in the kdesdk module.
 %{_kde_bindir}/zonetab2pot.py
 %{_kde_bindir}/optimizegraphics
 %{_kde_bindir}/wcgrep
+%{_kde_bindir}/extractqml
+%{_kde_bindir}/kde-systemsettings-tree.py
 
 %_kde_applicationsdir/kdesvn-build.desktop
 
@@ -308,9 +317,9 @@ An xml2po and vice versa converters.
 
 %files po2xml
 %defattr(-,root,root,-)
-%{_kde_bindir}/po2xml
+#%{_kde_bindir}/po2xml
 %{_kde_bindir}/split2po
-%{_kde_bindir}/swappo
+#%{_kde_bindir}/swappo
 %{_kde_bindir}/xml2pot
 
 #---------------------------------------------------------------------
@@ -339,11 +348,10 @@ A fast and advanced text editor with nice plugins
 %files -n kate
 %defattr(-,root,root)
 %_kde_bindir/kate
-%_kde_bindir/katesnippetstng_editor
+%_kde_bindir/ktesnippets_editor
 %_kde_datadir/config/ktexteditor_codesnippets_core.knsrc
 %_kde_appsdir/ktexteditor_snippets
 %_kde_datadir/applications/kde4/kate.desktop
-%_kde_datadir/applications/kde4/katesnippetstng_editor.desktop
 %_kde_iconsdir/hicolor/*/apps/kate.*
 %_kde_appsdir/kate
 %_kde_appsdir/kconf_update/kate-2.4.upd
@@ -359,7 +367,6 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/katemailfilesplugin.so
 %_kde_libdir/kde4/kateopenheaderplugin.so
 %_kde_libdir/kde4/katequickdocumentswitcherplugin.so
-%_kde_libdir/kde4/katesnippetsplugin.so
 %_kde_libdir/kde4/katesymbolviewerplugin.so
 %_kde_libdir/kde4/katetabbarextensionplugin.so
 %_kde_libdir/kde4/katetextfilterplugin.so
@@ -367,9 +374,10 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/katebuildplugin.so
 %_kde_libdir/kde4/katectagsplugin.so
 %_kde_libdir/kde4/kate_kttsd.so
-%_kde_libdir/kde4/katepybrowseplugin.so
 %_kde_libdir/kde4/katexmlcheckplugin.so
 %_kde_libdir/kde4/katesnippets_tngplugin.so
+%_kde_libdir/kde4/katetabifyplugin.so
+%_kde_libdir/kde4/katexmltoolsplugin.so
 %_kde_appsdir/katepart
 %_kde_services/katebacktracebrowserplugin.desktop
 %_kde_services/kateexternaltoolsplugin.desktop
@@ -380,7 +388,6 @@ A fast and advanced text editor with nice plugins
 %_kde_services/katemailfilesplugin.desktop
 %_kde_services/kateopenheader.desktop
 %_kde_services/katequickdocumentswitcher.desktop
-%_kde_services/katesnippets.desktop
 %_kde_services/katesymbolviewer.desktop
 %_kde_services/katetabbarextension.desktop
 %_kde_services/katetextfilter.desktop
@@ -389,11 +396,14 @@ A fast and advanced text editor with nice plugins
 %_kde_services/katebuildplugin.desktop
 %_kde_services/katectagsplugin.desktop
 %_kde_services/kate_kttsd.desktop
-%_kde_services/katepybrowse.desktop
 %_kde_services/katexmlcheck.desktop
 %_kde_services/katesnippets_tngplugin.desktop
-%_kde_datadir/mime/packages/kateplugin_katesnippets_tng.xml
+%_kde_services/katetabifyplugin.desktop
+%_kde_services/katexmltools.desktop
+%_kde_datadir/applications/kde4/ktesnippets_editor.desktop
+%_kde_appsdir/katexmltools
 %_kde_mandir/man1/kate.1.*
+%_kde_datadir/mime/packages/ktesnippets.xml
 %_kde_docdir/*/*/kate
 
 #---------------------------------------------------------------
@@ -675,22 +685,6 @@ Calltree extends Cachegrind, which is part of Valgrind.
 
 #---------------------------------------------------------------
 
-%define  antlr_major 4
-%define  libantlr %mklibname antlr %antlr_major
-
-%package -n %libantlr
-Summary: KDE 4 core library
-Group: System/Libraries
-
-%description -n %libantlr
-KDE 4 core library.
-
-%files -n %libantlr
-%defattr(-,root,root)
-%_kde_libdir/libantlr.so.%{antlr_major}*
-
-#---------------------------------------------------------------
-
 %define  kateinterfaces_major 4
 %define  libkateinterfaces %mklibname kateinterfaces %kateinterfaces_major
 
@@ -750,7 +744,6 @@ Obsoletes:  %{_lib}kdesdk41-cervisia-devel < %epoch:3.96.1-0.740308.2
 Requires: %libkomparediff2 = %epoch:%version
 Requires: %libkomparedialogpages = %epoch:%version
 Requires: %libkompareinterface = %epoch:%version
-Requires: %libantlr = %epoch:%version
 Requires: %libkateinterfaces = %epoch:%version
 Requires: %libktrace = %epoch:%version
 Requires: %libktexteditor_codesnippets_core = %epoch:%version
@@ -767,7 +760,6 @@ applications for kdesdk.
 %_kde_includedir/kate
 %_kde_includedir/kompare
 %_kde_includedir/ktexteditor_codesnippets_core
-%_kde_libdir/libantlr.so
 %_kde_libdir/libktrace.so
 %_kde_libdir/libkateinterfaces.so
 %_kde_libdir/libkompareinterface.so
@@ -785,8 +777,6 @@ applications for kdesdk.
 %setup -q -n kdesdk-%{version}
 %endif
 %patch0 -p0
-%patch1 -p1
-%patch100 -p0
 
 %build
 %cmake_kde4
