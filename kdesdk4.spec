@@ -234,6 +234,8 @@ contained in the kdesdk module.
 %{_kde_bindir}/extractqml
 %{_kde_bindir}/kde-systemsettings-tree.py
 %{_kde_libdir}/kde4/kstartperf.so
+%{_kde_applicationsdir}/kdesrc-build.desktop
+%doc %_kde_docdir/HTML/en/kdesrc-build
 %_kde_mandir/man1/adddebug.1.*
 %_kde_mandir/man1/cheatmake.1.*
 %_kde_mandir/man1/create_cvsignore.1.*
@@ -369,6 +371,8 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/katesnippets_tngplugin.so
 %_kde_libdir/kde4/katetabifyplugin.so
 %_kde_libdir/kde4/katexmltoolsplugin.so
+%_kde_libdir/kde4/katefiletreeplugin.so
+%_kde_libdir/kde4/katesqlplugin.so
 %_kde_appsdir/katepart
 %_kde_services/katebacktracebrowserplugin.desktop
 %_kde_services/kateexternaltoolsplugin.desktop
@@ -391,6 +395,8 @@ A fast and advanced text editor with nice plugins
 %_kde_services/katesnippets_tngplugin.desktop
 %_kde_services/katetabifyplugin.desktop
 %_kde_services/katexmltools.desktop
+%_kde_services/katesql.desktop
+%_kde_services/katefiletreeplugin.desktop
 %_kde_datadir/applications/kde4/ktesnippets_editor.desktop
 %_kde_appsdir/katexmltools
 %_kde_mandir/man1/kate.1.*
