@@ -1,14 +1,14 @@
-%define branch 0
+%define branch 1
 %{?_branch: %{expand: %%global branch 1}}
 
 
 %if %branch
-%define kde_snapshot svn1138650
+%define kde_snapshot svn1170578
 %endif
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.5.0
+Version: 4.5.67
 Release: %mkrel 1
 Epoch: 1
 License: GPL
@@ -17,7 +17,6 @@ Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}%kde_sn
 %else
 Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}.tar.bz2
 %endif
-Patch0:    kdesdk-4.4.0-lokalize-fix-crash.patch
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: db4-devel 
@@ -776,7 +775,6 @@ applications for kdesdk.
 %else
 %setup -q -n kdesdk-%{version}
 %endif
-%patch0 -p0
 
 %build
 %cmake_kde4
