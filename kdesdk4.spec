@@ -233,11 +233,7 @@ contained in the kdesdk module.
 %{_kde_bindir}/wcgrep
 %{_kde_bindir}/extractqml
 %{_kde_bindir}/kde-systemsettings-tree.py
-
-%_kde_applicationsdir/kdesvn-build.desktop
-
 %{_kde_libdir}/kde4/kstartperf.so
-
 %_kde_mandir/man1/adddebug.1.*
 %_kde_mandir/man1/cheatmake.1.*
 %_kde_mandir/man1/create_cvsignore.1.*
@@ -316,9 +312,7 @@ An xml2po and vice versa converters.
 
 %files po2xml
 %defattr(-,root,root,-)
-#%{_kde_bindir}/po2xml
 %{_kde_bindir}/split2po
-#%{_kde_bindir}/swappo
 %{_kde_bindir}/xml2pot
 
 #---------------------------------------------------------------------
