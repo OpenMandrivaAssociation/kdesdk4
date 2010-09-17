@@ -1,47 +1,34 @@
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
 
-
 %if %branch
-%define kde_snapshot svn1170578
+%define kde_snapshot svn1174542
 %endif
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.5.67
-Release: %mkrel 2
+Version: 4.5.68
+Release: %mkrel 1
 Epoch: 1
 License: GPL
 %if %branch
 Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}%kde_snapshot.tar.bz2
 %else
-Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%{version}.tar.bz2
 %endif
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
-BuildRequires: db4-devel 
-BuildRequires: freetype2-devel
-BuildRequires: qt4-qtdbus
 BuildRequires: kdelibs4-devel >= 2:4.2.98
 BuildRequires: kdepimlibs4-devel
 BuildRequires: kdebase4-workspace-devel
 BuildRequires: kdebase4-devel
 BuildRequires: kdepim4-devel
-BuildRequires: bzip2-devel 
-BuildRequires: jpeg-devel 
-BuildRequires: lcms-devel 
-BuildRequires: mng-devel 
-BuildRequires: png-devel 
-BuildRequires: zlib-devel
-BuildRequires: flex
-BuildRequires: binutils-devel
 BuildRequires: subversion-devel
 BuildRequires: libxslt-devel
-BuildRequires: mesaglut-devel 
-BuildRequires: X11-devel 
-BuildRequires: libltdl-devel
 BuildRequires: boost-devel
 BuildRequires: hunspell-devel
+BuildRequires: libltdl-devel
+BuildRequires: binutils-devel
 Suggests: kapptemplate
 Suggests: kuiviewer
 Suggests: kdesdk4-scripts
