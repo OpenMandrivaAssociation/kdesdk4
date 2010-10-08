@@ -2,13 +2,17 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define kde_snapshot svn1174542
+%define kde_snapshot svn1183784
 %endif
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.5.68
+Version: 4.5.71
+%if %branch
+Release: %mkrel -c %kde_snapshot 1
+%else
 Release: %mkrel 1
+%endif
 Epoch: 1
 License: GPL
 %if %branch
@@ -42,6 +46,7 @@ Suggests: kompare
 Suggests: kmtrace
 Suggests: kcachegrind
 Suggests: lokalize
+Suggests: okteta
 
 %description
 Software Development Kit for the K Desktop Environment.
@@ -166,9 +171,6 @@ contained in the kdesdk module.
 %{_kde_bindir}/adddebug
 %{_kde_bindir}/build-progress.sh
 %{_kde_bindir}/cheatmake
-# (nl) Prefer the file from colorsvn as it is more up to date 
-# and this removing fix a conflict between kdesdk4-scripts and colorsvn
-%exclude %{_kde_bindir}/colorsvn
 %{_kde_bindir}/create_cvsignore
 %{_kde_bindir}/create_makefile
 %{_kde_bindir}/create_makefiles
@@ -333,6 +335,9 @@ A fast and advanced text editor with nice plugins
 %_kde_appsdir/ktexteditor_snippets
 %_kde_datadir/applications/kde4/kate.desktop
 %_kde_iconsdir/hicolor/*/apps/kate.*
+%_kde_iconsdir/*/*/actions/debug.png
+%_kde_iconsdir/*/*/actions/interrupt.png
+%_kde_iconsdir/*/*/actions/kill.png
 %_kde_appsdir/kate
 %_kde_appsdir/kconf_update/kate-2.4.upd
 %_kde_datadir/config/katerc
@@ -343,6 +348,7 @@ A fast and advanced text editor with nice plugins
 %_kde_libdir/kde4/katefilebrowserplugin.so
 %_kde_libdir/kde4/katefiletemplates.so
 %_kde_libdir/kde4/katefindinfilesplugin.so
+%_kde_libdir/kde4/kategdbplugin.so
 %_kde_libdir/kde4/katekonsoleplugin.so
 %_kde_libdir/kde4/katemailfilesplugin.so
 %_kde_libdir/kde4/kateopenheaderplugin.so
@@ -366,6 +372,7 @@ A fast and advanced text editor with nice plugins
 %_kde_services/katefilebrowserplugin.desktop
 %_kde_services/katefiletemplates.desktop
 %_kde_services/katefindinfilesplugin.desktop
+%_kde_services/kategdbplugin.desktop
 %_kde_services/katekonsoleplugin.desktop
 %_kde_services/katemailfilesplugin.desktop
 %_kde_services/kateopenheader.desktop
@@ -413,6 +420,7 @@ Umbrello UML Modeller is a UML diagramming tool for KDE.
 %dir %_kde_appsdir/umbrello/
 %_kde_appsdir/umbrello/*
 %_kde_iconsdir/*/*/*/umbrello*
+%_kde_iconsdir/*/*/mimetypes/application-x-uml.png
 %_kde_docdir/*/*/umbrello
 
 #---------------------------------------------------------------
@@ -525,6 +533,163 @@ CVS client part.
 %_kde_services/svn.protocol
 %_kde_docdir/*/*/cervisia
 %{_kde_mandir}/man1/cervisia.1.*
+
+#---------------------------------------------------------------
+
+%package -n okteta
+Summary: Edit raw file data as Hex values
+Group: Graphical desktop/KDE
+%if %mdkversion >= 201000
+Obsoletes: kdeutils-khexedit < 3.5.10-3
+%endif
+
+%description -n okteta
+Okteta is a simple editor for the raw data of files. This type of
+program is also called hex editor or binary editor.
+
+%files -n okteta
+%defattr(-,root,root)
+%_kde_bindir/okteta
+%_kde_libdir/kde4/libkbytearrayedit.so
+%_kde_libdir/kde4/oktetapart.so
+%_kde_applicationsdir/okteta.desktop
+%_kde_appsdir/okteta
+%_kde_appsdir/oktetapart
+%_kde_datadir/config.kcfg/structviewpreferences.kcfg
+%_kde_configdir/okteta-structures.knsrc
+%_kde_iconsdir/*/*/apps/okteta.png
+%_kde_services/kbytearrayedit.desktop
+%_kde_services/oktetapart.desktop
+%_kde_datadir/mime/packages/okteta.xml
+%doc %_kde_docdir/HTML/en/okteta
+
+#---------------------------------------------------------------
+ 
+%define liboktetacore_major 4
+%define liboktetacore %mklibname oktetacore %{liboktetacore_major}
+
+%package -n %liboktetacore
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %liboktetacore
+KDE 4 library
+
+%files -n %liboktetacore
+%defattr(-,root,root)
+%_kde_libdir/liboktetacore.so.%{liboktetacore_major}*
+
+#---------------------------------------------------------------
+
+%define liboktetakastengui_major 4
+%define liboktetakastengui %mklibname oktetakastengui %{liboktetakastengui_major}
+
+%package -n %liboktetakastengui
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %liboktetakastengui
+KDE 4 library
+
+%files -n %liboktetakastengui
+%defattr(-,root,root)
+%_kde_libdir/liboktetakastengui.so.%{liboktetakastengui_major}*
+
+#---------------------------------------------------------------
+
+%define liboktetagui_major 4
+%define liboktetagui %mklibname oktetagui %{liboktetagui_major}
+
+%package -n %liboktetagui
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %liboktetagui
+KDE 4 library
+
+%files -n %liboktetagui
+%defattr(-,root,root)
+%_kde_libdir/liboktetagui.so.%{liboktetagui_major}*
+
+#---------------------------------------------------------------
+
+%define liboktetakastencore_major 4
+%define liboktetakastencore %mklibname oktetakastencore %{liboktetakastencore_major}
+
+%package -n %liboktetakastencore
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %liboktetakastencore
+KDE 4 library
+
+%files -n %liboktetakastencore
+%defattr(-,root,root)
+%_kde_libdir/liboktetakastencore.so.%{liboktetakastencore_major}*
+
+#---------------------------------------------------------------
+
+%define liboktetakastencontrollers_major 4
+%define liboktetakastencontrollers %mklibname oktetakastencontrollers %{liboktetakastencontrollers_major}
+
+%package -n %liboktetakastencontrollers
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %liboktetakastencontrollers
+KDE 4 library
+
+%files -n %liboktetakastencontrollers
+%defattr(-,root,root)
+%_kde_libdir/liboktetakastencontrollers.so.%{liboktetakastencontrollers_major}*
+
+#---------------------------------------------------------------
+
+%define libkastengui_major 4
+%define libkastengui %mklibname kastengui %{libkastengui_major}
+
+%package -n %libkastengui
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %libkastengui
+KDE 4 library
+
+%files -n %libkastengui
+%defattr(-,root,root)
+%_kde_libdir/libkastengui.so.%{libkastengui_major}*
+
+#---------------------------------------------------------------
+
+%define libkastencore_major 4
+%define libkastencore %mklibname kastencore %{libkastencore_major}
+
+%package -n %libkastencore
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %libkastencore
+KDE 4 library
+
+%files -n %libkastencore
+%defattr(-,root,root)
+%_kde_libdir/libkastencore.so.%{libkastencore_major}*
+
+#---------------------------------------------------------------
+
+%define libkastencontrollers_major 4
+%define libkastencontrollers %mklibname kastencontrollers %{libkastencontrollers_major}
+
+%package -n %libkastencontrollers
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %libkastencontrollers
+KDE 4 library
+
+%files -n %libkastencontrollers
+%defattr(-,root,root)
+%_kde_libdir/libkastencontrollers.so.%{libkastencontrollers_major}*
 
 #---------------------------------------------------------------
 
@@ -731,6 +896,16 @@ Requires: %libkompareinterface = %epoch:%version
 Requires: %libkateinterfaces = %epoch:%version
 Requires: %libktrace = %epoch:%version
 Requires: %libktexteditor_codesnippets_core = %epoch:%version
+Requires: %liboktetacore = %epoch:%version
+Requires: %liboktetakastengui = %epoch:%version
+Requires: %liboktetagui = %epoch:%version
+Requires: %liboktetakastencore = %epoch:%version
+Requires: %liboktetakastencontrollers = %epoch:%version
+Requires: %libkastengui = %epoch:%version
+Requires: %libkastencore = %epoch:%version
+Requires: %libkastencontrollers = %epoch:%version
+Conflicts: kdeutils4-devel < 4.5.71
+Conflicts: kremotecontrol < 4.5.71
 
 %description  devel
 This package includes the header files you will need to compile
@@ -738,18 +913,22 @@ applications for kdesdk.
 
 %files devel
 %defattr(-,root,root,-)
-%_kde_includedir/kprofilemethod.h
-%_kde_includedir/ktrace.h
-%_kde_includedir/kate_export.h
-%_kde_includedir/kate
-%_kde_includedir/kompare
-%_kde_includedir/ktexteditor_codesnippets_core
+%_kde_includedir/*
 %_kde_libdir/libktrace.so
 %_kde_libdir/libkateinterfaces.so
 %_kde_libdir/libkompareinterface.so
 %_kde_libdir/libkomparediff2.so
 %_kde_libdir/libkomparedialogpages.so
 %_kde_libdir/libktexteditor_codesnippets_core.so
+%_kde_libdir/libkastencontrollers.so
+%_kde_libdir/libkastencore.so
+%_kde_libdir/libkastengui.so
+%_kde_libdir/liboktetacore.so
+%_kde_libdir/liboktetagui.so
+%_kde_libdir/liboktetakastencontrollers.so
+%_kde_libdir/liboktetakastencore.so
+%_kde_libdir/liboktetakastengui.so
+%_kde_libdir/kde4/plugins/designer/oktetadesignerplugin.so
 %_kde_datadir/dbus-1/interfaces/*
 
 #---------------------------------------------------------------
@@ -775,7 +954,11 @@ mkdir -p %buildroot/%_kde_appsdir/kdesdk/
 cp -a scripts %buildroot/%_kde_appsdir/kdesdk/
 rm -f %buildroot/%_kde_appsdir/kdesdk/CMake*
 
+# (nl) Prefer the file from colorsvn as it is more up to date
+# and this removing fix a conflict between kdesdk4-scripts and colorsvn
+rm -f %buildroot%{_kde_bindir}/colorsvn
+
+
 %clean
 rm -fr %buildroot
-
 
