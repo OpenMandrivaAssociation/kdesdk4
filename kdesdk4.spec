@@ -24,9 +24,7 @@ BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: kdelibs4-devel >= 2:4.2.98
 BuildRequires: kdepimlibs4-devel
-BuildRequires: kdebase4-workspace-devel
 BuildRequires: kdebase4-devel
-BuildRequires: kdepim4-devel
 BuildRequires: subversion-devel
 BuildRequires: libxslt-devel
 BuildRequires: boost-devel
