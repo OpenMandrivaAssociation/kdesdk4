@@ -9,9 +9,9 @@ Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
 Version: 4.5.71
 %if %branch
-Release: %mkrel -c %kde_snapshot 1
+Release: %mkrel -c %kde_snapshot 2
 %else
-Release: %mkrel 1
+Release: %mkrel 2
 %endif
 Epoch: 1
 License: GPL
@@ -31,6 +31,8 @@ BuildRequires: boost-devel
 BuildRequires: hunspell-devel
 BuildRequires: libltdl-devel
 BuildRequires: binutils-devel
+BuildRequires: antlr
+BuildRequires: antlr-native
 Suggests: kapptemplate
 Suggests: kuiviewer
 Suggests: kdesdk4-scripts
@@ -301,6 +303,8 @@ An xml2po and vice versa converters.
 %defattr(-,root,root,-)
 %{_kde_bindir}/split2po
 %{_kde_bindir}/xml2pot
+%{_kde_bindir}/po2xml
+%{_kde_bindir}/swappo
 
 #---------------------------------------------------------------------
 
