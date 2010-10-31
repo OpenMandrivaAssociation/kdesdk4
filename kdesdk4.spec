@@ -272,7 +272,6 @@ Kbugbuster
 %_kde_iconsdir/*/*/*/kbugbuster*
 %_kde_libdir/kde4/kcal_bugzilla.so
 %_kde_services/kresources/kcal/bugzilla.desktop
-%_kde_docdir/*/*/kbugbuster
 
 #---------------------------------------------------------------------
 
