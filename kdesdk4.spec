@@ -89,6 +89,7 @@ Common files needed for kdesdk
 %{_kde_services}/fileviewgitplugin.desktop
 %{_kde_services}/fileviewsvnplugin.desktop
 %{_kde_datadir}/config.kcfg/fileviewsvnpluginsettings.kcfg
+%{_kde_datadir}/config.kcfg/fileviewgitpluginsettings.kcfg
 %{_kde_iconsdir}/oxygen/16x16/actions/repoadd.png
 %{_kde_iconsdir}/oxygen/16x16/actions/repomanage.png
 %{_kde_iconsdir}/oxygen/16x16/actions/snippetadd.png
