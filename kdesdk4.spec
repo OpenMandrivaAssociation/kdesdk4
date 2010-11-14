@@ -2,12 +2,12 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define kde_snapshot svn1190490
+%define kde_snapshot svn1196628
 %endif
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.5.74
+Version: 4.5.76
 %if %branch
 Release: %mkrel -c %kde_snapshot 1
 %else
@@ -30,13 +30,11 @@ BuildRequires: libxslt-devel
 BuildRequires: boost-devel
 BuildRequires: hunspell-devel
 BuildRequires: libltdl-devel
-BuildRequires: binutils-devel
 BuildRequires: antlr
 BuildRequires: antlr-native
 Suggests: kapptemplate
 Suggests: kuiviewer
 Suggests: kdesdk4-scripts
-Suggests: kbugbuster
 Suggests: %name-strigi-analyzer
 Suggests: %name-po2xml
 Suggests: kate
@@ -47,6 +45,7 @@ Suggests: kmtrace
 Suggests: kcachegrind
 Suggests: lokalize
 Suggests: okteta
+Obsoletes: kbugbuster < 1:4.5.76
 
 %description
 Software Development Kit for the K Desktop Environment.
@@ -249,30 +248,6 @@ contained in the kdesdk module.
 %_kde_mandir/man1/transxx.1.*
 %_kde_mandir/man1/xml2pot.1.*
 %_kde_mandir/man1/zonetab2pot.py.1.*
-
-#---------------------------------------------------------------------
-
-%package -n kbugbuster
-Summary:   kbugbuster
-Group:     Graphical desktop/KDE
-Provides:  kbugbuster4
-Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
-Requires:  %name-core = %epoch:%version-%release
-Obsoletes: kde4-kbugbuster < 1:4.0.68
-Provides: kde4-kbugbuster = %epoch:%version
-
-%description -n kbugbuster
-Kbugbuster
-
-%files -n kbugbuster
-%defattr(-,root,root)
-%_kde_bindir/kbugbuster
-%_kde_datadir/applications/kde4/kbugbuster.desktop
-%dir %_kde_appsdir/kbugbuster
-%_kde_appsdir/kbugbuster/*
-%_kde_iconsdir/*/*/*/kbugbuster*
-%_kde_libdir/kde4/kcal_bugzilla.so
-%_kde_services/kresources/kcal/bugzilla.desktop
 
 #---------------------------------------------------------------------
 
