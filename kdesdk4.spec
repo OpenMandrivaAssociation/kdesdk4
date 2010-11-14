@@ -27,6 +27,7 @@ BuildRequires: kdepimlibs4-devel
 BuildRequires: kdebase4-devel
 BuildRequires: subversion-devel
 BuildRequires: libxslt-devel
+BuildRequires: binutils-devel
 BuildRequires: boost-devel
 BuildRequires: hunspell-devel
 BuildRequires: libltdl-devel
