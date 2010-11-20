@@ -707,11 +707,12 @@ kompare is a KDE diff graphic tool
 #---------------------------------------------------------------
 
 %define  komparediff2_major 4
-%define  libkomparediff2 %mklibname komparediff2 %komparediff2_major
+%define  libkomparediff2 %mklibname komparediff2_ %komparediff2_major
 
 %package -n %libkomparediff2
 Summary:    KDE 4 core library
 Group:      System/Libraries
+Obsoletes:  %{_lib}komparediff24
 
 %description -n %libkomparediff2
 KDE 4 core library.
