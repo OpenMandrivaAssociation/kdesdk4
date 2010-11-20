@@ -2,12 +2,12 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define kde_snapshot svn1196628
+%define kde_snapshot svn1198704
 %endif
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.5.76
+Version: 4.5.77
 %if %branch
 Release: %mkrel -c %kde_snapshot 1
 %else
