@@ -144,7 +144,6 @@ Displays Qt Designer UI files
 %files -n kuiviewer
 %defattr(-,root,root)
 %{_kde_bindir}/kuiviewer
-%_kde_libdir/kde4/libkuiviewerpart.so
 %_kde_libdir/kde4/quithumbnail.so
 %{_kde_datadir}/applications/kde4/kuiviewer.desktop
 %{_kde_appsdir}/kuiviewer
