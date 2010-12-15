@@ -241,15 +241,11 @@ contained in the kdesdk module.
 %_kde_mandir/man1/extend_dmalloc.1.*
 %_kde_mandir/man1/extractrc.1.*
 %_kde_mandir/man1/fixincludes.1.*
-%_kde_mandir/man1/po2xml.1.*
 %_kde_mandir/man1/pruneemptydirs.1.*
 %_kde_mandir/man1/qtdoc.1.*
 %_kde_mandir/man1/reportview.1.*
-%_kde_mandir/man1/split2po.1.*
-%_kde_mandir/man1/swappo.1.*
 %_kde_mandir/man1/transxx.1.*
 %_kde_mandir/man1/xml2pot.1.*
-%_kde_mandir/man1/zonetab2pot.py.1.*
 
 #---------------------------------------------------------------------
 
@@ -272,6 +268,7 @@ Summary: Xml2po and vice versa converters
 Group: Graphical desktop/KDE
 Conflicts: kdesdk4-core < 1:3.97.1-0.752225.2
 Conflicts: kde4-scripts < 1:3.97.1-0.752225.2
+Conflicts: kdesdk4-scripts < 1:4.5.85-3
 
 %description po2xml
 An xml2po and vice versa converters.
@@ -282,6 +279,10 @@ An xml2po and vice versa converters.
 %{_kde_bindir}/xml2pot
 %{_kde_bindir}/po2xml
 %{_kde_bindir}/swappo
+%{_kde_mandir}/man1/po2xml.1.*
+%{_kde_mandir}/man1/split2po.1.*
+%{_kde_mandir}/man1/swappo.1.*
+%{_kde_mandir}/man1/xml2pot.1.*
 
 #---------------------------------------------------------------------
 
