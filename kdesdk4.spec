@@ -11,7 +11,7 @@ Version: 4.5.85
 %if %branch
 Release: %mkrel -c %kde_snapshot 1
 %else
-Release: %mkrel 2
+Release: %mkrel 3
 %endif
 Epoch: 1
 License: GPL
@@ -161,6 +161,7 @@ Group:      Graphical desktop/KDE
 Conflicts:  kdesdk4 < %epoch:3.97.1-0.746591.1
 Obsoletes:  kde4-scripts
 Requires:   %name-core = %epoch:%version-%release
+Requires:   md5deep
 Requires:   colorsvn
 
 %description -n kdesdk4-scripts
