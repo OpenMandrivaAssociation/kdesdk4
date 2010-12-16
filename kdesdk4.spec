@@ -161,7 +161,6 @@ Group:      Graphical desktop/KDE
 Conflicts:  kdesdk4 < %epoch:3.97.1-0.746591.1
 Obsoletes:  kde4-scripts
 Requires:   %name-core = %epoch:%version-%release
-Requires:   md5deep
 Requires:   colorsvn
 
 %description -n kdesdk4-scripts
@@ -269,6 +268,7 @@ Group: Graphical desktop/KDE
 Conflicts: kdesdk4-core < 1:3.97.1-0.752225.2
 Conflicts: kde4-scripts < 1:3.97.1-0.752225.2
 Conflicts: kdesdk4-scripts < 1:4.5.85-3
+Suggests: md5deep
 
 %description po2xml
 An xml2po and vice versa converters.
