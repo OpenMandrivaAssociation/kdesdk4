@@ -11,7 +11,7 @@ Version: 4.5.90
 %if %branch
 Release: %mkrel -c %kde_snapshot 1
 %else
-Release: %mkrel 3
+Release: %mkrel 1
 %endif
 Epoch: 1
 License: GPL
@@ -245,6 +245,7 @@ contained in the kdesdk module.
 %_kde_mandir/man1/reportview.1.*
 %_kde_mandir/man1/transxx.1.*
 %_kde_mandir/man1/xml2pot.1.*
+%_kde_mandir/man1/zonetab2pot.py.1.*
 
 #---------------------------------------------------------------------
 
