@@ -7,7 +7,7 @@
 
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.6.1
+Version: 4.6.2
 %if %branch
 Release: %mkrel -c %kde_snapshot 1
 %else
