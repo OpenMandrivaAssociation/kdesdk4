@@ -20,6 +20,7 @@ Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}%kde_sn
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%{version}.tar.bz2
 %endif
+Patch0: kdesdk-4.6.2-r1227782.patch
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: kdelibs4-devel >= 2:4.2.98
@@ -921,6 +922,7 @@ applications for kdesdk.
 %else
 %setup -q -n kdesdk-%{version}
 %endif
+%patch0 -p4
 
 %build
 %cmake_kde4
