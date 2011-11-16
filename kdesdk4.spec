@@ -1,25 +1,10 @@
-%define branch 0
-%{?_branch: %{expand: %%global branch 1}}
-
-%if %branch
-%define kde_snapshot svn1198704
-%endif
-
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
 Version: 4.6.4
-%if %branch
-Release: 0.%kde_snapshot.1
-%else
 Release: 2
-%endif
 Epoch: 1
 License: GPL
-%if %branch
-Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdesdk-%{version}%kde_snapshot.tar.bz2
-%else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%{version}.tar.bz2
-%endif
 BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: kdelibs4-devel >= 2:4.2.98
@@ -916,11 +901,7 @@ applications for kdesdk.
 #---------------------------------------------------------------
 
 %prep
-%if %branch
-%setup -q -n kdesdk-%{version}%kde_snapshot
-%else
 %setup -q -n kdesdk-%{version}
-%endif
 
 %build
 %cmake_kde4
