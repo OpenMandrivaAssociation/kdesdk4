@@ -37,7 +37,7 @@ Obsoletes: kbugbuster < 1:4.5.76
 Software Development Kit for the K Desktop Environment.
 
 %files
-%defattr(-,root,root)
+
 
 #--------------------------------------------------------------------
 
@@ -54,7 +54,7 @@ Requires:  kdebase4-runtime
 Common files needed for kdesdk
 
 %files core
-%defattr(-,root,root)
+
 %{_kde_bindir}/krazy-licensecheck
 %{_kde_bindir}/cvsaskpass
 %{_kde_bindir}/cvsservice
@@ -103,7 +103,7 @@ application, a KPart application, a KPart plugin, or even convert
 existing source code to the KDE framework.
 
 %files   -n kapptemplate
-%defattr(-,root,root)
+
 %{_kde_bindir}/kapptemplate
 %{_kde_datadir}/applications/kde4/kapptemplate.desktop
 %{_kde_datadir}/config.kcfg/kapptemplate.kcfg
@@ -127,7 +127,7 @@ Provides: kde4-kuiviewer = %epoch:%version
 Displays Qt Designer UI files
 
 %files -n kuiviewer
-%defattr(-,root,root)
+
 %{_kde_bindir}/kuiviewer
 %_kde_libdir/kde4/quithumbnail.so
 %_kde_libdir/kde4/kuiviewerpart.so
@@ -153,7 +153,7 @@ This package contains the scripts for KDE development which are
 contained in the kdesdk module.
 
 %files -n kdesdk4-scripts
-%defattr(-,root,root)
+
 %{_kde_bindir}/adddebug
 %{_kde_bindir}/build-progress.sh
 %{_kde_bindir}/cheatmake
@@ -243,7 +243,7 @@ Requires: %name-core = %epoch:%version-%release
 Strigi analyzer
 
 %files strigi-analyzer
-%defattr(-,root,root)
+
 %_kde_libdir/strigi/strigi*
 
 #---------------------------------------------------------------
@@ -294,7 +294,7 @@ Obsoletes:     kdebase3-kate < 1:3.5.10-24
 A fast and advanced text editor with nice plugins
 
 %files -n kate
-%defattr(-,root,root)
+
 %_kde_bindir/kate
 %_kde_bindir/ktesnippets_editor
 %_kde_datadir/config/ktexteditor_codesnippets_core.knsrc
@@ -514,7 +514,7 @@ Okteta is a simple editor for the raw data of files. This type of
 program is also called hex editor or binary editor.
 
 %files -n okteta
-%defattr(-,root,root)
+
 %_kde_bindir/okteta
 %_kde_libdir/kde4/libkbytearrayedit.so
 %_kde_libdir/kde4/oktetapart.so
@@ -542,7 +542,7 @@ Group: System/Libraries
 KDE 4 library
 
 %files -n %liboktetacore
-%defattr(-,root,root)
+
 %_kde_libdir/liboktetacore.so.%{liboktetacore_major}*
 
 #---------------------------------------------------------------
@@ -558,7 +558,7 @@ Group: System/Libraries
 KDE 4 library
 
 %files -n %liboktetakastengui
-%defattr(-,root,root)
+
 %_kde_libdir/liboktetakastengui.so.%{liboktetakastengui_major}*
 
 #---------------------------------------------------------------
@@ -574,7 +574,7 @@ Group: System/Libraries
 KDE 4 library
 
 %files -n %liboktetagui
-%defattr(-,root,root)
+
 %_kde_libdir/liboktetagui.so.%{liboktetagui_major}*
 
 #---------------------------------------------------------------
@@ -590,7 +590,7 @@ Group: System/Libraries
 KDE 4 library
 
 %files -n %liboktetakastencore
-%defattr(-,root,root)
+
 %_kde_libdir/liboktetakastencore.so.%{liboktetakastencore_major}*
 
 #---------------------------------------------------------------
@@ -606,7 +606,7 @@ Group: System/Libraries
 KDE 4 library
 
 %files -n %liboktetakastencontrollers
-%defattr(-,root,root)
+
 %_kde_libdir/liboktetakastencontrollers.so.%{liboktetakastencontrollers_major}*
 
 #---------------------------------------------------------------
@@ -622,7 +622,7 @@ Group: System/Libraries
 KDE 4 library
 
 %files -n %libkastengui
-%defattr(-,root,root)
+
 %_kde_libdir/libkastengui.so.%{libkastengui_major}*
 
 #---------------------------------------------------------------
@@ -638,7 +638,7 @@ Group: System/Libraries
 KDE 4 library
 
 %files -n %libkastencore
-%defattr(-,root,root)
+
 %_kde_libdir/libkastencore.so.%{libkastencore_major}*
 
 #---------------------------------------------------------------
@@ -654,7 +654,7 @@ Group: System/Libraries
 KDE 4 library
 
 %files -n %libkastencontrollers
-%defattr(-,root,root)
+
 %_kde_libdir/libkastencontrollers.so.%{libkastencontrollers_major}*
 
 #---------------------------------------------------------------
@@ -706,7 +706,7 @@ Obsoletes:  %{_lib}komparediff24
 KDE 4 core library.
 
 %files -n %libkomparediff2
-%defattr(-,root,root)
+
 %_kde_libdir/libkomparediff2.so.%{komparediff2_major}*
 
 #---------------------------------------------------------------
@@ -722,7 +722,7 @@ Group:      System/Libraries
 KDE 4 core library.
 
 %files -n %libkomparedialogpages
-%defattr(-,root,root)
+
 %_kde_libdir/libkomparedialogpages.so.%{komparedialogpages_major}*
 
 #---------------------------------------------------------------
@@ -739,7 +739,7 @@ Group:      System/Libraries
 KDE 4 core library.
 
 %files -n %libkompareinterface
-%defattr(-,root,root)
+
 %_kde_libdir/libkompareinterface.so.%{kompareinterface_major}*
 
 #---------------------------------------------------------------
@@ -812,7 +812,7 @@ Group:      System/Libraries
 KDE 4 core library.
 
 %files -n %libkateinterfaces
-%defattr(-,root,root)
+
 %_kde_libdir/libkateinterfaces.so.%{kateinterfaces_major}*
 
 #-----------------------------------------------------------------------------
@@ -828,7 +828,7 @@ Group: System/Libraries
 KDE 4 core library.
 
 %files -n %libktrace
-%defattr(-,root,root)
+
 %_kde_libdir/libktrace.so.%{ktrace_major}*
 
 #-----------------------------------------------------------------------------
@@ -844,7 +844,7 @@ Group: System/Libraries
 KDE 4 core library.
 
 %files -n %libktexteditor_codesnippets_core
-%defattr(-,root,root)
+
 %_kde_libdir/libktexteditor_codesnippets_core.so.%{ktexteditor_codesnippets_core_major}*
 
 #---------------------------------------------------------------------
@@ -908,8 +908,6 @@ applications for kdesdk.
 %make
 
 %install
-rm -fr %buildroot
-
 %makeinstall_std -C build
 
 # Copy all scripts 
@@ -920,8 +918,4 @@ rm -f %buildroot/%_kde_appsdir/kdesdk/CMake*
 # (nl) Prefer the file from colorsvn as it is more up to date
 # and this removing fix a conflict between kdesdk4-scripts and colorsvn
 rm -f %buildroot%{_kde_bindir}/colorsvn
-
-
-%clean
-rm -fr %buildroot
 
