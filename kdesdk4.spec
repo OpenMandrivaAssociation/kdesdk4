@@ -23,7 +23,6 @@ Suggests: kuiviewer
 Suggests: kdesdk4-scripts
 Suggests: %name-strigi-analyzer
 Suggests: %name-po2xml
-Suggests: kate
 Suggests: umbrello 
 Suggests: cervisia
 Suggests: kompare 
@@ -262,99 +261,6 @@ An xml2po and vice versa converters.
 %{_kde_mandir}/man1/split2po.1.*
 %{_kde_mandir}/man1/swappo.1.*
 %{_kde_mandir}/man1/xml2pot.1.*
-
-#---------------------------------------------------------------------
-
-%package -n kate
-Summary:   Kate
-Group:     Graphical desktop/KDE
-Provides:  kate4
-Obsoletes: kdebase4-kate < 1:3.97.1
-Provides:  kdebase4-kate > 1:3.97.1
-Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
-Requires(post): desktop-file-utils
-Requires(postun): desktop-file-utils
-Requires: %name-core = %epoch:%version-%release
-Obsoletes: kde4-kate < 1:4.0.68
-Provides: kde4-kate = %epoch:%version
-Requires: konsole
-%if %mdkversion >= 200100
-Obsoletes:     kdebase-kate < 1:3.5.10-24
-Obsoletes:     kdebase3-kate < 1:3.5.10-24
-%endif
-
-%description -n kate
-A fast and advanced text editor with nice plugins
-
-%files -n kate
-
-%_kde_bindir/kate
-%_kde_bindir/ktesnippets_editor
-%_kde_datadir/config/ktexteditor_codesnippets_core.knsrc
-%_kde_appsdir/ktexteditor_snippets
-%_kde_datadir/applications/kde4/kate.desktop
-%_kde_iconsdir/hicolor/*/apps/kate.*
-%_kde_iconsdir/*/*/actions/debug.png
-%_kde_iconsdir/*/*/actions/interrupt.png
-%_kde_iconsdir/*/*/actions/kill.png
-%_kde_appsdir/kate
-%_kde_appsdir/kconf_update/kate-2.4.upd
-%_kde_datadir/config/katerc
-%_kde_datadir/config/katefiletemplates.knsrc
-%_kde_libdir/libkdeinit4_kate.so
-%_kde_libdir/kde4/katebacktracebrowserplugin.so
-%_kde_libdir/kde4/kateexternaltoolsplugin.so
-%_kde_libdir/kde4/katefilebrowserplugin.so
-%_kde_libdir/kde4/katefiletemplates.so
-%_kde_libdir/kde4/katefindinfilesplugin.so
-%_kde_libdir/kde4/kategdbplugin.so
-%_kde_libdir/kde4/katekonsoleplugin.so
-%_kde_libdir/kde4/katemailfilesplugin.so
-%_kde_libdir/kde4/kateopenheaderplugin.so
-%_kde_libdir/kde4/katequickdocumentswitcherplugin.so
-%_kde_libdir/kde4/katesymbolviewerplugin.so
-%_kde_libdir/kde4/katetabbarextensionplugin.so
-%_kde_libdir/kde4/katetextfilterplugin.so
-%_kde_libdir/kde4/plasma_applet_katesession.so
-%_kde_libdir/kde4/katebuildplugin.so
-%_kde_libdir/kde4/katectagsplugin.so
-%_kde_libdir/kde4/kate_kttsd.so
-%_kde_libdir/kde4/katexmlcheckplugin.so
-%_kde_libdir/kde4/katesnippets_tngplugin.so
-%_kde_libdir/kde4/katetabifyplugin.so
-%_kde_libdir/kde4/katexmltoolsplugin.so
-%_kde_libdir/kde4/katefiletreeplugin.so
-%_kde_libdir/kde4/katesqlplugin.so
-%_kde_appsdir/katepart
-%_kde_services/katebacktracebrowserplugin.desktop
-%_kde_services/kateexternaltoolsplugin.desktop
-%_kde_services/katefilebrowserplugin.desktop
-%_kde_services/katefiletemplates.desktop
-%_kde_services/katefindinfilesplugin.desktop
-%_kde_services/kategdbplugin.desktop
-%_kde_services/katekonsoleplugin.desktop
-%_kde_services/katemailfilesplugin.desktop
-%_kde_services/kateopenheader.desktop
-%_kde_services/katequickdocumentswitcher.desktop
-%_kde_services/katesymbolviewer.desktop
-%_kde_services/katetabbarextension.desktop
-%_kde_services/katetextfilter.desktop
-%_kde_servicetypes/kateplugin.desktop
-%_kde_services/plasma-applet-katesession.desktop
-%_kde_services/katebuildplugin.desktop
-%_kde_services/katectagsplugin.desktop
-%_kde_services/kate_kttsd.desktop
-%_kde_services/katexmlcheck.desktop
-%_kde_services/katesnippets_tngplugin.desktop
-%_kde_services/katetabifyplugin.desktop
-%_kde_services/katexmltools.desktop
-%_kde_services/katesql.desktop
-%_kde_services/katefiletreeplugin.desktop
-%_kde_datadir/applications/kde4/ktesnippets_editor.desktop
-%_kde_appsdir/katexmltools
-%_kde_mandir/man1/kate.1.*
-%_kde_datadir/mime/packages/ktesnippets.xml
-%_kde_docdir/*/*/kate
 
 #---------------------------------------------------------------
 
