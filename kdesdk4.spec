@@ -360,12 +360,6 @@ CVS client part.
 %files -n cervisia
 %defattr(-,root,root,-)
 %{_kde_bindir}/cervisia
-%_kde_iconsdir/*/*/actions/svn_add.*
-%_kde_iconsdir/*/*/actions/svn_branch.*
-%_kde_iconsdir/*/*/actions/svn_merge.*
-%_kde_iconsdir/*/*/actions/svn_remove.*
-%_kde_iconsdir/*/*/actions/svn_status.*
-%_kde_iconsdir/*/*/actions/svn_switch.*
 %_kde_datadir/applications/kde4/cervisia.desktop
 %_kde_appsdir/cervisia/cervisia.notifyrc
 %_kde_appsdir/cervisia/cervisiashellui.rc
@@ -375,12 +369,6 @@ CVS client part.
 %_kde_appsdir/kconf_update/cervisia.upd
 %_kde_appsdir/kconf_update/change_colors.pl
 %_kde_datadir/config.kcfg/cervisiapart.kcfg
-%_kde_iconsdir/*/*/actions/vcs_add.*
-%_kde_iconsdir/*/*/actions/vcs_commit.*
-%_kde_iconsdir/*/*/actions/vcs_diff.*
-%_kde_iconsdir/*/*/actions/vcs_remove.*
-%_kde_iconsdir/*/*/actions/vcs_status.*
-%_kde_iconsdir/*/*/actions/vcs_update.*
 %_kde_iconsdir/*/*/apps/cervisia.*
 %_kde_libdir/libkdeinit4_cervisia.so
 %_kde_libdir/kde4/kded_ksvnd.so
