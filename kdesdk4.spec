@@ -181,7 +181,6 @@ contained in the kdesdk module.
 %{_kde_bindir}/kdekillall
 %{_kde_bindir}/kdelnk2desktop.py
 %{_kde_bindir}/kdemangen.pl
-%{_kde_bindir}/kdesrc-build
 %{_kde_bindir}/makeobj
 %{_kde_bindir}/noncvslist
 %{_kde_bindir}/nonsvnlist
@@ -205,8 +204,6 @@ contained in the kdesdk module.
 %{_kde_bindir}/extractqml
 %{_kde_bindir}/kde-systemsettings-tree.py
 %{_kde_libdir}/kde4/kstartperf.so
-%{_kde_applicationsdir}/kdesrc-build.desktop
-%doc %_kde_docdir/HTML/en/kdesrc-build
 %_kde_mandir/man1/adddebug.1.*
 %_kde_mandir/man1/cheatmake.1.*
 %_kde_mandir/man1/create_cvsignore.1.*
