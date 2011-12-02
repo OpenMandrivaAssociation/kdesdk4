@@ -1,11 +1,10 @@
 Name: kdesdk4
 Summary: K Desktop Environment - Software Development Kit
-Version: 4.7.41
+Version: 4.7.80
 Release: 1
 Epoch: 1
 License: GPL
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdesdk-%{version}.tar.bz2
-BuildRoot: %_tmppath/%name-%version-%release-root
 Group: Graphical desktop/KDE
 BuildRequires: kdelibs4-devel >= 2:4.2.98
 BuildRequires: kdepimlibs4-devel
@@ -30,7 +29,6 @@ Suggests: kmtrace
 Suggests: kcachegrind
 Suggests: lokalize
 Suggests: okteta
-Obsoletes: kbugbuster < 1:4.5.76
 
 %description
 Software Development Kit for the K Desktop Environment.
@@ -43,10 +41,6 @@ Software Development Kit for the K Desktop Environment.
 %package core
 Summary: Common files needed for kdesdk
 Group: Graphical desktop/KDE
-Conflicts: %name < %epoch:3.97.1-0.746591.1
-Conflicts: cervisia < 1:4.2.85-2
-Obsoletes: %{_lib}kdesdk41 < %epoch:3.96.1-0.740308.2
-Obsoletes: %name < %epoch:4.0.2-3
 Requires:  kdebase4-runtime
 
 %description core
@@ -81,12 +75,8 @@ Common files needed for kdesdk
 Summary:   Template for KDE Application Development
 Group:     Graphical desktop/KDE
 Provides:  kapptemplate4
-Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
-Conflicts: kdevelop4 < 3:4.0.80-1
 Requires:  %name-core = %epoch:%version-%release
 Requires:  kdelibs4-devel
-Obsoletes: kde4-kapptemplate < 1:4.0.68
-Provides: kde4-kapptemplate = %epoch:%version
 
 %description   -n kapptemplate
 KAppTemplate is a set of modular shell scripts that will create a 
@@ -138,7 +128,6 @@ Displays Qt Designer UI files
 %package -n kdesdk4-scripts
 Summary:    Script From kdesdk
 Group:      Graphical desktop/KDE
-Conflicts:  kdesdk4 < %epoch:3.97.1-0.746591.1
 Obsoletes:  kde4-scripts
 Requires:   %name-core = %epoch:%version-%release
 Requires:   colorsvn
@@ -243,9 +232,6 @@ Strigi analyzer
 %package po2xml
 Summary: Xml2po and vice versa converters
 Group: Graphical desktop/KDE
-Conflicts: kdesdk4-core < 1:3.97.1-0.752225.2
-Conflicts: kde4-scripts < 1:3.97.1-0.752225.2
-Conflicts: kdesdk4-scripts < 1:4.5.85-3
 Suggests: md5deep
 
 %description po2xml
@@ -268,12 +254,7 @@ An xml2po and vice versa converters.
 Summary:    UML Modeller
 Group:      Graphical desktop/KDE
 Provides:   umbrello4
-Conflicts:  kdesdk4 < %epoch:3.97.1
-Conflicts:  kdesdk-umbrello < 1:3.5.9-5
 Requires:   %name-core = %epoch:%version-%release
-Obsoletes:  %name-umbrello < %epoch:3.97.1 
-Obsoletes:  kde4-umbrello < 1:4.0.68
-Provides:   kde4-umbrello = %epoch:%version
 
 %description -n umbrello
 Umbrello UML Modeller is a UML diagramming tool for KDE.
@@ -294,8 +275,6 @@ Umbrello UML Modeller is a UML diagramming tool for KDE.
 Summary:    Computer-Aided Translation Tool
 Group:      Graphical desktop/KDE
 Provides:   lokalize4
-Obsoletes:  localise < 1:4.0.83-4
-Obsoletes:  localise4 < 1:4.0.83-4
 Requires:   %name-core = %epoch:%version-%release
 Requires:   kdesdk4-strigi-analyzer
 Requires:   qt4-database-plugin-sqlite
@@ -345,14 +324,8 @@ message-by-message approach (when translating GUI).
 %package -n cervisia
 Summary:    CVS client part
 Group:      Graphical desktop/KDE
-Provides:   cervisia4 = %epoch:%version-%release
 Requires:   cvs
-Conflicts:  kdesdk4 < %epoch:3.97.1-0.746591.1
-Conflicts:  kdesdk-cervisia < 1:3.5.9-5mdv
 Requires:   %name-core = %epoch:%version-%release
-Obsoletes:  %name-cervisia < %epoch:3.97.1 
-Obsoletes:  kde4-cervisia < 1:4.0.68
-Provides:   kde4-cervisia = %epoch:%version
 
 %description -n cervisia
 CVS client part.
@@ -392,9 +365,6 @@ CVS client part.
 %package -n okteta
 Summary: Edit raw file data as Hex values
 Group: Graphical desktop/KDE
-%if %mdkversion >= 201000
-Obsoletes: kdeutils-khexedit < 3.5.10-3
-%endif
 
 %description -n okteta
 Okteta is a simple editor for the raw data of files. This type of
@@ -549,13 +519,7 @@ KDE 4 library
 %package -n kompare
 Summary: KDE diff graphic tool
 Group: Graphical desktop/KDE
-Provides: kompare4 = %epoch:%version-%release
-Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
-Conflicts: kdesdk-kompare < 1:3.5.9-5
-Obsoletes: %name-kompare < %epoch:3.97.1-0.746591.1
 Requires: %name-core = %epoch:%version-%release
-Obsoletes: kde4-kompare < 1:4.0.68
-Provides: kde4-kompare = %epoch:%version
 
 %description -n kompare
 kompare is a KDE diff graphic tool
@@ -634,11 +598,7 @@ KDE 4 core library.
 %package -n kmtrace
 Summary: Memory Allocation Debugging Tool
 Group: Graphical desktop/KDE
-Provides: kmtrace4 = %epoch:%version-%release
-Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
 Requires: %name-core = %epoch:%version-%release
-Obsoletes: kde4-kmtrace < 1:4.0.68
-Provides: kde4-kmtrace = %epoch:%version
 
 %description -n kmtrace
 Memory Allocation Debugging Tool
@@ -656,16 +616,8 @@ Memory Allocation Debugging Tool
 %package -n kcachegrind
 Summary: KCachegrind
 Group: Graphical desktop/KDE
-Provides: kcachegrind4 = %epoch:%version-%release
-Obsoletes: %name-kcachegrind < %epoch:3.97.1
-Conflicts: kdesdk4 < %epoch:3.97.1-0.746591.1
-Conflicts: kdesdk-kcachegrind < 1:3.5.9-5
 Requires: %name-core = %epoch:%version-%release
-Obsoletes: kde4-kcachegrind < 1:4.0.68
-Provides: kde4-kcachegrind = %epoch:%version
-%ifarch %{ix86}
 Requires: valgrind
-%endif
 
 %description -n kcachegrind
 KCachegrind is a visualisation tool for the profiling data generated by 
@@ -739,11 +691,6 @@ KDE 4 core library.
 %package    devel
 Summary:    Header files for kdesdk
 Group:      Development/KDE and Qt
-Provides:   kdesdk4-devel = %epoch:%version-%release
-Conflicts:  kompare < 1:4.2.0-3
-Obsoletes:  %{_lib}kdesdk41-kate-devel < %epoch:3.96.1-0.740308.2
-Obsoletes:  %{_lib}kdesdk41-devel < %epoch:3.96.1-0.740308.2
-Obsoletes:  %{_lib}kdesdk41-cervisia-devel < %epoch:3.96.1-0.740308.2
 Requires: %libkomparediff2 = %epoch:%version
 Requires: %libkomparedialogpages = %epoch:%version
 Requires: %libkompareinterface = %epoch:%version
@@ -758,8 +705,6 @@ Requires: %liboktetakastencontrollers = %epoch:%version
 Requires: %libkastengui = %epoch:%version
 Requires: %libkastencore = %epoch:%version
 Requires: %libkastencontrollers = %epoch:%version
-Conflicts: kdeutils4-devel < 4.5.71
-Conflicts: kremotecontrol < 4.5.71
 
 %description  devel
 This package includes the header files you will need to compile
@@ -803,6 +748,6 @@ cp -a scripts %buildroot/%_kde_appsdir/kdesdk/
 rm -f %buildroot/%_kde_appsdir/kdesdk/CMake*
 
 # (nl) Prefer the file from colorsvn as it is more up to date
-# and this removing fix a conflict between kdesdk4-scripts and colorsvn
+# and this fix a conflict between kdesdk4-scripts and colorsvn
 rm -f %buildroot%{_kde_bindir}/colorsvn
 
