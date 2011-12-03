@@ -388,22 +388,6 @@ program is also called hex editor or binary editor.
 
 #---------------------------------------------------------------
 
-%define liboktetakastencore_major 4
-%define liboktetakastencore %mklibname oktetakastencore %{liboktetakastencore_major}
-
-%package -n %liboktetakastencore
-Summary: KDE 4 library
-Group: System/Libraries
-
-%description -n %liboktetakastencore
-KDE 4 library
-
-%files -n %liboktetakastencore
-
-%_kde_libdir/liboktetakastencore.so.%{liboktetakastencore_major}*
-
-#---------------------------------------------------------------
-
 %define liboktetakastencontrollers_major 4
 %define liboktetakastencontrollers %mklibname oktetakastencontrollers %{liboktetakastencontrollers_major}
 
@@ -672,7 +656,6 @@ applications for kdesdk.
 %_kde_libdir/libkastencore.so
 %_kde_libdir/libkastengui.so
 %_kde_libdir/liboktetakastencontrollers.so
-%_kde_libdir/liboktetakastencore.so
 %_kde_libdir/kde4/plugins/designer/oktetadesignerplugin.so
 %_kde_datadir/dbus-1/interfaces/*
 
