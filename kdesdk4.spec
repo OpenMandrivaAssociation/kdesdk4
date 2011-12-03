@@ -633,7 +633,6 @@ Requires: %libkompareinterface = %epoch:%version
 Requires: %libkateinterfaces = %epoch:%version
 Requires: %libktrace = %epoch:%version
 Requires: %libktexteditor_codesnippets_core = %epoch:%version
-Requires: %liboktetakastencore = %epoch:%version
 Requires: %liboktetakastencontrollers = %epoch:%version
 Requires: %libkastengui = %epoch:%version
 Requires: %libkastencore = %epoch:%version
