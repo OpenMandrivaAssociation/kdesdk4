@@ -387,22 +387,6 @@ program is also called hex editor or binary editor.
 %doc %_kde_docdir/HTML/en/okteta
 
 #---------------------------------------------------------------
- 
-%define liboktetacore_major 4
-%define liboktetacore %mklibname oktetacore %{liboktetacore_major}
-
-%package -n %liboktetacore
-Summary: KDE 4 library
-Group: System/Libraries
-
-%description -n %liboktetacore
-KDE 4 library
-
-%files -n %liboktetacore
-
-%_kde_libdir/liboktetacore.so.%{liboktetacore_major}*
-
-#---------------------------------------------------------------
 
 %define liboktetakastengui_major 4
 %define liboktetakastengui %mklibname oktetakastengui %{liboktetakastengui_major}
@@ -697,7 +681,6 @@ Requires: %libkompareinterface = %epoch:%version
 Requires: %libkateinterfaces = %epoch:%version
 Requires: %libktrace = %epoch:%version
 Requires: %libktexteditor_codesnippets_core = %epoch:%version
-Requires: %liboktetacore = %epoch:%version
 Requires: %liboktetakastengui = %epoch:%version
 Requires: %liboktetagui = %epoch:%version
 Requires: %liboktetakastencore = %epoch:%version
