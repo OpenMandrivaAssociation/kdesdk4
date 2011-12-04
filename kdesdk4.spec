@@ -399,7 +399,6 @@ kompare is a KDE diff graphic tool
 %files -n kompare
 %defattr(-,root,root,-)
 %_kde_bindir/kompare
-%_kde_libdir/kde4/libkomparenavtreepart.so
 %_kde_datadir/applications/kde4/kompare.desktop
 %_kde_appsdir/kompare
 %_kde_iconsdir/hicolor/128x128/apps/kompare.png
