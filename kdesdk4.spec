@@ -388,22 +388,6 @@ program is also called hex editor or binary editor.
 
 #---------------------------------------------------------------
 
-%define libkastencontrollers_major 4
-%define libkastencontrollers %mklibname kastencontrollers %{libkastencontrollers_major}
-
-%package -n %libkastencontrollers
-Summary: KDE 4 library
-Group: System/Libraries
-
-%description -n %libkastencontrollers
-KDE 4 library
-
-%files -n %libkastencontrollers
-
-%_kde_libdir/libkastencontrollers.so.%{libkastencontrollers_major}*
-
-#---------------------------------------------------------------
-
 %package -n kompare
 Summary: KDE diff graphic tool
 Group: Graphical desktop/KDE
@@ -585,7 +569,6 @@ Requires: %libkompareinterface = %epoch:%version
 Requires: %libkateinterfaces = %epoch:%version
 Requires: %libktrace = %epoch:%version
 Requires: %libktexteditor_codesnippets_core = %epoch:%version
-Requires: %libkastencontrollers = %epoch:%version
 
 %description  devel
 This package includes the header files you will need to compile
@@ -600,7 +583,6 @@ applications for kdesdk.
 %_kde_libdir/libkomparediff2.so
 %_kde_libdir/libkomparedialogpages.so
 %_kde_libdir/libktexteditor_codesnippets_core.so
-%_kde_libdir/libkastencontrollers.so
 %_kde_libdir/kde4/plugins/designer/oktetadesignerplugin.so
 %_kde_datadir/dbus-1/interfaces/*
 
