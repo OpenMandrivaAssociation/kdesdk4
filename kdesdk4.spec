@@ -509,22 +509,6 @@ Calltree extends Cachegrind, which is part of Valgrind.
 
 #---------------------------------------------------------------
 
-%define  kateinterfaces_major 4
-%define  libkateinterfaces %mklibname kateinterfaces %kateinterfaces_major
-
-%package -n %libkateinterfaces
-Summary:    KDE 4 core library
-Group:      System/Libraries
-
-%description -n %libkateinterfaces
-KDE 4 core library.
-
-%files -n %libkateinterfaces
-
-%_kde_libdir/libkateinterfaces.so.%{kateinterfaces_major}*
-
-#-----------------------------------------------------------------------------
-
 %define  ktrace_major 4
 %define  libktrace %mklibname ktrace %ktrace_major
 
@@ -563,7 +547,6 @@ Group:      Development/KDE and Qt
 Requires: %libkomparediff2 = %epoch:%version
 Requires: %libkomparedialogpages = %epoch:%version
 Requires: %libkompareinterface = %epoch:%version
-Requires: %libkateinterfaces = %epoch:%version
 Requires: %libktrace = %epoch:%version
 Requires: %libktexteditor_codesnippets_core = %epoch:%version
 
@@ -575,7 +558,6 @@ applications for kdesdk.
 %defattr(-,root,root,-)
 %_kde_includedir/*
 %_kde_libdir/libktrace.so
-%_kde_libdir/libkateinterfaces.so
 %_kde_libdir/libkompareinterface.so
 %_kde_libdir/libkomparediff2.so
 %_kde_libdir/libkomparedialogpages.so
