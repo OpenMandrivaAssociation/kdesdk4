@@ -68,6 +68,9 @@ Common files needed for kdesdk
 %{_kde_services}/fileviewsvnplugin.desktop
 %{_kde_datadir}/config.kcfg/fileviewsvnpluginsettings.kcfg
 %{_kde_datadir}/config.kcfg/fileviewgitpluginsettings.kcfg
+%{_kde_datadir}/config.kcfg/fileviewhgpluginsettings.kcfg
+%{_kde_services}/fileviewbazaarplugin.desktop
+%{_kde_services}/fileviewhgplugin.desktop
 
 #---------------------------------------------------------------------
 
@@ -341,7 +344,8 @@ CVS client part.
 %_kde_appsdir/kconf_update/cervisia.upd
 %_kde_appsdir/kconf_update/change_colors.pl
 %_kde_datadir/config.kcfg/cervisiapart.kcfg
-%_kde_iconsdir/*/*/apps/cervisia.*
+%_kde_iconsdir/*/*/*/*cervisia*
+%_kde_iconsdir/*/*/*/*kiosvn*
 %_kde_libdir/libkdeinit4_cervisia.so
 %_kde_libdir/kde4/kded_ksvnd.so
 %_kde_libdir/kde4/kio_svn.so
@@ -398,6 +402,8 @@ kompare is a KDE diff graphic tool
 %files -n kompare
 %defattr(-,root,root,-)
 %_kde_bindir/kompare
+%_kde_libdir/kde4/komparenavtreepart.so
+%_kde_libdir/kde4/komparepart.so
 %_kde_datadir/applications/kde4/kompare.desktop
 %_kde_appsdir/kompare
 %_kde_iconsdir/hicolor/128x128/apps/kompare.png
@@ -409,6 +415,7 @@ kompare is a KDE diff graphic tool
 %_kde_services/komparenavtreepart.desktop
 %_kde_services/komparepart.desktop
 %_kde_servicetypes/kompareviewpart.desktop
+%_kde_servicetypes/komparenavigationpart.desktop
 %_kde_docdir/*/*/kompare
 
 #---------------------------------------------------------------
@@ -522,29 +529,167 @@ KDE 4 core library.
 
 %_kde_libdir/libktrace.so.%{ktrace_major}*
 
+#---------------------------------------------------------------
+
+%define  kasten1controllers_major 0
+%define  libkasten1controllers %mklibname kasten1controllers %kasten1controllers_major
+
+%package -n %libkasten1controllers
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libkasten1controllers
+KDE 4 core library.
+
+%files -n %libkasten1controllers
+
+%_kde_libdir/libkasten1controllers.so.*
+
+#---------------------------------------------------------------
+
+%define  kasten1core_major 0
+%define  libkasten1core %mklibname kasten1core %kasten1core_major
+
+%package -n %libkasten1core
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libkasten1core
+KDE 4 core library.
+
+%files -n %libkasten1core
+
+%_kde_libdir/libkasten1core.so.*
+
+#---------------------------------------------------------------
+
+%define  kasten1gui_major 0
+%define  libkasten1gui %mklibname kasten1gui %kasten1gui_major
+
+%package -n %libkasten1gui
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libkasten1gui
+KDE 4 core library.
+
+%files -n %libkasten1gui
+%_kde_libdir/libkasten1gui.so.*
+
+#---------------------------------------------------------------
+
+%define  kasten1okteta1controllers_major 0
+%define  libkasten1okteta1controllers %mklibname kasten1okteta1controllers %kasten1okteta1controllers_major
+
+%package -n %libkasten1okteta1controllers
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libkasten1okteta1controllers
+KDE 4 core library.
+
+%files -n %libkasten1okteta1controllers
+%_kde_libdir/libkasten1okteta1controllers.so.*
+
+#---------------------------------------------------------------
+
+%define  kasten1okteta1core_major 0
+%define  libkasten1okteta1core %mklibname kasten1okteta1core %kasten1okteta1core_major
+
+%package -n %libkasten1okteta1core
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libkasten1okteta1core
+KDE 4 core library.
+
+%files -n %libkasten1okteta1core
+%_kde_libdir/libkasten1okteta1core.so.*
+
+#---------------------------------------------------------------
+
+%define  kasten1okteta1gui_major 0
+%define  libkasten1okteta1gui %mklibname kasten1okteta1gui %kasten1okteta1gui_major
+
+%package -n %libkasten1okteta1gui
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libkasten1okteta1gui
+KDE 4 core library.
+
+%files -n %libkasten1okteta1gui
+%_kde_libdir/libkasten1okteta1gui.so.*
+
+#---------------------------------------------------------------
+
+%define  okteta1core_major 0
+%define  libokteta1core %mklibname okteta1core %okteta1core_major
+
+%package -n %libokteta1core
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libokteta1core
+KDE 4 core library.
+
+%files -n %libokteta1core
+
+%_kde_libdir/libokteta1core.so.*
+
+#---------------------------------------------------------------
+
+%define  okteta1gui_major 0
+%define  libokteta1gui %mklibname okteta1gui %okteta1gui_major
+
+%package -n %libokteta1gui
+Summary: KDE 4 core library
+Group: System/Libraries
+
+%description -n %libokteta1gui
+KDE 4 core library.
+
+%files -n %libokteta1gui
+%_kde_libdir/libokteta1gui.so.*
+
 #-----------------------------------------------------------------------------
 
-%package    devel
-Summary:    Header files for kdesdk
-Group:      Development/KDE and Qt
-Requires: %libkomparediff2 = %epoch:%version
-Requires: %libkomparedialogpages = %epoch:%version
-Requires: %libkompareinterface = %epoch:%version
-Requires: %libktrace = %epoch:%version
+%package  devel
+Summary:  Header files for kdesdk
+Group:    Development/KDE and Qt
+Requires: %libkomparediff2 = %EVRD
+Requires: %libkomparedialogpages = %EVRD
+Requires: %libkompareinterface = %EVRD
+Requires: %libktrace = %EVRD
+Requires: %libkasten1controllers = %EVRD
+Requires: %libkasten1core = %EVRD
+Requires: %libkasten1gui = %EVRD
+Requires: %libkasten1okteta1controllers = %EVRD
+Requires: %libkasten1okteta1core = %EVRD
+Requires: %libkasten1okteta1gui = %EVRD
+Requires: %libokteta1core = %EVRD
+Requires: %libokteta1gui = %EVRD
 
 %description  devel
 This package includes the header files you will need to compile
 applications for kdesdk.
 
 %files devel
-%defattr(-,root,root,-)
 %_kde_includedir/*
 %_kde_libdir/libktrace.so
 %_kde_libdir/libkompareinterface.so
 %_kde_libdir/libkomparediff2.so
 %_kde_libdir/libkomparedialogpages.so
+%_kde_libdir/libkasten1controllers.so
+%_kde_libdir/libkasten1core.so
+%_kde_libdir/libkasten1gui.so
+%_kde_libdir/libkasten1okteta1controllers.so
+%_kde_libdir/libkasten1okteta1core.so
+%_kde_libdir/libkasten1okteta1gui.so
+%_kde_libdir/libokteta1core.so
+%_kde_libdir/libokteta1gui.so
 %_kde_libdir/kde4/plugins/designer/oktetadesignerplugin.so
-%_kde_datadir/dbus-1/interfaces/*
+%_datadir/dbus-1/interfaces/*
 
 #---------------------------------------------------------------
 
