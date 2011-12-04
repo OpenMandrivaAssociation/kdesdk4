@@ -210,7 +210,6 @@ contained in the kdesdk module.
 %_kde_mandir/man1/qtdoc.1.*
 %_kde_mandir/man1/reportview.1.*
 %_kde_mandir/man1/transxx.1.*
-%_kde_mandir/man1/xml2pot.1.*
 %_kde_mandir/man1/zonetab2pot.py.1.*
 
 #---------------------------------------------------------------------
