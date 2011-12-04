@@ -388,22 +388,6 @@ program is also called hex editor or binary editor.
 
 #---------------------------------------------------------------
 
-%define libkastengui_major 4
-%define libkastengui %mklibname kastengui %{libkastengui_major}
-
-%package -n %libkastengui
-Summary: KDE 4 library
-Group: System/Libraries
-
-%description -n %libkastengui
-KDE 4 library
-
-%files -n %libkastengui
-
-%_kde_libdir/libkastengui.so.%{libkastengui_major}*
-
-#---------------------------------------------------------------
-
 %define libkastencore_major 4
 %define libkastencore %mklibname kastencore %{libkastencore_major}
 
@@ -617,7 +601,6 @@ Requires: %libkompareinterface = %epoch:%version
 Requires: %libkateinterfaces = %epoch:%version
 Requires: %libktrace = %epoch:%version
 Requires: %libktexteditor_codesnippets_core = %epoch:%version
-Requires: %libkastengui = %epoch:%version
 Requires: %libkastencore = %epoch:%version
 Requires: %libkastencontrollers = %epoch:%version
 
@@ -636,7 +619,6 @@ applications for kdesdk.
 %_kde_libdir/libktexteditor_codesnippets_core.so
 %_kde_libdir/libkastencontrollers.so
 %_kde_libdir/libkastencore.so
-%_kde_libdir/libkastengui.so
 %_kde_libdir/kde4/plugins/designer/oktetadesignerplugin.so
 %_kde_datadir/dbus-1/interfaces/*
 
