@@ -525,22 +525,6 @@ KDE 4 core library.
 
 #-----------------------------------------------------------------------------
 
-%define  ktexteditor_codesnippets_core_major 0
-%define  libktexteditor_codesnippets_core %mklibname ktexteditor_codesnippets_core %ktexteditor_codesnippets_core_major
-
-%package -n %libktexteditor_codesnippets_core
-Summary: KDE 4 core library
-Group: System/Libraries
-
-%description -n %libktexteditor_codesnippets_core
-KDE 4 core library.
-
-%files -n %libktexteditor_codesnippets_core
-
-%_kde_libdir/libktexteditor_codesnippets_core.so.%{ktexteditor_codesnippets_core_major}*
-
-#---------------------------------------------------------------------
-
 %package    devel
 Summary:    Header files for kdesdk
 Group:      Development/KDE and Qt
@@ -548,7 +532,6 @@ Requires: %libkomparediff2 = %epoch:%version
 Requires: %libkomparedialogpages = %epoch:%version
 Requires: %libkompareinterface = %epoch:%version
 Requires: %libktrace = %epoch:%version
-Requires: %libktexteditor_codesnippets_core = %epoch:%version
 
 %description  devel
 This package includes the header files you will need to compile
@@ -561,7 +544,6 @@ applications for kdesdk.
 %_kde_libdir/libkompareinterface.so
 %_kde_libdir/libkomparediff2.so
 %_kde_libdir/libkomparedialogpages.so
-%_kde_libdir/libktexteditor_codesnippets_core.so
 %_kde_libdir/kde4/plugins/designer/oktetadesignerplugin.so
 %_kde_datadir/dbus-1/interfaces/*
 
