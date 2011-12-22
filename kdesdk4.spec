@@ -59,6 +59,8 @@ Common files needed for kdesdk
 %{_kde_libdir}/libkdeinit4_cvsservice.so
 %{_kde_libdir}/kde4/fileviewgitplugin.so
 %{_kde_libdir}/kde4/fileviewsvnplugin.so
+%{_kde_libdir}/kde4/fileviewbazaarplugin.so
+%{_kde_libdir}/kde4/fileviewhgplugin.so
 %{_kde_appsdir}/kabc/formats/kdeaccountsplugin.desktop
 %{_kde_appsdir}/kio_perldoc
 %{_kde_appsdir}/kpartloader
