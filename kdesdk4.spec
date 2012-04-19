@@ -14,7 +14,7 @@ BuildRequires: libxslt-devel
 BuildRequires: binutils-devel
 BuildRequires: boost-devel
 BuildRequires: hunspell-devel
-BuildRequires: libltdl-devel
+BuildRequires: libtool-devel
 BuildRequires: antlr
 BuildRequires: antlr-native
 Suggests: kapptemplate
