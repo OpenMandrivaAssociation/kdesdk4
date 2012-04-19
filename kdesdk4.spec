@@ -194,7 +194,6 @@ contained in the kdesdk module.
 %{_kde_bindir}/zonetab2pot.py
 %{_kde_bindir}/optimizegraphics
 %{_kde_bindir}/wcgrep
-%{_kde_bindir}/extractqml
 %{_kde_bindir}/kde-systemsettings-tree.py
 %{_kde_libdir}/kde4/kstartperf.so
 %_kde_mandir/man1/adddebug.1.*
