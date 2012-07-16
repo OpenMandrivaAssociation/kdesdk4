@@ -54,14 +54,12 @@ Common files needed for kdesdk
 %{_kde_bindir}/kio_svn_helper
 %{_kde_bindir}/kstartperf
 %{_kde_bindir}/kpartloader
-%{_kde_libdir}/kde4/kabcformat_kdeaccounts.so
 %{_kde_libdir}/libkdeinit4_cvsaskpass.so
 %{_kde_libdir}/libkdeinit4_cvsservice.so
 %{_kde_libdir}/kde4/fileviewgitplugin.so
 %{_kde_libdir}/kde4/fileviewsvnplugin.so
 %{_kde_libdir}/kde4/fileviewbazaarplugin.so
 %{_kde_libdir}/kde4/fileviewhgplugin.so
-%{_kde_appsdir}/kabc/formats/kdeaccountsplugin.desktop
 %{_kde_appsdir}/kio_perldoc
 %{_kde_appsdir}/kpartloader
 %{_kde_libdir}/kde4/kio_perldoc.so
