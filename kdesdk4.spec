@@ -531,83 +531,83 @@ KDE 4 core library.
 
 #---------------------------------------------------------------
 
-%define  kasten1core_major 0
-%define  libkasten1core %mklibname kasten1core %kasten1core_major
+%define  kasten2core_major 2
+%define  libkasten2core %mklibname kasten2core %kasten2core_major
 
-%package -n %libkasten1core
+%package -n %libkasten2core
 Summary: KDE 4 core library
 Group: System/Libraries
 
-%description -n %libkasten1core
+%description -n %libkasten2core
 KDE 4 core library.
 
-%files -n %libkasten1core
+%files -n %libkasten2core
 
-%_kde_libdir/libkasten1core.so.*
+%_kde_libdir/libkasten2core.so.*
 
 #---------------------------------------------------------------
 
-%define  kasten1gui_major 0
-%define  libkasten1gui %mklibname kasten1gui %kasten1gui_major
+%define  kasten2gui_major 2
+%define  libkasten2gui %mklibname kasten2gui %kasten2gui_major
 
-%package -n %libkasten1gui
+%package -n %libkasten2gui
 Summary: KDE 4 core library
 Group: System/Libraries
 
-%description -n %libkasten1gui
+%description -n %libkasten2gui
 KDE 4 core library.
 
-%files -n %libkasten1gui
-%_kde_libdir/libkasten1gui.so.*
+%files -n %libkasten2gui
+%_kde_libdir/libkasten2gui.so.*
 
 #---------------------------------------------------------------
 
-%define  kasten1okteta1controllers_major 0
-%define  libkasten1okteta1controllers %mklibname kasten1okteta1controllers %kasten1okteta1controllers_major
+%define  kasten2okteta1controllers_major 1
+%define  libkasten2okteta1controllers %mklibname kasten2okteta1controllers %kasten2okteta1controllers_major
 
-%package -n %libkasten1okteta1controllers
+%package -n %libkasten2okteta1controllers
 Summary: KDE 4 core library
 Group: System/Libraries
 
-%description -n %libkasten1okteta1controllers
+%description -n %libkasten2okteta1controllers
 KDE 4 core library.
 
-%files -n %libkasten1okteta1controllers
-%_kde_libdir/libkasten1okteta1controllers.so.*
+%files -n %libkasten2okteta1controllers
+%_kde_libdir/libkasten2okteta1controllers.so.*
 
 #---------------------------------------------------------------
 
-%define  kasten1okteta1core_major 0
-%define  libkasten1okteta1core %mklibname kasten1okteta1core %kasten1okteta1core_major
+%define  kasten2okteta1core_major 1
+%define  libkasten2okteta1core %mklibname kasten2okteta1core %kasten2okteta1core_major
 
-%package -n %libkasten1okteta1core
+%package -n %libkasten2okteta1core
 Summary: KDE 4 core library
 Group: System/Libraries
 
-%description -n %libkasten1okteta1core
+%description -n %libkasten2okteta1core
 KDE 4 core library.
 
-%files -n %libkasten1okteta1core
-%_kde_libdir/libkasten1okteta1core.so.*
+%files -n %libkasten2okteta1core
+%_kde_libdir/libkasten2okteta1core.so.*
 
 #---------------------------------------------------------------
 
-%define  kasten1okteta1gui_major 0
-%define  libkasten1okteta1gui %mklibname kasten1okteta1gui %kasten1okteta1gui_major
+%define  kasten2okteta1gui_major 1
+%define  libkasten2okteta1gui %mklibname kasten2okteta1gui %kasten2okteta1gui_major
 
-%package -n %libkasten1okteta1gui
+%package -n %libkasten2okteta1gui
 Summary: KDE 4 core library
 Group: System/Libraries
 
-%description -n %libkasten1okteta1gui
+%description -n %libkasten2okteta1gui
 KDE 4 core library.
 
-%files -n %libkasten1okteta1gui
-%_kde_libdir/libkasten1okteta1gui.so.*
+%files -n %libkasten2okteta1gui
+%_kde_libdir/libkasten2okteta1gui.so.*
 
 #---------------------------------------------------------------
 
-%define  okteta1core_major 0
+%define  okteta1core_major 1
 %define  libokteta1core %mklibname okteta1core %okteta1core_major
 
 %package -n %libokteta1core
@@ -623,7 +623,7 @@ KDE 4 core library.
 
 #---------------------------------------------------------------
 
-%define  okteta1gui_major 0
+%define  okteta1gui_major 1
 %define  libokteta1gui %mklibname okteta1gui %okteta1gui_major
 
 %package -n %libokteta1gui
@@ -645,11 +645,11 @@ Requires: %libkomparediff2 = %EVRD
 Requires: %libkomparedialogpages = %EVRD
 Requires: %libkompareinterface = %EVRD
 Requires: %libktrace = %EVRD
-Requires: %libkasten1core = %EVRD
-Requires: %libkasten1gui = %EVRD
-Requires: %libkasten1okteta1controllers = %EVRD
-Requires: %libkasten1okteta1core = %EVRD
-Requires: %libkasten1okteta1gui = %EVRD
+Requires: %libkasten2core = %EVRD
+Requires: %libkasten2gui = %EVRD
+Requires: %libkasten2okteta1controllers = %EVRD
+Requires: %libkasten2okteta1core = %EVRD
+Requires: %libkasten2okteta1gui = %EVRD
 Requires: %libokteta1core = %EVRD
 Requires: %libokteta1gui = %EVRD
 
@@ -663,12 +663,12 @@ applications for kdesdk.
 %_kde_libdir/libkompareinterface.so
 %_kde_libdir/libkomparediff2.so
 %_kde_libdir/libkomparedialogpages.so
-%_kde_libdir/libkasten1controllers.so
-%_kde_libdir/libkasten1core.so
-%_kde_libdir/libkasten1gui.so
-%_kde_libdir/libkasten1okteta1controllers.so
-%_kde_libdir/libkasten1okteta1core.so
-%_kde_libdir/libkasten1okteta1gui.so
+%_kde_libdir/libkasten2controllers.so
+%_kde_libdir/libkasten2core.so
+%_kde_libdir/libkasten2gui.so
+%_kde_libdir/libkasten2okteta1controllers.so
+%_kde_libdir/libkasten2okteta1core.so
+%_kde_libdir/libkasten2okteta1gui.so
 %_kde_libdir/libokteta1core.so
 %_kde_libdir/libokteta1gui.so
 %_kde_libdir/kde4/plugins/designer/oktetadesignerplugin.so
