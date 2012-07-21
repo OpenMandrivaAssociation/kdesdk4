@@ -645,7 +645,6 @@ Requires: %libkomparediff2 = %EVRD
 Requires: %libkomparedialogpages = %EVRD
 Requires: %libkompareinterface = %EVRD
 Requires: %libktrace = %EVRD
-Requires: %libkasten1controllers = %EVRD
 Requires: %libkasten1core = %EVRD
 Requires: %libkasten1gui = %EVRD
 Requires: %libkasten1okteta1controllers = %EVRD
