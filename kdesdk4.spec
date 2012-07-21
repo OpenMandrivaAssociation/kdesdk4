@@ -17,6 +17,7 @@ BuildRequires: hunspell-devel
 BuildRequires: libtool-devel
 BuildRequires: antlr
 BuildRequires: antlr-native
+BuildRequires: gettext-devel
 Suggests: kapptemplate
 Suggests: kuiviewer
 Suggests: kdesdk4-scripts
@@ -527,22 +528,6 @@ KDE 4 core library.
 %files -n %libktrace
 
 %_kde_libdir/libktrace.so.%{ktrace_major}*
-
-#---------------------------------------------------------------
-
-%define  kasten1controllers_major 0
-%define  libkasten1controllers %mklibname kasten1controllers %kasten1controllers_major
-
-%package -n %libkasten1controllers
-Summary: KDE 4 core library
-Group: System/Libraries
-
-%description -n %libkasten1controllers
-KDE 4 core library.
-
-%files -n %libkasten1controllers
-
-%_kde_libdir/libkasten1controllers.so.*
 
 #---------------------------------------------------------------
 
