@@ -61,15 +61,18 @@ Common files needed for kdesdk
 %{_kde_libdir}/kde4/fileviewsvnplugin.so
 %{_kde_libdir}/kde4/fileviewbazaarplugin.so
 %{_kde_libdir}/kde4/fileviewhgplugin.so
+%{_kde_libdir}/kde4/pothumbnail.so
 %{_kde_appsdir}/kio_perldoc
 %{_kde_appsdir}/kpartloader
 %{_kde_libdir}/kde4/kio_perldoc.so
 %{_kde_services}/perldoc.protocol
 %{_kde_services}/fileviewgitplugin.desktop
 %{_kde_services}/fileviewsvnplugin.desktop
+%{_kde_services}/pothumbnail.desktop
 %{_kde_datadir}/config.kcfg/fileviewsvnpluginsettings.kcfg
 %{_kde_datadir}/config.kcfg/fileviewgitpluginsettings.kcfg
 %{_kde_datadir}/config.kcfg/fileviewhgpluginsettings.kcfg
+%{_kde_datadir}/config.kcfg/pocreatorsettings.kcfg
 %{_kde_services}/fileviewbazaarplugin.desktop
 %{_kde_services}/fileviewhgplugin.desktop
 
@@ -528,6 +531,21 @@ KDE 4 core library.
 %files -n %libktrace
 
 %_kde_libdir/libktrace.so.%{ktrace_major}*
+
+#---------------------------------------------------------------
+
+%define  kasten2controllers_major 2
+%define  libkasten2controllers %mklibname kasten2controllers %kasten2controllers_major
+	  	 
+%package -n %libkasten2controllers
+Summary: KDE 4 core library
+Group: System/Libraries
+	  	 
+%description -n %libkasten2controllers
+KDE 4 core library.
+	  	 
+%files -n %libkasten2controllers
+%_kde_libdir/libkasten2controllers.so.*
 
 #---------------------------------------------------------------
 
