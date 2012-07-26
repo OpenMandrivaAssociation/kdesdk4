@@ -15,7 +15,7 @@ BuildRequires:	antlr-native
 BuildRequires:	binutils-devel
 BuildRequires:	boost-devel
 BuildRequires:	gettext-devel
-BuildRequires:	libltdl-devel
+BuildRequires:	libtool-devel
 BuildRequires:	subversion-devel
 BuildRequires:	pkgconfig(hunspell)
 BuildRequires:	pkgconfig(libxslt)
