@@ -1,12 +1,12 @@
 Name:		kdesdk4
 Summary:	K Desktop Environment - Software Development Kit
-Version:	4.8.97
-Release:	2
+Version: 4.9.0
+Release: 1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPL
 URL:		http://www.kde.org
-Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/kdesdk-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kdesdk-%{version}.tar.xz
 BuildRequires:	kdebase4-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdepimlibs4-devel
