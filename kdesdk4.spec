@@ -1,6 +1,6 @@
 Name:		kdesdk4
 Summary:	K Desktop Environment - Software Development Kit
-Version: 4.9.0
+Version: 4.9.2
 Release: 1
 Epoch:		1
 Group:		Graphical desktop/KDE
