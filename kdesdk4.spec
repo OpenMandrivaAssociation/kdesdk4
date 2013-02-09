@@ -1,6 +1,6 @@
 Name:		kdesdk4
 Summary:	K Desktop Environment - Software Development Kit
-Version:	4.9.4
+Version:	4.10.0
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -56,6 +56,7 @@ Common files needed for kdesdk
 %{_kde_bindir}/kio_svn_helper
 %{_kde_bindir}/kstartperf
 %{_kde_bindir}/kpartloader
+%{_kde_bindir}/struct2osd.sh
 %{_kde_libdir}/libkdeinit4_cvsaskpass.so
 %{_kde_libdir}/libkdeinit4_cvsservice.so
 %{_kde_libdir}/kde4/fileviewgitplugin.so
@@ -327,10 +328,6 @@ CVS client part.
 %{_kde_appsdir}/cervisia/cervisia.notifyrc
 %{_kde_appsdir}/cervisia/cervisiashellui.rc
 %{_kde_appsdir}/cervisiapart/cervisiaui.rc
-%{_kde_appsdir}/kconf_update/cervisia-change_repos_list.pl
-%{_kde_appsdir}/kconf_update/cervisia-normalize_cvsroot.pl
-%{_kde_appsdir}/kconf_update/cervisia.upd
-%{_kde_appsdir}/kconf_update/change_colors.pl
 %{_kde_datadir}/config.kcfg/cervisiapart.kcfg
 %{_kde_iconsdir}/*/*/*/*cervisia*
 %{_kde_iconsdir}/*/*/*/*kiosvn*
@@ -720,6 +717,10 @@ rm -f %{buildroot}%{_kde_appsdir}/kdesdk/CMake*
 rm -f %{buildroot}%{_kde_bindir}/colorsvn
 
 %changelog
+* Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.0-1
+- New version 4.10.0
+- Update files
+
 * Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.9.4-1
 - New version 4.9.4
 
