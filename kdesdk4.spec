@@ -100,7 +100,6 @@ existing source code to the KDE framework.
 %{_kde_appsdir}/kdevappwizard
 %{_kde_docdir}/*/*/kapptemplate
 %{_kde_iconsdir}/hicolor/*/apps/kapptemplate.png
-%{_kde_appsdir}/kdesdk/scripts
 
 #---------------------------------------------------------------------
 
@@ -707,11 +706,6 @@ applications for kdesdk.
 %install
 %makeinstall_std -C build
 
-# Copy all scripts
-mkdir -p %{buildroot}%{_kde_appsdir}/kdesdk/
-cp -a scripts %{buildroot}%{_kde_appsdir}/kdesdk/
-rm -f %{buildroot}%{_kde_appsdir}/kdesdk/CMake*
-
 # (nl) Prefer the file from colorsvn as it is more up to date
 # and this fix a conflict between kdesdk4-scripts and colorsvn
 rm -f %{buildroot}%{_kde_bindir}/colorsvn
@@ -719,6 +713,7 @@ rm -f %{buildroot}%{_kde_bindir}/colorsvn
 %changelog
 * Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.1-1
 - New version 4.10.1
+- Fix files
 
 * Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.0-1
 - New version 4.10.0
