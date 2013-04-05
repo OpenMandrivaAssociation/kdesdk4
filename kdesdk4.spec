@@ -1,6 +1,6 @@
 Name:		kdesdk4
 Summary:	K Desktop Environment - Software Development Kit
-Version:	4.10.1
+Version:	4.10.2
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -711,6 +711,9 @@ applications for kdesdk.
 rm -f %{buildroot}%{_kde_bindir}/colorsvn
 
 %changelog
+* Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.2-1
+- New version 4.10.2
+
 * Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.1-1
 - New version 4.10.1
 - Fix files
