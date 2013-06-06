@@ -1,11 +1,11 @@
-Name:		kdesdk4
 Summary:	K Desktop Environment - Software Development Kit
-Version:	4.10.3
+Name:		kdesdk4
+Version:	4.10.4
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPL
-URL:		http://www.kde.org
+Url:		http://www.kde.org
 Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kdesdk-%{version}.tar.xz
 Source1:	kdesdk4.rpmlintrc
 BuildRequires:	kdebase4-devel
@@ -711,6 +711,9 @@ applications for kdesdk.
 rm -f %{buildroot}%{_kde_bindir}/colorsvn
 
 %changelog
+* Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.4-1
+- New version 4.10.4
+
 * Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.3-1
 - New version 4.10.3
 
